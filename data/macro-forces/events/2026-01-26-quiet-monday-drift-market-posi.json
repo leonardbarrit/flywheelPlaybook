@@ -1,0 +1,58 @@
+{
+  "id": "2026-01-26-quiet-monday-drift-market-posi",
+  "date": "2026-01-26",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Quiet Monday drift; market positioning ahead of FOMC Jan 27-28 meeting. No stock-specific catalyst. Bloomberg retrospective 'DeepSeek fears unfounded a year later' suggests narrative was stable.",
+    "source_url": "https://www.bloomberg.com/news/articles/2026-01-26/deepseek-was-less-of-a-sputnik-moment-than-ai-boom-aberration",
+    "event_window": "intraday"
+  },
+  "secondary_catalysts": [],
+  "price_data": {
+    "prior_close": 187.67,
+    "event_day": {
+      "open": 187.16,
+      "high": 189.12,
+      "low": 185.99,
+      "close": 186.47,
+      "volume": 124799649,
+      "gap_open_pct": -0.272,
+      "intraday_range_pct": 1.672,
+      "close_change_pct": -0.6394,
+      "close_vs_open_pct": -0.369
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": -0.386,
+    "volume_sigma": -1.57,
+    "range_expansion_sigma": -0.939,
+    "gap_sigma": -0.567,
+    "volume_baseline": 168260720
+  },
+  "reaction_classification": {
+    "close": "negligible",
+    "volume": "significant",
+    "range": "negligible"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "E1",
+      "direction": "neutral",
+      "weight_share": 0.7,
+      "f1_tier": null,
+      "rationale": "Pre-FOMC positioning light"
+    },
+    {
+      "force_id": "C3",
+      "direction": "bearish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Mild pre-FOMC de-risking given market pricing for hold"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "low",
+  "notes": "Volume anomaly only (vol_z -1.57). Muted move ahead of Fed meeting."
+}

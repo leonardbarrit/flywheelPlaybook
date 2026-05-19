@@ -1,0 +1,74 @@
+{
+  "id": "2026-01-14-president-trump-signed-section",
+  "date": "2026-01-14",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "President Trump signed Section 232 Presidential Proclamation imposing 25% tariff on advanced AI chips (NVDA H200, AMD MI325X), effective 12:01am EST Jan 15. Announcement intraday Jan 14 drove NVDA and AMD lower.",
+    "source_url": "https://www.whitehouse.gov/fact-sheets/2026/01/fact-sheet-president-donald-j-trump-takes-action-on-certain-advanced-computing-chips-to-protect-americas-economic-and-national-security/",
+    "event_window": "intraday"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Axios reporting: 25% tariff specifically hits NVDA's top export SKUs",
+      "source_url": "https://www.axios.com/2026/01/14/trump-tariff-nvidia-chips-china"
+    },
+    {
+      "description": "CNN Business: 'Trump enacts 25% tariff on chips \u00e2\u20ac\u201d with a caveat' (data center/domestic-use exemptions)",
+      "source_url": "https://www.cnn.com/2026/01/14/tech/chip-tariff-trump"
+    }
+  ],
+  "price_data": {
+    "prior_close": 185.81,
+    "event_day": {
+      "open": 184.32,
+      "high": 184.46,
+      "low": 180.8,
+      "close": 183.14,
+      "volume": 159586135,
+      "gap_open_pct": -0.802,
+      "intraday_range_pct": 1.986,
+      "close_change_pct": -1.44,
+      "close_vs_open_pct": -0.64
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": -1.326,
+    "volume_sigma": 0.084,
+    "range_expansion_sigma": -0.915,
+    "gap_sigma": -1.409,
+    "volume_baseline": 158007243
+  },
+  "reaction_classification": {
+    "close": "notable",
+    "volume": "negligible",
+    "range": "negligible"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "C2",
+      "direction": "bearish",
+      "weight_share": 0.6,
+      "f1_tier": null,
+      "rationale": "US industrial policy (Section 232) directly targets NVDA flagship AI chips to force reshoring"
+    },
+    {
+      "force_id": "C1",
+      "direction": "bearish",
+      "weight_share": 0.2,
+      "f1_tier": null,
+      "rationale": "Creates new export-control-like structure for China-bound H200 shipments"
+    },
+    {
+      "force_id": "B1",
+      "direction": "bearish",
+      "weight_share": 0.2,
+      "f1_tier": null,
+      "rationale": "TSMC outbound logistics complexity increases; foundry chain pressure"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "high",
+  "notes": "Move was muted (-1.44%) because of broad data-center exemption carve-outs in the proclamation text. Full impact absorbed over Jan 15-20 as enforcement details clarified."
+}

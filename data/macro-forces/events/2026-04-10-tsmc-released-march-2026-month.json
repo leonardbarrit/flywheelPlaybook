@@ -1,0 +1,74 @@
+{
+  "id": "2026-04-10-tsmc-released-march-2026-month",
+  "date": "2026-04-10",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "TSMC released March 2026 monthly revenue report: NT$415.19B, +45.2% YoY and +30.7% MoM \u00e2\u20ac\u201d record March print. Q1 2026 revenue NT$1.134T (+35.1% YoY). Direct read-through to NVDA (NVDA is TSMC's largest advanced-node customer and books CoWoS capacity through 2027). TSM Taipei shares +2.3%; translated into NVDA bid through the session.",
+    "source_url": "https://pr.tsmc.com/english/news/3294"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "TSMC record revenue framed as AI-chip-demand-stays-strong per CNBC coverage",
+      "source_url": "https://www.cnbc.com/2026/04/10/tsmc-q1-record-revenue-ai-chip-demand-strong.html"
+    }
+  ],
+  "price_data": {
+    "prior_close": 183.91,
+    "event_day": {
+      "open": 184.31,
+      "high": 190.0,
+      "low": 184.3,
+      "close": 188.63,
+      "volume": 160459525,
+      "gap_open_pct": 0.217,
+      "intraday_range_pct": 3.093,
+      "close_change_pct": 2.57,
+      "close_vs_open_pct": 2.344
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 1.195,
+    "volume_sigma": -0.261,
+    "range_expansion_sigma": 0.568,
+    "gap_sigma": -0.028,
+    "volume_baseline": 169417318
+  },
+  "reaction_classification": {
+    "close": "notable",
+    "volume": "negligible",
+    "range": "negligible"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "B1",
+      "direction": "bullish",
+      "weight_share": 0.55,
+      "f1_tier": null,
+      "rationale": "TSMC monthly revenue print is the strongest leading indicator of NVDA demand fulfillment \u00e2\u20ac\u201d advanced packaging + foundry signal"
+    },
+    {
+      "force_id": "A1",
+      "direction": "bullish",
+      "weight_share": 0.35,
+      "f1_tier": null,
+      "rationale": "45% TSMC March YoY confirms hyperscaler AI capex is not just holding but accelerating \u00e2\u20ac\u201d direct A1 validation"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bullish",
+      "weight_share": 0.1,
+      "f1_tier": null,
+      "rationale": "Continued post-ceasefire recovery flows supportive"
+    }
+  ],
+  "f1_attribution": {
+    "force_id": "F1",
+    "tier": 4,
+    "multiplier": 1.5,
+    "rationale": "TSMC is Tier 4 adjacent AI supplier \u00e2\u20ac\u201d independent 3rd-party corroboration that AI chip demand from NVDA hyperscaler customers is intact/accelerating"
+  },
+  "confounded": false,
+  "confidence": "high",
+  "notes": "MEDIUM priority but cleanly attributable to TSMC monthly revenue. Beginning of the 10-day winning streak."
+}

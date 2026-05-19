@@ -1,0 +1,70 @@
+{
+  "id": "2026-02-04-nvda-plunged-as-much-as-5-intr",
+  "date": "2026-02-04",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "NVDA plunged as much as 5% intraday on Anthropic launching new Claude LLM tool for data analysis, legal/sales/marketing applications \u00e2\u20ac\u201d raising fresh concerns about software-layer disruption reducing hardware dependency. Jensen Huang publicly defended AI investment thesis, saying software-tool-decline narrative is wrong.",
+    "source_url": "https://www.fool.com/investing/2026/02/04/why-did-nvidia-stock-plunge-today/",
+    "event_window": "intraday"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Day 3 of chip selloff compounds the Anthropic news",
+      "source_url": "https://fortune.com/2026/02/04/why-saas-stocks-tech-selloff-freefall-like-deepseek-2025-overblown-paradox-irrational/"
+    }
+  ],
+  "price_data": {
+    "prior_close": 180.34,
+    "event_day": {
+      "open": 179.46,
+      "high": 179.58,
+      "low": 171.91,
+      "close": 174.19,
+      "volume": 207014116,
+      "gap_open_pct": -0.488,
+      "intraday_range_pct": 4.274,
+      "close_change_pct": -3.41,
+      "close_vs_open_pct": -2.937
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": -1.747,
+    "volume_sigma": 1.474,
+    "range_expansion_sigma": 1.742,
+    "gap_sigma": -0.569,
+    "volume_baseline": 166513599
+  },
+  "reaction_classification": {
+    "close": "significant",
+    "volume": "notable",
+    "range": "significant"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "A2",
+      "direction": "bearish",
+      "weight_share": 0.4,
+      "f1_tier": null,
+      "rationale": "Enterprise AI disruption concern \u00e2\u20ac\u201d Anthropic tool threatens hardware demand narrative at application layer"
+    },
+    {
+      "force_id": "D2",
+      "direction": "bearish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Model-layer competition (Anthropic) reduces NVDA's 'only training beneficiary' premium"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bearish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Correlated selling into day 3 of selloff; capitulation pattern"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "high",
+  "notes": "Third consecutive decline. Huang's public defense is itself a signal that sentiment was bad."
+}

@@ -1,0 +1,57 @@
+{
+  "id": "2026-03-24-modest-down-day-amid-re-escala",
+  "date": "2026-03-24",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Modest down day amid re-escalation of US/Iran conflict headlines \u00e2\u20ac\u201d Iran began charging Strait of Hormuz transit fees (up to $2M per voyage) and peace-process talk wavered. Mag7 continued slide (down 12-13% YTD at this point). Low-volume (-0.99 vol z) range-bound session; no NVDA-specific catalyst identified.",
+    "source_url": "https://www.thestreet.com/latest-news/stock-market-today-march-24-2026-updates"
+  },
+  "secondary_catalysts": [],
+  "price_data": {
+    "prior_close": 175.64,
+    "event_day": {
+      "open": 174.83,
+      "high": 176.22,
+      "low": 173.98,
+      "close": 175.2,
+      "volume": 147667844,
+      "gap_open_pct": -0.461,
+      "intraday_range_pct": 1.281,
+      "close_change_pct": -0.2505,
+      "close_vs_open_pct": 0.212
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 0.067,
+    "volume_sigma": -0.988,
+    "range_expansion_sigma": -1.584,
+    "gap_sigma": -0.195,
+    "volume_baseline": 201045648
+  },
+  "reaction_classification": {
+    "close": "negligible",
+    "volume": "negligible",
+    "range": "significant"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "E2",
+      "direction": "bearish",
+      "weight_share": 0.7,
+      "f1_tier": null,
+      "rationale": "Iran geopolitical risk continued to weigh on Mag7 / growth complex; energy-transit-fee headline kept oil-risk premium alive"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bearish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Low-volume drift within ongoing Mag7 de-rating trend; no fresh NVDA fundamental news"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "low",
+  "notes": "LOW priority (range anomaly only, -0.25% close). Day-of news thin; treat as continuation of March Mag7 de-rating tape."
+}

@@ -1,0 +1,76 @@
+{
+  "id": "2026-04-23-tesla-q1-2026-results-weighed-",
+  "date": "2026-04-23",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Tesla Q1 2026 results weighed on AI/growth complex: TSLA -3.59% to $373.60, lifted 2026 capex guide to $25B (+$5B) for AI/robotics and indicated negative FCF for rest of 2026. IBM -8%, ServiceNow -~18% on disappointing prints \u00e2\u20ac\u201d broad software/tech sell-the-news day. S&P -0.42%, Nasdaq -0.89%. NVDA dragged with the group ahead of Intel's after-close earnings (which would drive the +4.32% Apr 24 move).",
+    "source_url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-april-23-223648525.html"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "IBM, ServiceNow Q1 misses dragged enterprise software; Lockheed -5%",
+      "source_url": "https://www.fool.com/investing/2026/04/23/stock-market-today-live-coverage/"
+    }
+  ],
+  "price_data": {
+    "prior_close": 202.5,
+    "event_day": {
+      "open": 202.46,
+      "high": 203.83,
+      "low": 197.22,
+      "close": 199.64,
+      "volume": 113561831,
+      "gap_open_pct": -0.02,
+      "intraday_range_pct": 3.265,
+      "close_change_pct": -1.41,
+      "close_vs_open_pct": -1.393
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": -1.027,
+    "volume_sigma": -1.164,
+    "range_expansion_sigma": 1.016,
+    "gap_sigma": -0.07,
+    "volume_baseline": 152111446
+  },
+  "reaction_classification": {
+    "close": "notable",
+    "volume": "notable",
+    "range": "notable"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "E1",
+      "direction": "bearish",
+      "weight_share": 0.45,
+      "f1_tier": null,
+      "rationale": "Sell-the-news tape across enterprise software (IBM, NOW) dragged broader tech; NVDA as largest tech component got hit with the basket"
+    },
+    {
+      "force_id": "A2",
+      "direction": "bearish",
+      "weight_share": 0.25,
+      "f1_tier": null,
+      "rationale": "IBM/NOW weak enterprise AI prints called enterprise-AI-adoption narrative into question temporarily"
+    },
+    {
+      "force_id": "E2",
+      "direction": "bearish",
+      "weight_share": 0.15,
+      "f1_tier": null,
+      "rationale": "Iran ceasefire uncertainty still lurking in backdrop"
+    },
+    {
+      "force_id": "A1",
+      "direction": "bearish",
+      "weight_share": 0.15,
+      "f1_tier": null,
+      "rationale": "TSLA capex raise to $25B could be read bullish A1 (more AI capex) but market read as 'negative FCF = growth-at-any-cost' \u00e2\u20ac\u201d net negative for AI complex on the day"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": true,
+  "confidence": "medium",
+  "notes": "MEDIUM priority. No NVDA-specific news \u00e2\u20ac\u201d dragged by broader tech weakness. The setup for the Apr 24 Intel-driven +4.32% reversal."
+}

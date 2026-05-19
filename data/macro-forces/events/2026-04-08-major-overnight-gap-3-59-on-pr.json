@@ -1,0 +1,80 @@
+{
+  "id": "2026-04-08-major-overnight-gap-3-59-on-pr",
+  "date": "2026-04-08",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "MAJOR overnight gap +3.59% on President Trump's two-week US/Iran ceasefire announcement (April 7 evening). Reversed weeks of Iran-war-driven tech selloff. NVDA/Meta/Amazon/Alphabet led Mag7 recovery. Chip complex surged: TSM +6%, ASML +9%, AMAT +9%, MU +8%, WDC +9%, LRCX +10%, INTC +11%. Trump administration also withdrew draft worldwide AI chip licensing proposal that would have required US approval for every large-scale GPU export \u00e2\u20ac\u201d direct NVDA C1 positive.",
+    "source_url": "https://www.cnbc.com/2026/04/08/alphabet-nvidia-microsoft-tech-stocks-iran-ceasefire.html"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Trump administration withdrew draft worldwide AI chip licensing proposal \u00e2\u20ac\u201d removed overhang on NVDA international revenue",
+      "source_url": "https://finance.yahoo.com/news/live/stock-market-today-wednesday-april-22-dow-sp-500-nasdaq-trump-us-iran-ceasefire-230429476.html"
+    },
+    {
+      "description": "Nasdaq/S&P 500 booked best week since November following ceasefire; Strait of Hormuz supply-chain relief for TSMC/NVDA",
+      "source_url": "https://fortune.com/2026/04/08/analysts-taco-trade-donald-trump-finance-markets-tech-stocks-iran-war-strait-of-hormuz/"
+    }
+  ],
+  "price_data": {
+    "prior_close": 178.1,
+    "event_day": {
+      "open": 184.5,
+      "high": 185.26,
+      "low": 180.3,
+      "close": 182.08,
+      "volume": 147732687,
+      "gap_open_pct": 3.593,
+      "intraday_range_pct": 2.688,
+      "close_change_pct": 2.23,
+      "close_vs_open_pct": -1.312
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 1.098,
+    "volume_sigma": -0.769,
+    "range_expansion_sigma": 0.165,
+    "gap_sigma": 2.959,
+    "volume_baseline": 172429204
+  },
+  "reaction_classification": {
+    "close": "notable",
+    "volume": "negligible",
+    "range": "negligible"
+  },
+  "gap_priority": "high",
+  "force_attributions": [
+    {
+      "force_id": "E2",
+      "direction": "bullish",
+      "weight_share": 0.5,
+      "f1_tier": null,
+      "rationale": "Iran ceasefire was the dominant cross-asset risk regime shift \u00e2\u20ac\u201d oil plunged, USD softened, risk-on resumed. Dominant driver of the +3.59% gap"
+    },
+    {
+      "force_id": "C1",
+      "direction": "bullish",
+      "weight_share": 0.25,
+      "f1_tier": null,
+      "rationale": "Withdrawal of AI chip licensing proposal directly removed a key NVDA export-controls overhang \u00e2\u20ac\u201d specific NVDA-positive policy event"
+    },
+    {
+      "force_id": "B2",
+      "direction": "bullish",
+      "weight_share": 0.15,
+      "f1_tier": null,
+      "rationale": "Strait of Hormuz / TSMC supply chain relief \u00e2\u20ac\u201d reduced tail-risk to NVDA foundry supply"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bullish",
+      "weight_share": 0.1,
+      "f1_tier": null,
+      "rationale": "Short-covering and rotation flows back into Mag7 after months of de-rating"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": true,
+  "confidence": "high",
+  "notes": "HIGH priority \u00e2\u20ac\u201d major overnight gap. Geopolitical regime shift the dominant force; AI chip license withdrawal is NVDA-specific kicker."
+}

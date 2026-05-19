@@ -1,0 +1,70 @@
+{
+  "id": "2026-02-03-broad-semiconductor-and-ai-sof",
+  "date": "2026-02-03",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Broad semiconductor and AI software sell-off continues. AMD's Q1 forecast underwhelmed, sending AMD -17% and dragging the sector. Chip selloff extended into day 2 post-OpenAI news; bull-bear debate over AI capex ROI intensified.",
+    "source_url": "https://www.cnbc.com/2026/02/03/stock-market-today-live-updates.html",
+    "event_window": "intraday"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Seeking Alpha: 'Semiconductor and AI software stocks see red amid tech stock selloff'",
+      "source_url": "https://seekingalpha.com/news/4569429-semiconductor-and-ai-software-stocks-see-red-amid-tech-stock-selloff"
+    }
+  ],
+  "price_data": {
+    "prior_close": 185.61,
+    "event_day": {
+      "open": 186.24,
+      "high": 186.27,
+      "low": 176.23,
+      "close": 180.34,
+      "volume": 204019589,
+      "gap_open_pct": 0.339,
+      "intraday_range_pct": 5.391,
+      "close_change_pct": -2.84,
+      "close_vs_open_pct": -3.168
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": -1.596,
+    "volume_sigma": 1.462,
+    "range_expansion_sigma": 3.562,
+    "gap_sigma": 0.12,
+    "volume_baseline": 165489106
+  },
+  "reaction_classification": {
+    "close": "significant",
+    "volume": "notable",
+    "range": "regime-changing"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "D1",
+      "direction": "bearish",
+      "weight_share": 0.4,
+      "f1_tier": null,
+      "rationale": "AMD Q1 guide miss and -17% drop dragged entire AI chip complex; competitive concerns spilled over"
+    },
+    {
+      "force_id": "A1",
+      "direction": "bearish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "AI capex ROI debate intensified \u00e2\u20ac\u201d 'indiscriminate selloff' per BofA's Arya"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bearish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Correlated dumping across AI beta; SaaS crash narrative"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": true,
+  "confidence": "high",
+  "notes": "Day 2 of the early-February chip selloff. Large intraday range (vol_z +1.46) confirms active institutional repositioning."
+}

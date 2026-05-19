@@ -1,0 +1,63 @@
+{
+  "id": "2026-01-21-dip-buying-rebound-from-jan-20",
+  "date": "2026-01-21",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Dip-buying rebound from Jan 20 -4.38% washout. Major cloud providers (Microsoft, Google) reiterated massive AI infrastructure spending plans for 2026, reassuring that long-term chip demand remains intact. Turnaround Tuesday pattern \u00e2\u20ac\u201d classic bounce from prior-day capitulation.",
+    "source_url": "https://www.apnews.org/tech-stocks-decline-january-2026/",
+    "event_window": "intraday"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Analyst defense: Baird reiterated outperform, named NVDA top idea for 2026",
+      "source_url": "https://www.cnbc.com/2026/01/14/nvidia-shares-are-struggling-how-the-ai-juggernaut-can-can-break-its-funk.html"
+    }
+  ],
+  "price_data": {
+    "prior_close": 178.07,
+    "event_day": {
+      "open": 179.05,
+      "high": 185.38,
+      "low": 178.4,
+      "close": 183.32,
+      "volume": 200380959,
+      "gap_open_pct": 0.55,
+      "intraday_range_pct": 3.898,
+      "close_change_pct": 2.95,
+      "close_vs_open_pct": 2.385
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 1.943,
+    "volume_sigma": 1.11,
+    "range_expansion_sigma": 2.246,
+    "gap_sigma": 0.262,
+    "volume_baseline": 170095429
+  },
+  "reaction_classification": {
+    "close": "significant",
+    "volume": "notable",
+    "range": "significant"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "E1",
+      "direction": "bullish",
+      "weight_share": 0.5,
+      "f1_tier": null,
+      "rationale": "Mean-reversion / dip-buying after oversold -4.38% print; short covering"
+    },
+    {
+      "force_id": "A1",
+      "direction": "bullish",
+      "weight_share": 0.5,
+      "f1_tier": 3,
+      "rationale": "MSFT/GOOGL capex reaffirmation (Tier 3 major customers = 0.7x F1 multiplier) supports thesis"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "medium",
+  "notes": "Bounce from prior-day selloff. No new positive catalyst of its own magnitude; largely positioning-driven reversion."
+}

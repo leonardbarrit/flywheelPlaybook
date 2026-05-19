@@ -1,0 +1,63 @@
+{
+  "id": "2026-02-09-follow-through-buying-on-the-f",
+  "date": "2026-02-09",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Follow-through buying on the Feb 6 $650B Big Tech capex reveal. Positioning continued to rebuild into pre-earnings window (Feb 25). Weekend news cycle reinforced AI capex narrative.",
+    "source_url": "https://finance.yahoo.com/news/big-tech-unveils-650-billion-121205995.html",
+    "event_window": "intraday"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Silicon Republic: investor concerns partially easing as $650B data digested",
+      "source_url": "https://www.siliconrepublic.com/business/big-tech-650bn-capital-expense-bill-2026-meta-amazon-google-microsoft"
+    }
+  ],
+  "price_data": {
+    "prior_close": 185.41,
+    "event_day": {
+      "open": 184.26,
+      "high": 193.66,
+      "low": 183.95,
+      "close": 190.04,
+      "volume": 196387351,
+      "gap_open_pct": -0.62,
+      "intraday_range_pct": 5.27,
+      "close_change_pct": 2.5,
+      "close_vs_open_pct": 3.137
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 0.923,
+    "volume_sigma": 0.694,
+    "range_expansion_sigma": 1.665,
+    "gap_sigma": -0.645,
+    "volume_baseline": 173604120
+  },
+  "reaction_classification": {
+    "close": "negligible",
+    "volume": "negligible",
+    "range": "significant"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "A1",
+      "direction": "bullish",
+      "weight_share": 0.7,
+      "f1_tier": 3,
+      "rationale": "Continuation of $650B Tier 3 capex narrative (0.7x F1 multiplier)"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bullish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Re-accumulation into earnings run-up"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "medium",
+  "notes": "Follow-through Monday after Feb 6 breakout. Beginning of pre-earnings drift higher."
+}

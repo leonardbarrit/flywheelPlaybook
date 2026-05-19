@@ -1,0 +1,13 @@
+{
+  "date": "2026-05-18",
+  "net_bullish": 23.471,
+  "net_bearish": -11.896,
+  "net_directional": 11.575,
+  "f1_multiplier": 1.5,
+  "composite_score": 17.362,
+  "active_force_count": 11,
+  "attenuating_force_count": 2,
+  "dormant_force_count": 3,
+  "interpretation": "bullish_dominant",
+  "source": "data/forces.json"
+}

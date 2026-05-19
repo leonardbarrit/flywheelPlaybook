@@ -1,0 +1,70 @@
+{
+  "id": "2026-03-02-monday-open-gap-down-driven-by",
+  "date": "2026-03-02",
+  "event_window": "overnight_weekend",
+  "primary_catalyst": {
+    "description": "Monday open gap-down driven by weekend US/Israeli strikes on Iran (WTI >$78, flight to energy); NVDA and tech closed sharply off lows as intraday dip-buying returned following initial sector rotation into oil/defensives. Semiconductor weakness on the day framed by Iran-driven inflation/rates repricing, but NVDA specifically recovered on AI demand resilience narrative.",
+    "source_url": "https://www.nasdaq.com/articles/stock-market-news-mar-2-2026",
+    "event_window": "overnight_weekend"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Technology sector broadly under pressure as lingering AI-spending/monetization concerns pressured semis at the open",
+      "source_url": "https://www.cnbc.com/2026/03/01/stock-market-today-live-update.html"
+    }
+  ],
+  "price_data": {
+    "prior_close": 177.19,
+    "event_day": {
+      "open": 175.01,
+      "high": 183.46,
+      "low": 174.64,
+      "close": 182.48,
+      "volume": 209095331,
+      "gap_open_pct": -1.23,
+      "intraday_range_pct": 5.04,
+      "close_change_pct": 2.99,
+      "close_vs_open_pct": 4.268
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 1.159,
+    "volume_sigma": 0.225,
+    "range_expansion_sigma": 1.128,
+    "gap_sigma": -1.104,
+    "volume_baseline": 196246726
+  },
+  "reaction_classification": {
+    "close": "notable",
+    "volume": "negligible",
+    "range": "notable"
+  },
+  "gap_priority": "failed_gap",
+  "force_attributions": [
+    {
+      "force_id": "E2",
+      "direction": "bearish",
+      "weight_share": 0.5,
+      "f1_tier": null,
+      "rationale": "US-Iran conflict shock drove cross-asset risk-off open (oil +, rates +, growth -); this is the dominant regime event that produced the failed gap-down setup"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bullish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Dip-buying flows and short-covering drove NVDA specifically from deep gap-down to +2.99% close \u00e2\u20ac\u201d positioning, not fresh fundamental news"
+    },
+    {
+      "force_id": "A1",
+      "direction": "bullish",
+      "weight_share": 0.2,
+      "f1_tier": null,
+      "rationale": "Hyperscaler AI capex narrative continued to underwrite buyers stepping in on NVDA-specific weakness"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": true,
+  "confidence": "medium",
+  "notes": "Failed-gap pattern: geopolitical shock drove gap-down open, AI demand narrative drove intraday reversal to green close. Classic cross-current day."
+}

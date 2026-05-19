@@ -1,0 +1,67 @@
+{
+  "id": "2026-02-06-big-tech-4-amzn-googl-meta-msf",
+  "date": "2026-02-06",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Big Tech 4 (AMZN, GOOGL, META, MSFT) earnings/capex guidance crystallized into a combined $650 BILLION 2026 AI infrastructure commitment. Amazon $200B, Alphabet $185B, Meta up to $135B, Microsoft $105B \u00e2\u20ac\u201d roughly 60% YoY increase. Bloomberg/Fortune reporting on Feb 6 aggregated this into a single landmark figure that crushed the AI capex peak thesis. NVDA as the primary beneficiary rallied +7.87% on heavy volume.",
+    "source_url": "https://www.bloomberg.com/news/articles/2026-02-06/nvidia-nvda-shares-surge-on-big-tech-s-650-billion-ai-spending-plan",
+    "event_window": "intraday"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Bloomberg: 'How Much Is Big Tech Spending on AI Computing? A Staggering $650 Billion in 2026'",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-02-06/how-much-is-big-tech-spending-on-ai-computing-a-staggering-650-billion-in-2026"
+    },
+    {
+      "description": "Fortune: 'Big Tech to Spend $650 Billion This Year as AI Race Intensifies'",
+      "source_url": "https://finance.yahoo.com/news/big-tech-spend-650-billion-012716850.html"
+    }
+  ],
+  "price_data": {
+    "prior_close": 171.88,
+    "event_day": {
+      "open": 176.69,
+      "high": 187.0,
+      "low": 174.6,
+      "close": 185.41,
+      "volume": 231346241,
+      "gap_open_pct": 2.798,
+      "intraday_range_pct": 7.018,
+      "close_change_pct": 7.87,
+      "close_vs_open_pct": 4.935
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 4.246,
+    "volume_sigma": 2.032,
+    "range_expansion_sigma": 3.996,
+    "gap_sigma": 2.569,
+    "volume_baseline": 170659660
+  },
+  "reaction_classification": {
+    "close": "regime-changing",
+    "volume": "significant",
+    "range": "regime-changing"
+  },
+  "gap_priority": "high",
+  "force_attributions": [
+    {
+      "force_id": "A1",
+      "direction": "bullish",
+      "weight_share": 0.85,
+      "f1_tier": 3,
+      "rationale": "Hyperscaler capex cycle decisively re-rated upward by $650B aggregated figure. F1 Tier 3 (major customers themselves making capex claims) = 0.7x multiplier \u00e2\u20ac\u201d high independence, material revenue visibility"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bullish",
+      "weight_share": 0.15,
+      "f1_tier": null,
+      "rationale": "Short covering and systematic re-engagement; CTA buy programs triggered"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "high",
+  "notes": "CRITICAL regime-changing move \u00e2\u20ac\u201d largest single-day move YTD at +7.87%, z=+4.25. The $650B figure became the canonical anchor for 2026 AI capex thesis. This single narrative reversal undid 3 weeks of AI-peak worry."
+}

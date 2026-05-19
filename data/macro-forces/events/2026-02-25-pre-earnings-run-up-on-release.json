@@ -1,0 +1,63 @@
+{
+  "id": "2026-02-25-pre-earnings-run-up-on-release",
+  "date": "2026-02-25",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Pre-earnings run-up on release day. Q4 FY26 earnings scheduled for post-close release. Visible Alpha consensus for revenue was ~$57B (official figure actually $68.1B). NVDA gained ~0.7% intraday ahead of the after-hours print; additional lift from broad market strength.",
+    "source_url": "https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html",
+    "event_window": "intraday"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Bloomberg preview: 'Nvidia's Rosy Revenue Forecast Shows the AI Boom Remains Strong'",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-02-25/nvidia-s-rosy-revenue-forecast-shows-the-ai-boom-remains-strong"
+    }
+  ],
+  "price_data": {
+    "prior_close": 192.85,
+    "event_day": {
+      "open": 194.45,
+      "high": 197.63,
+      "low": 193.79,
+      "close": 195.56,
+      "volume": 250637103,
+      "gap_open_pct": 0.83,
+      "intraday_range_pct": 1.975,
+      "close_change_pct": 1.41,
+      "close_vs_open_pct": 0.571
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 0.489,
+    "volume_sigma": 2.885,
+    "range_expansion_sigma": -0.901,
+    "gap_sigma": 0.398,
+    "volume_baseline": 173294081
+  },
+  "reaction_classification": {
+    "close": "negligible",
+    "volume": "major",
+    "range": "negligible"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "E1",
+      "direction": "bullish",
+      "weight_share": 0.6,
+      "f1_tier": null,
+      "rationale": "Classic pre-earnings positioning; volume z=+2.89 shows heavy institutional engagement"
+    },
+    {
+      "force_id": "A1",
+      "direction": "bullish",
+      "weight_share": 0.4,
+      "f1_tier": null,
+      "rationale": "Bloomberg preview reinforced hyperscaler capex thesis going into the print"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "medium",
+  "notes": "Pre-earnings drift with very high volume (vol_z +2.89) \u00e2\u20ac\u201d straddle buyers, institutional positioning. Earnings released AFTER close."
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "id": "t001",
+    "date": "2026-03-06",
+    "account": "ROTH",
+    "action": "STO",
+    "ticker": "NVDA",
+    "type": "CC",
+    "strike": 200,
+    "expiration": "2026-04-17",
+    "premium": 4.39,
+    "qty": 4,
+    "notes": "Mode 1, 45-DTE entry. Double Barrier: $200 strike above ascending channel + round number."
+  },
+  {
+    "id": "t002",
+    "date": "2026-03-20",
+    "account": "ROTH",
+    "action": "BTC",
+    "ticker": "NVDA",
+    "type": "CC",
+    "strike": 200,
+    "expiration": "2026-04-17",
+    "premium": 0.69,
+    "qty": 4,
+    "notes": "Closed at 84% profit. Net: $3.70/sh × 400 = $1,480. Filled 30min after open Friday. Total cost w/commission: $278.69."
+  },
+  {
+    "id": "t003",
+    "date": "2026-05-18",
+    "account": "ROTH",
+    "action": "STO",
+    "ticker": "NVDA",
+    "type": "CC",
+    "strike": 205,
+    "expiration": "2026-06-05",
+    "premium": 17.11,
+    "qty": 4,
+    "notes": "Entry premium $17.11. Entry date not confirmed — logged on 2026-05-18. No qualifying roll target (50% net credit standard not met). Will be assigned or BTC on post-earnings dip. Earnings Shield active: NVDA Q1 FY27 prints 2026-05-20 (T-2 from log date)."
+  },
+  {
+    "id": "t004",
+    "date": "2026-04-27",
+    "account": "HSA",
+    "action": "SELL",
+    "ticker": "PPA",
+    "type": "SHARES",
+    "strike": null,
+    "expiration": null,
+    "premium": 165.25,
+    "qty": 100,
+    "notes": "PPA sold when funding bill stalled in Congress. Proceeds ($16,525) directed to JEPI purchase. Regime growth vehicle fully exited."
+  },
+  {
+    "id": "t005",
+    "date": "2026-04-27",
+    "account": "HSA",
+    "action": "BUY",
+    "ticker": "JEPI",
+    "type": "SHARES",
+    "strike": null,
+    "expiration": null,
+    "premium": 57.23,
+    "qty": 230,
+    "notes": "JEPI purchase funded by PPA proceeds. 230 shares at $57.23. New blended avg cost: $57.29 on 500 total shares. Reached 500-share milestone."
+  }
+]

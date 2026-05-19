@@ -1,0 +1,74 @@
+{
+  "_syntax_reference": {
+    "options_example": {
+      "ticker": "-NVDA260501C205",
+      "underlying": "NVDA",
+      "direction": "SHORT",
+      "type": "CALL",
+      "strike": 205,
+      "expiration": "2026-05-01",
+      "dte": 42,
+      "premium": 3.80,
+      "qty": 4,
+      "mode": 1,
+      "entryDate": "2026-03-24"
+    },
+    "shares_example": {
+      "ticker": "NVDA",
+      "qty": 400,
+      "avgCost": 174.63,
+      "mktPrice": null
+    }
+  },
+  "_updated": "2026-05-18",
+  "_source": "User-supplied via /status 2026-05-18",
+  "roth": {
+    "shares": [
+      {
+        "ticker": "NVDA",
+        "qty": 400,
+        "avgCost": 174.63,
+        "mktPrice": null,
+        "_note": "avgCost from 2026-03-20 snapshot; mktPrice not supplied"
+      },
+      {
+        "ticker": "JEPQ",
+        "qty": 1000,
+        "avgCost": 54.29,
+        "mktPrice": null
+      }
+    ],
+    "options": [
+      {
+        "ticker": "-NVDA260605C205",
+        "underlying": "NVDA",
+        "direction": "SHORT",
+        "type": "CALL",
+        "strike": 205,
+        "expiration": "2026-06-05",
+        "dte": 18,
+        "premium": 17.11,
+        "qty": 4,
+        "mode": null,
+        "entryDate": null,
+        "_note": "Premium $17.11 confirmed. Entry date not supplied. Earnings Shield active — NVDA earnings 2026-05-20. Will be assigned or BTC on post-earnings dip."
+      }
+    ],
+    "spaxx": 9470.38,
+    "pendingSettlement": 0
+  },
+  "hsa": {
+    "shares": [
+      {
+        "ticker": "JEPI",
+        "qty": 500,
+        "avgCost": 57.29,
+        "mktPrice": null,
+        "_note": "500 shares at $57.29 blended avg as of 2026-04-27. 230 shares purchased 2026-04-27 at $57.23 via PPA proceeds."
+      }
+    ],
+    "options": [],
+    "openOrders": [],
+    "spaxx": 3596.04
+  }
+}

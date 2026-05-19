@@ -1,0 +1,85 @@
+{
+  "id": "2026-03-31-nvidia-announced-2-billion-str",
+  "date": "2026-03-31",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "NVIDIA announced $2 billion strategic investment in Marvell Technology and deep strategic partnership using NVLink Fusion to co-develop next-generation AI infrastructure, including custom XPUs, networking solutions, and silicon photonics collaboration. Marvell +13%, chip complex rallied. Quarter-end reversal off YTD low. Volume z +2.02 confirms institutional re-engagement.",
+    "source_url": "https://www.bloomberg.com/news/articles/2026-03-31/nvidia-invests-2-billion-in-marvell-announces-partnership"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Quarter-end window dressing / Mag7 mean-reversion buying off YTD low",
+      "source_url": "https://247wallst.com/investing/2026/04/24/why-isnt-nvidia-stock-at-300-while-other-semiconductor-stocks-rally/"
+    },
+    {
+      "description": "NVIDIA-Marvell NVLink Fusion press release from NVIDIA newsroom",
+      "source_url": "https://nvidianews.nvidia.com/news/nvidia-ai-ecosystem-expands-as-marvell-joins-forces-through-nvlink-fusion"
+    }
+  ],
+  "price_data": {
+    "prior_close": 165.17,
+    "event_day": {
+      "open": 166.97,
+      "high": 174.62,
+      "low": 166.96,
+      "close": 174.4,
+      "volume": 226181301,
+      "gap_open_pct": 1.09,
+      "intraday_range_pct": 4.588,
+      "close_change_pct": 5.59,
+      "close_vs_open_pct": 4.45
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 3.167,
+    "volume_sigma": 2.023,
+    "range_expansion_sigma": 2.351,
+    "gap_sigma": 0.968,
+    "volume_baseline": 179593716
+  },
+  "reaction_classification": {
+    "close": "major",
+    "volume": "significant",
+    "range": "significant"
+  },
+  "gap_priority": "moderate",
+  "force_attributions": [
+    {
+      "force_id": "A1",
+      "direction": "bullish",
+      "weight_share": 0.35,
+      "f1_tier": null,
+      "rationale": "$2B Marvell stake signals NVDA confidence in hyperscaler custom-silicon AI infrastructure demand through 2027+ \u00e2\u20ac\u201d core demand-cycle story"
+    },
+    {
+      "force_id": "B1",
+      "direction": "bullish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "NVLink Fusion + silicon photonics extends NVDA rack-scale platform moat at the packaging/networking layer \u00e2\u20ac\u201d a supply-side advanced-packaging claim"
+    },
+    {
+      "force_id": "D2",
+      "direction": "bullish",
+      "weight_share": 0.2,
+      "f1_tier": null,
+      "rationale": "Co-opting Marvell's custom-silicon capability into NVIDIA ecosystem directly blunts the Trainium/MTIA/Maia displacement threat \u00e2\u20ac\u201d defensive against D2 competitive pressure"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bullish",
+      "weight_share": 0.15,
+      "f1_tier": null,
+      "rationale": "Quarter-end flows amplified the move; high volume (z +2.02) consistent with institutional re-engagement off YTD-low capitulation print"
+    }
+  ],
+  "f1_attribution": {
+    "force_id": "F1",
+    "tier": 4,
+    "multiplier": 1.5,
+    "rationale": "Marvell is a Tier 4 adjacent AI supplier (custom silicon, networking, photonics) and the $2B NVDA stake is independent 3rd-party corroboration of NVDA's view of AI demand \u00e2\u20ac\u201d high-signal validation event"
+  },
+  "confounded": false,
+  "confidence": "high",
+  "notes": "CRITICAL single-catalyst day. +5.59% / +3.17 close z / +2.02 vol z \u00e2\u20ac\u201d the Marvell deal is the clear singular driver. Reversal off the YTD-low capitulation print made 3/26."
+}

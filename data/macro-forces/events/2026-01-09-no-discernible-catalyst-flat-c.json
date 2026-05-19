@@ -1,0 +1,51 @@
+{
+  "id": "2026-01-09-no-discernible-catalyst-flat-c",
+  "date": "2026-01-09",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "No discernible catalyst; flat close, volume anomaly (vol_z -2.33) suggests very quiet consolidation day after the Jan 8 sell-off. Likely pre-weekend positioning with traders waiting for Monday catalysts.",
+    "source_url": "https://finance.yahoo.com/quote/NVDA/history/",
+    "event_window": "intraday"
+  },
+  "secondary_catalysts": [],
+  "price_data": {
+    "prior_close": 185.04,
+    "event_day": {
+      "open": 185.08,
+      "high": 186.34,
+      "low": 183.67,
+      "close": 184.86,
+      "volume": 131327534,
+      "gap_open_pct": 0.022,
+      "intraday_range_pct": 1.443,
+      "close_change_pct": -0.0973,
+      "close_vs_open_pct": -0.119
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 0.038,
+    "volume_sigma": -2.331,
+    "range_expansion_sigma": -2.622,
+    "gap_sigma": -1.261,
+    "volume_baseline": 166926604
+  },
+  "reaction_classification": {
+    "close": "negligible",
+    "volume": "significant",
+    "range": "major"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "E1",
+      "direction": "neutral",
+      "weight_share": 1.0,
+      "f1_tier": null,
+      "rationale": "Positioning/flows default \u00e2\u20ac\u201d no identifiable news catalyst; volume anomaly only"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "low",
+  "notes": "Volume anomaly only \u00e2\u20ac\u201d no material move. Quiet Friday before tariff news cycle ignited the following week."
+}

@@ -1,0 +1,91 @@
+{
+  "id": "2026-04-14-nvidia-launched-ising-the-worl",
+  "date": "2026-04-14",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "NVIDIA launched 'Ising' \u00e2\u20ac\u201d the world's first open AI models for quantum computing \u00e2\u20ac\u201d on World Quantum Day (4.14 = first three digits of Planck constant). Ising Calibration (VLM) + Ising Decoding (3D CNN): up to 2.5x faster and 3x more accurate quantum error correction vs traditional. Adopted by Harvard, Lawrence Berkeley, Fermi Lab, Academia Sinica, IQM, Infleqtion, NPL. Quantum stocks surged: IONQ +20.95%, QBTS +22.63%, RGTI +13.28%. This was the 10th consecutive NVDA up-day \u00e2\u20ac\u201d longest winning streak since 2023.",
+    "source_url": "https://nvidianews.nvidia.com/news/nvidia-launches-ising-the-worlds-first-open-ai-models-to-accelerate-the-path-to-useful-quantum-computers"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "10-day winning streak momentum: Vera Rubin demand narrative, Q1 FY27 $78B guidance, 10-day MA crossed bullish above 50-day MA (technical breakout)",
+      "source_url": "https://www.cnbc.com/2026/04/14/nvidia-stock-nvda-ai-streak.html"
+    },
+    {
+      "description": "TSMC Q1 earnings pending (delivered Apr 16 with +58% profit surge, but rally anticipated it)",
+      "source_url": "https://www.cnbc.com/2026/04/16/tsmc-q1-profit-58-percent-ai-chip-demand-record.html"
+    },
+    {
+      "description": "Cadence expanded AI alliances with TSMC, NVIDIA, Google on agentic AI / advanced-node design flows (April 2026 announcement)",
+      "source_url": "https://finance.yahoo.com/markets/stocks/articles/cadence-expanded-ai-alliances-tsmc-180745245.html"
+    }
+  ],
+  "price_data": {
+    "prior_close": 189.31,
+    "event_day": {
+      "open": 190.84,
+      "high": 196.51,
+      "low": 190.77,
+      "close": 196.51,
+      "volume": 161307010,
+      "gap_open_pct": 0.808,
+      "intraday_range_pct": 3.008,
+      "close_change_pct": 3.8,
+      "close_vs_open_pct": 2.971
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 1.616,
+    "volume_sigma": -0.199,
+    "range_expansion_sigma": 0.483,
+    "gap_sigma": 0.427,
+    "volume_baseline": 168285149
+  },
+  "reaction_classification": {
+    "close": "significant",
+    "volume": "negligible",
+    "range": "negligible"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "A1",
+      "direction": "bullish",
+      "weight_share": 0.35,
+      "f1_tier": null,
+      "rationale": "Vera Rubin hyperscaler demand + $78B Q1 FY27 guidance narrative was the core fundamental driver of the 10-day streak that culminated Apr 14"
+    },
+    {
+      "force_id": "A2",
+      "direction": "bullish",
+      "weight_share": 0.25,
+      "f1_tier": null,
+      "rationale": "Ising launch expands NVDA TAM into enterprise/research quantum-AI workloads \u00e2\u20ac\u201d Ising Calibration + Decoding positions NVDA as quantum OS layer"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bullish",
+      "weight_share": 0.2,
+      "f1_tier": null,
+      "rationale": "Technical breakout above multi-week resistance (10/50 MA cross) drove CTA/trend-following flows; momentum chase after weeks of consolidation"
+    },
+    {
+      "force_id": "B1",
+      "direction": "bullish",
+      "weight_share": 0.1,
+      "f1_tier": null,
+      "rationale": "Pre-positioning into TSMC Apr 16 earnings (which delivered +58% profit surge two days later)"
+    },
+    {
+      "force_id": "E2",
+      "direction": "bullish",
+      "weight_share": 0.1,
+      "f1_tier": null,
+      "rationale": "Iran ceasefire-era risk-on regime continued supportive despite Apr 14 'bad wholesale inflation print' \u00e2\u20ac\u201d market shrugged it off"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": true,
+  "confidence": "high",
+  "notes": "CRITICAL \u00e2\u20ac\u201d this is the wedge breakout the user missed during vacation. Ising is the specific April 14 headline but the move is confounded with 10-day streak dynamics (TSMC, Rubin backlog, technical breakout). Primary attribution is A1 (demand cycle narrative) since the 18% 10-day move was fundamentally about Rubin/hyperscaler capex, with Ising as the headline-grabbing accelerant."
+}

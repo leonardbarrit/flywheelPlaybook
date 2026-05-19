@@ -1,0 +1,12 @@
+{
+  "date": "2026-04-24",
+  "net_bullish": 18.322,
+  "net_bearish": -13.221,
+  "net_directional": 5.102,
+  "f1_multiplier": 1.15,
+  "composite_score": 5.867,
+  "active_force_count": 11,
+  "attenuating_force_count": 2,
+  "dormant_force_count": 3,
+  "interpretation": "bullish_dominant"
+}

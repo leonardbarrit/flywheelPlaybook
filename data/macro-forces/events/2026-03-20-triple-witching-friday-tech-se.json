@@ -1,0 +1,80 @@
+{
+  "id": "2026-03-20-triple-witching-friday-tech-se",
+  "date": "2026-03-20",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Triple-witching Friday tech selloff. Super Micro (SMCI) crashed >20% premarket after Co-Founder Wally Liaw was charged with selling billions of dollars of servers containing sanctioned NVIDIA hardware to China in violation of export controls. Direct NVDA-supply-chain sanctions headline. Nasdaq -2% to 21,647.61, S&P -1.51%. AI-associated plays hit hardest. Russell 2000 entered correction territory.",
+    "source_url": "https://www.thestreet.com/latest-news/stock-market-today-march-20-2026"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Triple-witching options expiration amplified positioning/gamma unwinds on heavy tech names",
+      "source_url": "https://finance.yahoo.com/video/nvidia-sell-off-triple-witching-203022845.html"
+    },
+    {
+      "description": "Post-FOMC (Mar 17-18) rate-cut uncertainty; Fed left rates unchanged citing Middle East/inflation risk",
+      "source_url": "https://www.thestreet.com/latest-news/stock-market-today-march-20-2026"
+    }
+  ],
+  "price_data": {
+    "prior_close": 178.56,
+    "event_day": {
+      "open": 178.0,
+      "high": 178.26,
+      "low": 171.72,
+      "close": 172.7,
+      "volume": 241323529,
+      "gap_open_pct": -0.314,
+      "intraday_range_pct": 3.674,
+      "close_change_pct": -3.28,
+      "close_vs_open_pct": -2.978
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": -1.386,
+    "volume_sigma": 0.821,
+    "range_expansion_sigma": 0.706,
+    "gap_sigma": 0.011,
+    "volume_baseline": 197338015
+  },
+  "reaction_classification": {
+    "close": "notable",
+    "volume": "negligible",
+    "range": "negligible"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "C1",
+      "direction": "bearish",
+      "weight_share": 0.45,
+      "f1_tier": null,
+      "rationale": "SMCI/Liaw sanctions-violation indictment put NVDA China export-control story front and center \u00e2\u20ac\u201d direct hit on NVDA hardware supply chain integrity"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bearish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Triple-witching expiration mechanically forced large unwinds in NVDA; heavy volume (+0.82 vol z) consistent with gamma/positioning-driven move"
+    },
+    {
+      "force_id": "E2",
+      "direction": "bearish",
+      "weight_share": 0.15,
+      "f1_tier": null,
+      "rationale": "Ongoing Iran tension / broader risk-off tape provided the backdrop"
+    },
+    {
+      "force_id": "C3",
+      "direction": "bearish",
+      "weight_share": 0.1,
+      "f1_tier": null,
+      "rationale": "FOMC held rates on Mar 18 citing Iran-inflation risk; tech duration discount pressure"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": true,
+  "confidence": "high",
+  "notes": "High-volume selloff (+0.82 vol z) on triple-witching expiration plus specific NVDA-linked sanctions headline \u00e2\u20ac\u201d classic confounded day but C1 is the clearest NVDA-specific driver."
+}

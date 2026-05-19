@@ -1,0 +1,352 @@
+[
+  {
+    "date": "2026-01-08",
+    "nvda_pct_change": -2.15,
+    "primary_catalyst": {
+      "description": "AI spending sustainability concerns intensify; NVDA continues slide from Oct 29 all-time high amid worries about hyperscaler capex peak, GPU depreciation accounting at hyperscalers, and custom-silicon competition from Google/Amazon. Broad sector de-rating extends.",
+      "source_url": "https://www.cnbc.com/2026/01/14/nvidia-shares-are-struggling-how-the-ai-juggernaut-can-can-break-its-funk.html",
+      "event_window": "intraday"
+    },
+    "secondary_catalysts": [
+      {"description": "Bloomberg: 'Nvidia's $4 Trillion Stock Rally Faces More Threats Than Ever' framing piece published Jan 6, continues to weigh on sentiment", "source_url": "https://www.bloomberg.com/news/articles/2026-01-06/nvidia-s-4-trillion-stock-rally-faces-more-threats-than-ever"},
+      {"description": "Seeking Alpha ratings downgrade (Jan 2026) amplifying AI capex peak narrative", "source_url": "https://seekingalpha.com/article/4853785-nvidia-im-a-convert-a-big-decline-is-probably-coming-rating-downgrade"}
+    ],
+    "force_attributions": [
+      {"force_id": "A1", "direction": "bearish", "weight_share": 0.4, "f1_tier": null, "rationale": "Hyperscaler capex peak concern dominated the tape; market re-rating on whether 60%+ capex growth is sustainable"},
+      {"force_id": "D2", "direction": "bearish", "weight_share": 0.3, "f1_tier": null, "rationale": "Custom silicon displacement threat (TPU, Trainium, MTIA) cited directly in the CNBC piece"},
+      {"force_id": "E1", "direction": "bearish", "weight_share": 0.3, "f1_tier": null, "rationale": "Position unwind from mega-cap concentration; stock down ~9% from Oct 29 highs"}
+    ],
+    "confounded": false,
+    "confidence": "medium",
+    "notes": "Move is part of a multi-week narrative re-evaluation, not a single catalyst. CES 2026 product announcements (Rubin, DRIVE AV) failed to halt the slide."
+  },
+  {
+    "date": "2026-01-09",
+    "nvda_pct_change": -0.10,
+    "primary_catalyst": {
+      "description": "No discernible catalyst; flat close, volume anomaly (vol_z -2.33) suggests very quiet consolidation day after the Jan 8 sell-off. Likely pre-weekend positioning with traders waiting for Monday catalysts.",
+      "source_url": "https://finance.yahoo.com/quote/NVDA/history/",
+      "event_window": "intraday"
+    },
+    "secondary_catalysts": [],
+    "force_attributions": [
+      {"force_id": "E1", "direction": "neutral", "weight_share": 1.0, "f1_tier": null, "rationale": "Positioning/flows default — no identifiable news catalyst; volume anomaly only"}
+    ],
+    "confounded": false,
+    "confidence": "low",
+    "notes": "Volume anomaly only — no material move. Quiet Friday before tariff news cycle ignited the following week."
+  },
+  {
+    "date": "2026-01-14",
+    "nvda_pct_change": -1.44,
+    "primary_catalyst": {
+      "description": "President Trump signed Section 232 Presidential Proclamation imposing 25% tariff on advanced AI chips (NVDA H200, AMD MI325X), effective 12:01am EST Jan 15. Announcement intraday Jan 14 drove NVDA and AMD lower.",
+      "source_url": "https://www.whitehouse.gov/fact-sheets/2026/01/fact-sheet-president-donald-j-trump-takes-action-on-certain-advanced-computing-chips-to-protect-americas-economic-and-national-security/",
+      "event_window": "intraday"
+    },
+    "secondary_catalysts": [
+      {"description": "Axios reporting: 25% tariff specifically hits NVDA's top export SKUs", "source_url": "https://www.axios.com/2026/01/14/trump-tariff-nvidia-chips-china"},
+      {"description": "CNN Business: 'Trump enacts 25% tariff on chips — with a caveat' (data center/domestic-use exemptions)", "source_url": "https://www.cnn.com/2026/01/14/tech/chip-tariff-trump"}
+    ],
+    "force_attributions": [
+      {"force_id": "C2", "direction": "bearish", "weight_share": 0.6, "f1_tier": null, "rationale": "US industrial policy (Section 232) directly targets NVDA flagship AI chips to force reshoring"},
+      {"force_id": "C1", "direction": "bearish", "weight_share": 0.2, "f1_tier": null, "rationale": "Creates new export-control-like structure for China-bound H200 shipments"},
+      {"force_id": "B1", "direction": "bearish", "weight_share": 0.2, "f1_tier": null, "rationale": "TSMC outbound logistics complexity increases; foundry chain pressure"}
+    ],
+    "confounded": false,
+    "confidence": "high",
+    "notes": "Move was muted (-1.44%) because of broad data-center exemption carve-outs in the proclamation text. Full impact absorbed over Jan 15-20 as enforcement details clarified."
+  },
+  {
+    "date": "2026-01-15",
+    "nvda_pct_change": 2.13,
+    "primary_catalyst": {
+      "description": "Bureau of Industry and Security transitioned to 'case-by-case review' for H200 exports to China; US-Taiwan $250B investment deal announced, and TSMC reported earnings with strong AI outlook — triggered rebound as tariff exemption framework became clearer and H200 China revenue was unlocked (with 25% surcharge mechanism).",
+      "source_url": "https://markets.financialcontent.com/stocks/article/marketminute-2026-1-16-the-new-managed-access-era-trump-administration-authorizes-nvidia-h200-exports-to-china-under-strict-surcharges",
+      "event_window": "intraday"
+    },
+    "secondary_catalysts": [
+      {"description": "TSMC strong earnings/outlook amid tariff announcement", "source_url": "https://ts2.tech/en/ai-chip-stocks-rally-nvidia-and-amd-jump-on-tsmc-outlook-as-trump-tariff-clouds-china-trade/"},
+      {"description": "Prior-week report: China approved ByteDance/Alibaba/Tencent to buy 400,000 H200 chips", "source_url": "https://sherwood.news/markets/nvidia-rises-reports-china-approved-sale-400000-h200-chips-bytedance-alibaba-tencent-chinese-tech-firms/"}
+    ],
+    "force_attributions": [
+      {"force_id": "C1", "direction": "bullish", "weight_share": 0.5, "f1_tier": null, "rationale": "H200 export pathway to China formalized, unlocking $1.28-$2.56B in Q1 FY27 China revenue per Fool analysis"},
+      {"force_id": "B1", "direction": "bullish", "weight_share": 0.3, "f1_tier": 4, "rationale": "TSMC earnings corroboration of AI capex demand (Tier 4 adjacent supplier = 1.5x F1 multiplier)"},
+      {"force_id": "C2", "direction": "bullish", "weight_share": 0.2, "f1_tier": null, "rationale": "$250B TSMC US investment deal reduced tariff overhang risk"}
+    ],
+    "confounded": true,
+    "confidence": "high",
+    "notes": "Triple catalyst day — tariff clarification + H200 China opening + TSMC earnings beat. Volume z=+2.74 confirms institutional participation."
+  },
+  {
+    "date": "2026-01-20",
+    "nvda_pct_change": -4.38,
+    "primary_catalyst": {
+      "description": "Post-MLK-weekend reopening (Jan 19 was MLK Day, market closed). Chinese customs officials began blocking H200 shipments at the border over the 25% US surcharge/revenue-tariff; China Ministry of Commerce signaled it would not allow US to collect 'tax' on technology imports. Section 232 tariff took full effect on Jan 15 and impact was compounded over the 3-day weekend into a gap-down Tuesday open.",
+      "source_url": "https://markets.financialcontent.com/stocks/article/tokenring-2026-1-23-us-eases-nvidia-h200-exports-to-china-with-25-revenue-tariff",
+      "event_window": "overnight_weekend"
+    },
+    "secondary_catalysts": [
+      {"description": "Broader Mag-7 selloff on AI spending sustainability + concentration unwind", "source_url": "https://www.apnews.org/tech-stocks-decline-january-2026/"},
+      {"description": "IndexBox: semiconductor sector sell-off despite strong AI chip earnings", "source_url": "https://www.indexbox.io/blog/semiconductor-sell-off-drags-market-lower-despite-strong-ai-chip-earnings/"}
+    ],
+    "force_attributions": [
+      {"force_id": "C1", "direction": "bearish", "weight_share": 0.45, "f1_tier": null, "rationale": "China retaliation via customs blocks directly threatens newly-approved H200 revenue stream"},
+      {"force_id": "C2", "direction": "bearish", "weight_share": 0.3, "f1_tier": null, "rationale": "Tariff now fully in effect; margin compression math being priced in by buyside"},
+      {"force_id": "E1", "direction": "bearish", "weight_share": 0.15, "f1_tier": null, "rationale": "Mega-cap concentration unwind amplifies the move; CTA/systematic de-risking post-3-day weekend"},
+      {"force_id": "E2", "direction": "bearish", "weight_share": 0.1, "f1_tier": null, "rationale": "Risk-off regime; VIX elevated on tariff + Taiwan geopolitical overhang"}
+    ],
+    "confounded": true,
+    "confidence": "high",
+    "notes": "CRITICAL regime-changing move. Gap priority HIGH aligns with 3-day weekend risk accumulation. Z-score -3.62 places this as a 1-in-several-hundred-trading-day event. Sets up Tuesday-Thursday consolidation and subsequent recovery."
+  },
+  {
+    "date": "2026-01-21",
+    "nvda_pct_change": 2.95,
+    "primary_catalyst": {
+      "description": "Dip-buying rebound from Jan 20 -4.38% washout. Major cloud providers (Microsoft, Google) reiterated massive AI infrastructure spending plans for 2026, reassuring that long-term chip demand remains intact. Turnaround Tuesday pattern — classic bounce from prior-day capitulation.",
+      "source_url": "https://www.apnews.org/tech-stocks-decline-january-2026/",
+      "event_window": "intraday"
+    },
+    "secondary_catalysts": [
+      {"description": "Analyst defense: Baird reiterated outperform, named NVDA top idea for 2026", "source_url": "https://www.cnbc.com/2026/01/14/nvidia-shares-are-struggling-how-the-ai-juggernaut-can-can-break-its-funk.html"}
+    ],
+    "force_attributions": [
+      {"force_id": "E1", "direction": "bullish", "weight_share": 0.5, "f1_tier": null, "rationale": "Mean-reversion / dip-buying after oversold -4.38% print; short covering"},
+      {"force_id": "A1", "direction": "bullish", "weight_share": 0.5, "f1_tier": 3, "rationale": "MSFT/GOOGL capex reaffirmation (Tier 3 major customers = 0.7x F1 multiplier) supports thesis"}
+    ],
+    "confounded": false,
+    "confidence": "medium",
+    "notes": "Bounce from prior-day selloff. No new positive catalyst of its own magnitude; largely positioning-driven reversion."
+  },
+  {
+    "date": "2026-01-22",
+    "nvda_pct_change": 0.83,
+    "primary_catalyst": {
+      "description": "Quiet consolidation day — no major catalyst. Digestion of tariff framework and H200 China opening. Stock settling into $170-195 consolidation range identified by technical analysts.",
+      "source_url": "https://www.litefinance.org/blog/analysts-opinions/nvda-stock-price-prediction/",
+      "event_window": "intraday"
+    },
+    "secondary_catalysts": [],
+    "force_attributions": [
+      {"force_id": "E1", "direction": "neutral", "weight_share": 1.0, "f1_tier": null, "rationale": "Positioning/flows default — consolidation within developing range"}
+    ],
+    "confounded": false,
+    "confidence": "low",
+    "notes": "Range day; negative volume z (-1.20) confirms low conviction."
+  },
+  {
+    "date": "2026-01-26",
+    "nvda_pct_change": -0.64,
+    "primary_catalyst": {
+      "description": "Quiet Monday drift; market positioning ahead of FOMC Jan 27-28 meeting. No stock-specific catalyst. Bloomberg retrospective 'DeepSeek fears unfounded a year later' suggests narrative was stable.",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-01-26/deepseek-was-less-of-a-sputnik-moment-than-ai-boom-aberration",
+      "event_window": "intraday"
+    },
+    "secondary_catalysts": [],
+    "force_attributions": [
+      {"force_id": "E1", "direction": "neutral", "weight_share": 0.7, "f1_tier": null, "rationale": "Pre-FOMC positioning light"},
+      {"force_id": "C3", "direction": "bearish", "weight_share": 0.3, "f1_tier": null, "rationale": "Mild pre-FOMC de-risking given market pricing for hold"}
+    ],
+    "confounded": false,
+    "confidence": "low",
+    "notes": "Volume anomaly only (vol_z -1.57). Muted move ahead of Fed meeting."
+  },
+  {
+    "date": "2026-01-29",
+    "nvda_pct_change": 0.52,
+    "primary_catalyst": {
+      "description": "Day after FOMC (Jan 27-28 meeting). Fed held target rate at 3.5-3.75%, with Governors Miran and Waller dissenting for a cut. NVDA modestly up on dovish dissent signal; range-bound session.",
+      "source_url": "https://www.cnbc.com/2026/01/28/fed-rate-decision-january-2026.html",
+      "event_window": "intraday"
+    },
+    "secondary_catalysts": [
+      {"description": "FOMC Statement — held rates, acknowledged data-dependent posture", "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260128a.htm"}
+    ],
+    "force_attributions": [
+      {"force_id": "C3", "direction": "bullish", "weight_share": 0.6, "f1_tier": null, "rationale": "Two dovish dissents (Miran, Waller for cut) seen as bullish for duration assets / long-duration growth"},
+      {"force_id": "E1", "direction": "neutral", "weight_share": 0.4, "f1_tier": null, "rationale": "Muted broad market response"}
+    ],
+    "confounded": false,
+    "confidence": "medium",
+    "notes": "Note: Jan 29 is day AFTER FOMC (meeting concluded Jan 28). Range-bound response consistent with no-surprise hold."
+  },
+  {
+    "date": "2026-02-02",
+    "nvda_pct_change": -2.89,
+    "primary_catalyst": {
+      "description": "WSJ published late Friday Jan 30: NVDA's $100B planned investment in OpenAI had stalled, citing insider uncertainty. Huang had told industry associates the investment was 'nonbinding and not finalized,' criticized OpenAI's lack of discipline, and shared concerns about competition from Google/Anthropic. Gap-down Monday open on overnight news.",
+      "source_url": "https://www.cnbc.com/2026/02/02/nvidia-stock-price-openai-funding.html",
+      "event_window": "before_open"
+    },
+    "secondary_catalysts": [
+      {"description": "Mag-7 earnings aftermath — Meta, Microsoft, Tesla beat but ballooning capex concerns", "source_url": "https://finance.yahoo.com/news/big-tech-set-to-spend-650-billion-in-2026-as-ai-investments-soar-163907630.html"}
+    ],
+    "force_attributions": [
+      {"force_id": "A1", "direction": "bearish", "weight_share": 0.5, "f1_tier": null, "rationale": "OpenAI — the largest AI compute customer — potentially losing NVDA strategic capital commitment signals lower forward demand certainty"},
+      {"force_id": "D2", "direction": "bearish", "weight_share": 0.3, "f1_tier": null, "rationale": "Huang's own citation of Google/Anthropic competition validates custom silicon concern"},
+      {"force_id": "E1", "direction": "bearish", "weight_share": 0.2, "f1_tier": null, "rationale": "Gap-down on WSJ report absorbed over weekend — classic positioning-amplified gap"}
+    ],
+    "confounded": false,
+    "confidence": "high",
+    "notes": "Gap priority HIGH confirmed — WSJ overnight/weekend report was the catalyst. Jensen's own critical quotes about OpenAI discipline were particularly damaging."
+  },
+  {
+    "date": "2026-02-03",
+    "nvda_pct_change": -2.84,
+    "primary_catalyst": {
+      "description": "Broad semiconductor and AI software sell-off continues. AMD's Q1 forecast underwhelmed, sending AMD -17% and dragging the sector. Chip selloff extended into day 2 post-OpenAI news; bull-bear debate over AI capex ROI intensified.",
+      "source_url": "https://www.cnbc.com/2026/02/03/stock-market-today-live-updates.html",
+      "event_window": "intraday"
+    },
+    "secondary_catalysts": [
+      {"description": "Seeking Alpha: 'Semiconductor and AI software stocks see red amid tech stock selloff'", "source_url": "https://seekingalpha.com/news/4569429-semiconductor-and-ai-software-stocks-see-red-amid-tech-stock-selloff"}
+    ],
+    "force_attributions": [
+      {"force_id": "D1", "direction": "bearish", "weight_share": 0.4, "f1_tier": null, "rationale": "AMD Q1 guide miss and -17% drop dragged entire AI chip complex; competitive concerns spilled over"},
+      {"force_id": "A1", "direction": "bearish", "weight_share": 0.3, "f1_tier": null, "rationale": "AI capex ROI debate intensified — 'indiscriminate selloff' per BofA's Arya"},
+      {"force_id": "E1", "direction": "bearish", "weight_share": 0.3, "f1_tier": null, "rationale": "Correlated dumping across AI beta; SaaS crash narrative"}
+    ],
+    "confounded": true,
+    "confidence": "high",
+    "notes": "Day 2 of the early-February chip selloff. Large intraday range (vol_z +1.46) confirms active institutional repositioning."
+  },
+  {
+    "date": "2026-02-04",
+    "nvda_pct_change": -3.41,
+    "primary_catalyst": {
+      "description": "NVDA plunged as much as 5% intraday on Anthropic launching new Claude LLM tool for data analysis, legal/sales/marketing applications — raising fresh concerns about software-layer disruption reducing hardware dependency. Jensen Huang publicly defended AI investment thesis, saying software-tool-decline narrative is wrong.",
+      "source_url": "https://www.fool.com/investing/2026/02/04/why-did-nvidia-stock-plunge-today/",
+      "event_window": "intraday"
+    },
+    "secondary_catalysts": [
+      {"description": "Day 3 of chip selloff compounds the Anthropic news", "source_url": "https://fortune.com/2026/02/04/why-saas-stocks-tech-selloff-freefall-like-deepseek-2025-overblown-paradox-irrational/"}
+    ],
+    "force_attributions": [
+      {"force_id": "A2", "direction": "bearish", "weight_share": 0.4, "f1_tier": null, "rationale": "Enterprise AI disruption concern — Anthropic tool threatens hardware demand narrative at application layer"},
+      {"force_id": "D2", "direction": "bearish", "weight_share": 0.3, "f1_tier": null, "rationale": "Model-layer competition (Anthropic) reduces NVDA's 'only training beneficiary' premium"},
+      {"force_id": "E1", "direction": "bearish", "weight_share": 0.3, "f1_tier": null, "rationale": "Correlated selling into day 3 of selloff; capitulation pattern"}
+    ],
+    "confounded": false,
+    "confidence": "high",
+    "notes": "Third consecutive decline. Huang's public defense is itself a signal that sentiment was bad."
+  },
+  {
+    "date": "2026-02-06",
+    "nvda_pct_change": 7.87,
+    "primary_catalyst": {
+      "description": "Big Tech 4 (AMZN, GOOGL, META, MSFT) earnings/capex guidance crystallized into a combined $650 BILLION 2026 AI infrastructure commitment. Amazon $200B, Alphabet $185B, Meta up to $135B, Microsoft $105B — roughly 60% YoY increase. Bloomberg/Fortune reporting on Feb 6 aggregated this into a single landmark figure that crushed the AI capex peak thesis. NVDA as the primary beneficiary rallied +7.87% on heavy volume.",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-02-06/nvidia-nvda-shares-surge-on-big-tech-s-650-billion-ai-spending-plan",
+      "event_window": "intraday"
+    },
+    "secondary_catalysts": [
+      {"description": "Bloomberg: 'How Much Is Big Tech Spending on AI Computing? A Staggering $650 Billion in 2026'", "source_url": "https://www.bloomberg.com/news/articles/2026-02-06/how-much-is-big-tech-spending-on-ai-computing-a-staggering-650-billion-in-2026"},
+      {"description": "Fortune: 'Big Tech to Spend $650 Billion This Year as AI Race Intensifies'", "source_url": "https://finance.yahoo.com/news/big-tech-spend-650-billion-012716850.html"}
+    ],
+    "force_attributions": [
+      {"force_id": "A1", "direction": "bullish", "weight_share": 0.85, "f1_tier": 3, "rationale": "Hyperscaler capex cycle decisively re-rated upward by $650B aggregated figure. F1 Tier 3 (major customers themselves making capex claims) = 0.7x multiplier — high independence, material revenue visibility"},
+      {"force_id": "E1", "direction": "bullish", "weight_share": 0.15, "f1_tier": null, "rationale": "Short covering and systematic re-engagement; CTA buy programs triggered"}
+    ],
+    "confounded": false,
+    "confidence": "high",
+    "notes": "CRITICAL regime-changing move — largest single-day move YTD at +7.87%, z=+4.25. The $650B figure became the canonical anchor for 2026 AI capex thesis. This single narrative reversal undid 3 weeks of AI-peak worry."
+  },
+  {
+    "date": "2026-02-09",
+    "nvda_pct_change": 2.50,
+    "primary_catalyst": {
+      "description": "Follow-through buying on the Feb 6 $650B Big Tech capex reveal. Positioning continued to rebuild into pre-earnings window (Feb 25). Weekend news cycle reinforced AI capex narrative.",
+      "source_url": "https://finance.yahoo.com/news/big-tech-unveils-650-billion-121205995.html",
+      "event_window": "intraday"
+    },
+    "secondary_catalysts": [
+      {"description": "Silicon Republic: investor concerns partially easing as $650B data digested", "source_url": "https://www.siliconrepublic.com/business/big-tech-650bn-capital-expense-bill-2026-meta-amazon-google-microsoft"}
+    ],
+    "force_attributions": [
+      {"force_id": "A1", "direction": "bullish", "weight_share": 0.7, "f1_tier": 3, "rationale": "Continuation of $650B Tier 3 capex narrative (0.7x F1 multiplier)"},
+      {"force_id": "E1", "direction": "bullish", "weight_share": 0.3, "f1_tier": null, "rationale": "Re-accumulation into earnings run-up"}
+    ],
+    "confounded": false,
+    "confidence": "medium",
+    "notes": "Follow-through Monday after Feb 6 breakout. Beginning of pre-earnings drift higher."
+  },
+  {
+    "date": "2026-02-19",
+    "nvda_pct_change": -0.04,
+    "primary_catalyst": {
+      "description": "Quiet pre-earnings positioning day. NVDA traded near $188 in consolidation. Recent Feb 17 announcement of NVDA-Meta multiyear strategic partnership (CPUs, networking, Blackwell/Rubin GPUs) already digested — no new material catalyst.",
+      "source_url": "https://capital.com/en-int/market-updates/nvidia-nvda-stock-forecast-19-02-2026",
+      "event_window": "intraday"
+    },
+    "secondary_catalysts": [],
+    "force_attributions": [
+      {"force_id": "E1", "direction": "neutral", "weight_share": 1.0, "f1_tier": null, "rationale": "Pre-earnings quiet period; low-volume drift"}
+    ],
+    "confounded": false,
+    "confidence": "low",
+    "notes": "Flat close, low volume (vol_z -1.51). No catalyst."
+  },
+  {
+    "date": "2026-02-25",
+    "nvda_pct_change": 1.41,
+    "primary_catalyst": {
+      "description": "Pre-earnings run-up on release day. Q4 FY26 earnings scheduled for post-close release. Visible Alpha consensus for revenue was ~$57B (official figure actually $68.1B). NVDA gained ~0.7% intraday ahead of the after-hours print; additional lift from broad market strength.",
+      "source_url": "https://www.cnbc.com/2026/02/25/nvidia-nvda-earnings-report-q4-2026.html",
+      "event_window": "intraday"
+    },
+    "secondary_catalysts": [
+      {"description": "Bloomberg preview: 'Nvidia's Rosy Revenue Forecast Shows the AI Boom Remains Strong'", "source_url": "https://www.bloomberg.com/news/articles/2026-02-25/nvidia-s-rosy-revenue-forecast-shows-the-ai-boom-remains-strong"}
+    ],
+    "force_attributions": [
+      {"force_id": "E1", "direction": "bullish", "weight_share": 0.6, "f1_tier": null, "rationale": "Classic pre-earnings positioning; volume z=+2.89 shows heavy institutional engagement"},
+      {"force_id": "A1", "direction": "bullish", "weight_share": 0.4, "f1_tier": null, "rationale": "Bloomberg preview reinforced hyperscaler capex thesis going into the print"}
+    ],
+    "confounded": false,
+    "confidence": "medium",
+    "notes": "Pre-earnings drift with very high volume (vol_z +2.89) — straddle buyers, institutional positioning. Earnings released AFTER close."
+  },
+  {
+    "date": "2026-02-26",
+    "nvda_pct_change": -5.46,
+    "primary_catalyst": {
+      "description": "Post-earnings selloff despite beat. Q4 FY26: $68.1B revenue (vs ~$57B est), $1.62 non-GAAP EPS, 75.2% non-GAAP gross margin, Data Center $62.3B (+75% YoY). Q1 FY27 guide: $78B +/-2% (well above consensus). BUT: company explicitly stated ZERO China data center compute revenue in Q1 guide — and an 'overarching AI bubble worry' persisted despite blowout numbers. Stock fell >5% on record beat-and-raise.",
+      "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+      "event_window": "before_open"
+    },
+    "secondary_catalysts": [
+      {"description": "CNBC: 'Nvidia's blowout earnings report disappoints Wall Street as stock sinks 5%'", "source_url": "https://www.cnbc.com/2026/02/26/nvidia-nvda-stock-price-q4-earnings.html"},
+      {"description": "Yahoo/Kiplinger: AI bubble concerns front of mind", "source_url": "https://finance.yahoo.com/news/stock-market-today-feb-26-215858261.html"},
+      {"description": "Investing.com: 'Fed Speak Echoes Patience' added macro de-risking layer", "source_url": "https://www.investing.com/analysis/nvidia-delivers-in-q4-fy26-earnings-fed-speak-echoes-patience-200675695"}
+    ],
+    "force_attributions": [
+      {"force_id": "A1", "direction": "bearish", "weight_share": 0.4, "f1_tier": null, "rationale": "AI bubble / buy-the-rumor-sell-the-news on hyperscaler capex — market priced in beat already"},
+      {"force_id": "C1", "direction": "bearish", "weight_share": 0.35, "f1_tier": null, "rationale": "Explicit ZERO China DC compute revenue in Q1 guide confirms de facto export block persists (despite Jan H200 framework)"},
+      {"force_id": "D1", "direction": "bearish", "weight_share": 0.15, "f1_tier": null, "rationale": "Customers 'starting to branch out to rivals like AMD' per earnings commentary"},
+      {"force_id": "E1", "direction": "bearish", "weight_share": 0.1, "f1_tier": null, "rationale": "Mechanical de-risk from peak-earnings optimism"}
+    ],
+    "confounded": true,
+    "confidence": "high",
+    "notes": "CRITICAL earnings move. Volume z=+5.89 is extraordinary. Classic sell-the-news on priced-in perfection. Worst day for NVDA since spring 2025 per BNN Bloomberg."
+  },
+  {
+    "date": "2026-02-27",
+    "nvda_pct_change": -4.16,
+    "primary_catalyst": {
+      "description": "Post-earnings selloff continuation (day 2). Stock closed at $178.79, down 3.3-4.2% on the day. Broke below 50-day and 100-day moving averages — technical trigger for further systematic selling. AI bubble narrative dominated; no stabilization attempt.",
+      "source_url": "https://ts2.tech/en/nvidia-stock-price-slides-again-as-nvda-selloff-deepens-after-earnings-beat/",
+      "event_window": "intraday"
+    },
+    "secondary_catalysts": [
+      {"description": "Motley Fool: 'Nasdaq and S&P 500 Stumble on Fading Nvidia Optimism'", "source_url": "https://www.fool.com/coverage/stock-market-today/2026/02/26/stock-market-today-feb-26-nasdaq-and-s-and-p-500-stumble-on-fading-nvidia-optimism/"}
+    ],
+    "force_attributions": [
+      {"force_id": "A1", "direction": "bearish", "weight_share": 0.4, "f1_tier": null, "rationale": "AI bubble concerns continued; capex sustainability doubts"},
+      {"force_id": "E1", "direction": "bearish", "weight_share": 0.35, "f1_tier": null, "rationale": "Technical break of 50/100-day MAs triggered CTA/trend-following sell programs"},
+      {"force_id": "C1", "direction": "bearish", "weight_share": 0.15, "f1_tier": null, "rationale": "China zero-revenue overhang continued to weigh"},
+      {"force_id": "D1", "direction": "bearish", "weight_share": 0.1, "f1_tier": null, "rationale": "AMD competitive narrative from earnings call persisted"}
+    ],
+    "confounded": true,
+    "confidence": "high",
+    "notes": "Day 2 earnings continuation. Gap priority 'moderate' + volume z=+2.43 consistent with systematic selling after technical break. Closed at $178.79."
+  }
+]

@@ -1,0 +1,12 @@
+# Temp files from skill pipelines
+data/_tmp_*.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db

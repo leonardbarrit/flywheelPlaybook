@@ -1,0 +1,74 @@
+{
+  "id": "2026-01-15-bureau-of-industry-and-securit",
+  "date": "2026-01-15",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Bureau of Industry and Security transitioned to 'case-by-case review' for H200 exports to China; US-Taiwan $250B investment deal announced, and TSMC reported earnings with strong AI outlook \u00e2\u20ac\u201d triggered rebound as tariff exemption framework became clearer and H200 China revenue was unlocked (with 25% surcharge mechanism).",
+    "source_url": "https://markets.financialcontent.com/stocks/article/marketminute-2026-1-16-the-new-managed-access-era-trump-administration-authorizes-nvidia-h200-exports-to-china-under-strict-surcharges",
+    "event_window": "intraday"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "TSMC strong earnings/outlook amid tariff announcement",
+      "source_url": "https://ts2.tech/en/ai-chip-stocks-rally-nvidia-and-amd-jump-on-tsmc-outlook-as-trump-tariff-clouds-china-trade/"
+    },
+    {
+      "description": "Prior-week report: China approved ByteDance/Alibaba/Tencent to buy 400,000 H200 chips",
+      "source_url": "https://sherwood.news/markets/nvidia-rises-reports-china-approved-sale-400000-h200-chips-bytedance-alibaba-tencent-chinese-tech-firms/"
+    }
+  ],
+  "price_data": {
+    "prior_close": 183.14,
+    "event_day": {
+      "open": 186.5,
+      "high": 189.7,
+      "low": 186.33,
+      "close": 187.05,
+      "volume": 206188642,
+      "gap_open_pct": 1.835,
+      "intraday_range_pct": 1.807,
+      "close_change_pct": 2.13,
+      "close_vs_open_pct": 0.295
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 2.131,
+    "volume_sigma": 2.743,
+    "range_expansion_sigma": -1.085,
+    "gap_sigma": 1.804,
+    "volume_baseline": 158182675
+  },
+  "reaction_classification": {
+    "close": "significant",
+    "volume": "major",
+    "range": "notable"
+  },
+  "gap_priority": "moderate",
+  "force_attributions": [
+    {
+      "force_id": "C1",
+      "direction": "bullish",
+      "weight_share": 0.5,
+      "f1_tier": null,
+      "rationale": "H200 export pathway to China formalized, unlocking $1.28-$2.56B in Q1 FY27 China revenue per Fool analysis"
+    },
+    {
+      "force_id": "B1",
+      "direction": "bullish",
+      "weight_share": 0.3,
+      "f1_tier": 4,
+      "rationale": "TSMC earnings corroboration of AI capex demand (Tier 4 adjacent supplier = 1.5x F1 multiplier)"
+    },
+    {
+      "force_id": "C2",
+      "direction": "bullish",
+      "weight_share": 0.2,
+      "f1_tier": null,
+      "rationale": "$250B TSMC US investment deal reduced tariff overhang risk"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": true,
+  "confidence": "high",
+  "notes": "Triple catalyst day \u00e2\u20ac\u201d tariff clarification + H200 China opening + TSMC earnings beat. Volume z=+2.74 confirms institutional participation."
+}

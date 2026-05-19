@@ -1,0 +1,85 @@
+{
+  "id": "2026-04-24-intel-q1-fy26-earnings-release",
+  "date": "2026-04-24",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Intel Q1 FY26 earnings (released after close April 23) affirmed hyperscaler CPU demand: $13.6B revenue (vs $12.7B YoY), strongest top-line growth since 2021. DCAI segment +22% YoY to $5.1B. CEO cited three drivers: (1) accelerated Xeon 6 ramp at hyperscalers preparing 2027 capacity, (2) stronger-than-expected commercial PC refresh (Win10 EOL), (3) incremental growth. Revenue beat midpoint of guidance by $1.4B. Validates AI data center buildout as real, not vaporware. Intel +24% (best day since 1987). NVDA closed at $208.27 (+4.32%), first record close since October, market cap >$5T. Semiconductors rose for 18th straight day.",
+    "source_url": "https://www.businesswire.com/news/home/20260423038467/en/Intel-Reports-First-Quarter-2026-Financial-Results"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "CNBC: Nvidia stock closes at record, pushing market cap past $5 trillion \u00e2\u20ac\u201d 4.3% jump on Intel print",
+      "source_url": "https://www.cnbc.com/2026/04/24/nvidia-stock-closes-at-record-pushing-market-cap-past-5-trillion.html"
+    },
+    {
+      "description": "Hyperscaler capex projected ~$650B across MSFT/AMZN/GOOGL/META/ORCL for 2026 per INTC DCAI context",
+      "source_url": "https://tech-insider.org/intel-q1-2026-earnings-13-6-billion-revenue-data-center-surge/"
+    }
+  ],
+  "price_data": {
+    "prior_close": 199.64,
+    "event_day": {
+      "open": 199.96,
+      "high": 210.95,
+      "low": 199.81,
+      "close": 208.27,
+      "volume": 213841345,
+      "gap_open_pct": 0.16,
+      "intraday_range_pct": 5.571,
+      "close_change_pct": 4.32,
+      "close_vs_open_pct": 4.156
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 1.754,
+    "volume_sigma": 1.883,
+    "range_expansion_sigma": 3.661,
+    "gap_sigma": 0.122,
+    "volume_baseline": 149659435
+  },
+  "reaction_classification": {
+    "close": "significant",
+    "volume": "significant",
+    "range": "regime-changing"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "A1",
+      "direction": "bullish",
+      "weight_share": 0.7,
+      "f1_tier": null,
+      "rationale": "Intel DCAI +22% YoY to $5.1B is the cleanest independent Tier 4 validation of hyperscaler AI capex being real and accelerating \u00e2\u20ac\u201d Xeon 6 hyperscaler ramp for 2027 capacity IS the NVDA-adjacent CPU portion of AI rack spend. This is the dominant A1 force on the day."
+    },
+    {
+      "force_id": "B3",
+      "direction": "bullish",
+      "weight_share": 0.1,
+      "f1_tier": null,
+      "rationale": "AI data center buildout validation also indirectly validates power/grid infrastructure demand \u00e2\u20ac\u201d CPU ramp implies rack-level buildout is executing"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bullish",
+      "weight_share": 0.1,
+      "f1_tier": null,
+      "rationale": "Breakout-day momentum + semis rising 18 straight days drove CTA/trend chase; record-close FOMO amplified the move"
+    },
+    {
+      "force_id": "D1",
+      "direction": "bearish",
+      "weight_share": 0.1,
+      "f1_tier": null,
+      "rationale": "Intel's strength is marginally a competitive story (CPU TCO gaining vs pure-GPU rack design) but on this day the AI-validation signal dominated the competitive-threat reading"
+    }
+  ],
+  "f1_attribution": {
+    "force_id": "F1",
+    "tier": 4,
+    "multiplier": 1.5,
+    "rationale": "Intel Q1 FY26 is the textbook Tier 4 F1 event: adjacent AI supplier (CPU side of rack) independently corroborating that hyperscaler capex is not only intact but accelerating. This is independent of NVDA itself and directly confirms the A1 demand-side thesis."
+  },
+  "confounded": false,
+  "confidence": "high",
+  "notes": "CRITICAL \u00e2\u20ac\u201d TODAY. Single-catalyst day: Intel Q1 FY26 earnings released after close Apr 23 drove gap-up Apr 24 open. F1 Tier 4 multiplier (1.5x) applied to A1 attribution. First NVDA record close since October; market cap >$5T."
+}

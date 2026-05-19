@@ -1,0 +1,57 @@
+{
+  "id": "2026-04-02-modest-continuation-day-post-m",
+  "date": "2026-04-02",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Modest continuation day post Marvell-deal relief rally. No singular NVDA catalyst identified. Broader semiconductor complex grinding higher as AMD-Meta $60B deal (announced late Feb) continued to drive 'AI diversification' trade \u00e2\u20ac\u201d NVDA lagged but participated in broad tape strength.",
+    "source_url": "https://www.fool.com/investing/2026/04/02/nvidias-blackwell-and-rubin-chips-will-have-1-tril/"
+  },
+  "secondary_catalysts": [],
+  "price_data": {
+    "prior_close": 175.75,
+    "event_day": {
+      "open": 172.18,
+      "high": 177.49,
+      "low": 171.37,
+      "close": 177.39,
+      "volume": 143143157,
+      "gap_open_pct": -2.031,
+      "intraday_range_pct": 3.554,
+      "close_change_pct": 0.9331,
+      "close_vs_open_pct": 3.026
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 0.481,
+    "volume_sigma": -1.508,
+    "range_expansion_sigma": 0.873,
+    "gap_sigma": -1.814,
+    "volume_baseline": 181517850
+  },
+  "reaction_classification": {
+    "close": "negligible",
+    "volume": "significant",
+    "range": "negligible"
+  },
+  "gap_priority": "failed_gap",
+  "force_attributions": [
+    {
+      "force_id": "E1",
+      "direction": "bullish",
+      "weight_share": 0.7,
+      "f1_tier": null,
+      "rationale": "Low-volume (-1.51 vol z) drift continuation of Mar 31 reversal; positioning/flows dominate"
+    },
+    {
+      "force_id": "A1",
+      "direction": "bullish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Ongoing $1T Blackwell/Rubin backlog narrative underpinning buy-the-dip interest"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "low",
+  "notes": "LOW priority \u00e2\u20ac\u201d gap filled / follow-through day post Marvell rally. No discrete catalyst."
+}

@@ -1,0 +1,372 @@
+{
+  "updated": "2026-04-24",
+  "forces": [
+    {
+      "id": "A1",
+      "name": "Hyperscaler Capex Cycle",
+      "category": "A",
+      "type": "additive",
+      "state": "ACTIVE",
+      "weight": 1.509,
+      "direction_bias": "bullish",
+      "net_ytd_reaction": 12.733,
+      "attenuation_trend": "stable",
+      "event_counts": {
+        "total": 18,
+        "isolated": 12,
+        "confounded": 6,
+        "bullish": 12,
+        "bearish": 6,
+        "neutral": 0
+      },
+      "last_event_date": "2026-04-24",
+      "sample_sufficient_for_decomposition": true
+    },
+    {
+      "id": "A2",
+      "name": "Enterprise AI Adoption",
+      "category": "A",
+      "type": "additive",
+      "state": "ACTIVE",
+      "weight": 0.889,
+      "direction_bias": "bearish",
+      "net_ytd_reaction": -0.766,
+      "attenuation_trend": "stable",
+      "event_counts": {
+        "total": 3,
+        "isolated": 1,
+        "confounded": 2,
+        "bullish": 1,
+        "bearish": 2,
+        "neutral": 0
+      },
+      "last_event_date": "2026-04-23",
+      "sample_sufficient_for_decomposition": false
+    },
+    {
+      "id": "A3",
+      "name": "Sovereign AI",
+      "category": "A",
+      "type": "additive",
+      "state": "DORMANT",
+      "weight": 0.0,
+      "direction_bias": "neutral",
+      "net_ytd_reaction": 0.0,
+      "attenuation_trend": "No events in YTD window",
+      "event_counts": {
+        "total": 0,
+        "isolated": 0,
+        "confounded": 0,
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 0
+      },
+      "last_event_date": null,
+      "sample_sufficient_for_decomposition": false
+    },
+    {
+      "id": "B1",
+      "name": "Advanced Packaging & Foundry (CoWoS, HBM)",
+      "category": "B",
+      "type": "additive",
+      "state": "ACTIVE",
+      "weight": 0.845,
+      "direction_bias": "bullish",
+      "net_ytd_reaction": 4.493,
+      "attenuation_trend": "stable",
+      "event_counts": {
+        "total": 6,
+        "isolated": 4,
+        "confounded": 2,
+        "bullish": 5,
+        "bearish": 1,
+        "neutral": 0
+      },
+      "last_event_date": "2026-04-17",
+      "sample_sufficient_for_decomposition": true
+    },
+    {
+      "id": "B2",
+      "name": "Taiwan Geopolitical Risk",
+      "category": "B",
+      "type": "additive",
+      "state": "ACTIVE",
+      "weight": 0.334,
+      "direction_bias": "neutral",
+      "net_ytd_reaction": 0.334,
+      "attenuation_trend": "stable",
+      "event_counts": {
+        "total": 1,
+        "isolated": 0,
+        "confounded": 1,
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 0
+      },
+      "last_event_date": "2026-04-08",
+      "sample_sufficient_for_decomposition": false
+    },
+    {
+      "id": "B3",
+      "name": "Power & Grid Infrastructure",
+      "category": "B",
+      "type": "additive",
+      "state": "ACTIVE",
+      "weight": 0.432,
+      "direction_bias": "neutral",
+      "net_ytd_reaction": 0.432,
+      "attenuation_trend": "stable",
+      "event_counts": {
+        "total": 1,
+        "isolated": 1,
+        "confounded": 0,
+        "bullish": 1,
+        "bearish": 0,
+        "neutral": 0
+      },
+      "last_event_date": "2026-04-24",
+      "sample_sufficient_for_decomposition": false
+    },
+    {
+      "id": "C1",
+      "name": "China Export Controls",
+      "category": "C",
+      "type": "additive",
+      "state": "ACTIVE",
+      "weight": 1.065,
+      "direction_bias": "bearish",
+      "net_ytd_reaction": -5.272,
+      "attenuation_trend": "stable",
+      "event_counts": {
+        "total": 8,
+        "isolated": 1,
+        "confounded": 7,
+        "bullish": 2,
+        "bearish": 6,
+        "neutral": 0
+      },
+      "last_event_date": "2026-04-08",
+      "sample_sufficient_for_decomposition": false
+    },
+    {
+      "id": "C2",
+      "name": "US Industrial Policy",
+      "category": "C",
+      "type": "additive",
+      "state": "ATTENUATING",
+      "weight": 0.868,
+      "direction_bias": "bearish",
+      "net_ytd_reaction": -1.752,
+      "attenuation_trend": "stable",
+      "event_counts": {
+        "total": 3,
+        "isolated": 1,
+        "confounded": 2,
+        "bullish": 1,
+        "bearish": 2,
+        "neutral": 0
+      },
+      "last_event_date": "2026-01-20",
+      "sample_sufficient_for_decomposition": false
+    },
+    {
+      "id": "C3",
+      "name": "Federal Reserve Policy",
+      "category": "C",
+      "type": "additive",
+      "state": "ATTENUATING",
+      "weight": 0.339,
+      "direction_bias": "bearish",
+      "net_ytd_reaction": -1.077,
+      "attenuation_trend": "building",
+      "event_counts": {
+        "total": 5,
+        "isolated": 2,
+        "confounded": 3,
+        "bullish": 1,
+        "bearish": 4,
+        "neutral": 0
+      },
+      "last_event_date": "2026-03-26",
+      "sample_sufficient_for_decomposition": false
+    },
+    {
+      "id": "C4",
+      "name": "AI & Antitrust Regulation",
+      "category": "C",
+      "type": "additive",
+      "state": "DORMANT",
+      "weight": 0.0,
+      "direction_bias": "neutral",
+      "net_ytd_reaction": 0.0,
+      "attenuation_trend": "No events in YTD window",
+      "event_counts": {
+        "total": 0,
+        "isolated": 0,
+        "confounded": 0,
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 0
+      },
+      "last_event_date": null,
+      "sample_sufficient_for_decomposition": false
+    },
+    {
+      "id": "D1",
+      "name": "AMD Competitive Pressure",
+      "category": "D",
+      "type": "additive",
+      "state": "ACTIVE",
+      "weight": 0.701,
+      "direction_bias": "bearish",
+      "net_ytd_reaction": -1.939,
+      "attenuation_trend": "stable",
+      "event_counts": {
+        "total": 4,
+        "isolated": 1,
+        "confounded": 3,
+        "bullish": 0,
+        "bearish": 4,
+        "neutral": 0
+      },
+      "last_event_date": "2026-04-24",
+      "sample_sufficient_for_decomposition": false
+    },
+    {
+      "id": "D2",
+      "name": "Custom Silicon Displacement",
+      "category": "D",
+      "type": "additive",
+      "state": "ACTIVE",
+      "weight": 0.795,
+      "direction_bias": "bearish",
+      "net_ytd_reaction": -1.741,
+      "attenuation_trend": "stable",
+      "event_counts": {
+        "total": 5,
+        "isolated": 4,
+        "confounded": 1,
+        "bullish": 1,
+        "bearish": 4,
+        "neutral": 0
+      },
+      "last_event_date": "2026-04-21",
+      "sample_sufficient_for_decomposition": true
+    },
+    {
+      "id": "D3",
+      "name": "China Domestic Chip Capability",
+      "category": "D",
+      "type": "additive",
+      "state": "DORMANT",
+      "weight": 0.0,
+      "direction_bias": "neutral",
+      "net_ytd_reaction": 0.0,
+      "attenuation_trend": "No events in YTD window",
+      "event_counts": {
+        "total": 0,
+        "isolated": 0,
+        "confounded": 0,
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 0
+      },
+      "last_event_date": null,
+      "sample_sufficient_for_decomposition": false
+    },
+    {
+      "id": "E1",
+      "name": "Positioning & Flows",
+      "category": "E",
+      "type": "oscillating",
+      "state": "ACTIVE",
+      "weight": 0.696,
+      "direction_bias": "bullish",
+      "net_ytd_reaction": 0.661,
+      "attenuation_trend": "stable",
+      "event_counts": {
+        "total": 33,
+        "isolated": 21,
+        "confounded": 12,
+        "bullish": 15,
+        "bearish": 13,
+        "neutral": 5
+      },
+      "last_event_date": "2026-04-24",
+      "sample_sufficient_for_decomposition": true
+    },
+    {
+      "id": "E2",
+      "name": "Cross-Asset Risk Regime",
+      "category": "E",
+      "type": "oscillating",
+      "state": "ACTIVE",
+      "weight": 0.721,
+      "direction_bias": "bearish",
+      "net_ytd_reaction": -1.347,
+      "attenuation_trend": "stable",
+      "event_counts": {
+        "total": 11,
+        "isolated": 2,
+        "confounded": 9,
+        "bullish": 3,
+        "bearish": 8,
+        "neutral": 0
+      },
+      "last_event_date": "2026-04-23",
+      "sample_sufficient_for_decomposition": false
+    },
+    {
+      "id": "F1",
+      "name": "Narrative Validation / 3rd Party Corroboration",
+      "category": "F",
+      "type": "multiplier",
+      "state": "ACTIVE",
+      "weight": 1.5,
+      "direction_bias": "neutral",
+      "net_ytd_reaction": 0.0,
+      "attenuation_trend": "building",
+      "event_counts": {
+        "total": 0,
+        "isolated": 0,
+        "confounded": 0,
+        "bullish": 0,
+        "bearish": 0,
+        "neutral": 0
+      },
+      "last_event_date": "2026-04-24",
+      "sample_sufficient_for_decomposition": false,
+      "f1_instances": [
+        {
+          "date": "2026-03-31",
+          "tier": 4,
+          "multiplier": 1.5,
+          "close_pct": 5.59,
+          "rationale": "Marvell is a Tier 4 adjacent AI supplier (custom silicon, networking, photonics) and the $2B NVDA stake is independent 3rd-party corroboration of NVDA's view of AI demand \u00e2\u20ac\u201d high-signal validation event"
+        },
+        {
+          "date": "2026-04-10",
+          "tier": 4,
+          "multiplier": 1.5,
+          "close_pct": 2.57,
+          "rationale": "TSMC is Tier 4 adjacent AI supplier \u00e2\u20ac\u201d independent 3rd-party corroboration that AI chip demand from NVDA hyperscaler customers is intact/accelerating"
+        },
+        {
+          "date": "2026-04-17",
+          "tier": 4,
+          "multiplier": 1.5,
+          "close_pct": 1.68,
+          "rationale": "TSMC earnings is Tier 4 corroboration \u00e2\u20ac\u201d NVDA's primary foundry confirming AI demand is accelerating"
+        },
+        {
+          "date": "2026-04-24",
+          "tier": 4,
+          "multiplier": 1.5,
+          "close_pct": 4.32,
+          "rationale": "Intel Q1 FY26 is the textbook Tier 4 F1 event: adjacent AI supplier (CPU side of rack) independently corroborating that hyperscaler capex is not only intact but accelerating. This is independent of NVDA itself and directly confirms the A1 demand-side thesis."
+        }
+      ],
+      "f1_count": 4
+    }
+  ]
+}

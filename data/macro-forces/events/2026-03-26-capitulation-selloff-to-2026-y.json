@@ -1,0 +1,80 @@
+{
+  "id": "2026-03-26-capitulation-selloff-to-2026-y",
+  "date": "2026-03-26",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Capitulation selloff to 2026 YTD low on confluence of: ARK Invest executed ~$84M in tech/semi divestments (sold 154,441-155,441 NVDA shares, ~$26-28M); US/Iran conflict re-escalation reignited risk-off; 'higher-for-longer' rate fear plus China-export-control drag compounded. Classic institutional distribution day into a broken tape.",
+    "source_url": "https://blockonomi.com/ark-invest-dumps-84m-in-meta-meta-nvidia-nvda-and-chip-stocks-in-major-thursday-selloff/"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "NVDA traded below S&P 500 forward P/E for first time in years amid Mag7 12-14% YTD decline",
+      "source_url": "https://www.ebc.com/forex/nvidia-nvda-stock-falls-to-a-year-to-date-low-why-and-whats-next"
+    },
+    {
+      "description": "Iran-linked oil risk still elevated; SMCI sanctions scandal fresh (six sessions prior)",
+      "source_url": "https://www.thestreet.com/investing/stocks/stock-market-today-mar-26-2026-stock-futures-down-on-iran-concerns"
+    }
+  ],
+  "price_data": {
+    "prior_close": 178.68,
+    "event_day": {
+      "open": 176.07,
+      "high": 176.51,
+      "low": 171.14,
+      "close": 171.24,
+      "volume": 186152233,
+      "gap_open_pct": -1.461,
+      "intraday_range_pct": 3.05,
+      "close_change_pct": -4.16,
+      "close_vs_open_pct": -2.743
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": -1.606,
+    "volume_sigma": -0.168,
+    "range_expansion_sigma": 0.132,
+    "gap_sigma": -0.973,
+    "volume_baseline": 195271107
+  },
+  "reaction_classification": {
+    "close": "significant",
+    "volume": "negligible",
+    "range": "negligible"
+  },
+  "gap_priority": "moderate",
+  "force_attributions": [
+    {
+      "force_id": "E1",
+      "direction": "bearish",
+      "weight_share": 0.45,
+      "f1_tier": null,
+      "rationale": "Institutional distribution (ARK dump, Mag7 de-rating, concentration unwind) was the dominant driver \u00e2\u20ac\u201d positioning-flow event"
+    },
+    {
+      "force_id": "E2",
+      "direction": "bearish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Iran-war risk regime remained the backdrop pushing capital out of long-duration growth"
+    },
+    {
+      "force_id": "C1",
+      "direction": "bearish",
+      "weight_share": 0.15,
+      "f1_tier": null,
+      "rationale": "China export controls (H20, SMCI sanctions echo) continued to drag NVDA-specific narrative"
+    },
+    {
+      "force_id": "C3",
+      "direction": "bearish",
+      "weight_share": 0.1,
+      "f1_tier": null,
+      "rationale": "Higher-for-longer rate fear compressed tech multiples into quarter-end"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": true,
+  "confidence": "medium",
+  "notes": "YTD low. Capitulation print set up the Mar 31 Marvell-deal reversal that followed. Moderate confidence on attribution weights \u00e2\u20ac\u201d confluence day."
+}

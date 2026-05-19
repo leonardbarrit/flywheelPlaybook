@@ -1,0 +1,51 @@
+{
+  "id": "2026-02-19-quiet-pre-earnings-positioning",
+  "date": "2026-02-19",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Quiet pre-earnings positioning day. NVDA traded near $188 in consolidation. Recent Feb 17 announcement of NVDA-Meta multiyear strategic partnership (CPUs, networking, Blackwell/Rubin GPUs) already digested \u00e2\u20ac\u201d no new material catalyst.",
+    "source_url": "https://capital.com/en-int/market-updates/nvidia-nvda-stock-forecast-19-02-2026",
+    "event_window": "intraday"
+  },
+  "secondary_catalysts": [],
+  "price_data": {
+    "prior_close": 187.98,
+    "event_day": {
+      "open": 187.06,
+      "high": 188.43,
+      "low": 185.66,
+      "close": 187.9,
+      "volume": 126554526,
+      "gap_open_pct": -0.489,
+      "intraday_range_pct": 1.481,
+      "close_change_pct": -0.0426,
+      "close_vs_open_pct": 0.449
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": -0.134,
+    "volume_sigma": -1.511,
+    "range_expansion_sigma": -1.13,
+    "gap_sigma": -0.857,
+    "volume_baseline": 171088081
+  },
+  "reaction_classification": {
+    "close": "negligible",
+    "volume": "significant",
+    "range": "notable"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "E1",
+      "direction": "neutral",
+      "weight_share": 1.0,
+      "f1_tier": null,
+      "rationale": "Pre-earnings quiet period; low-volume drift"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "low",
+  "notes": "Flat close, low volume (vol_z -1.51). No catalyst."
+}

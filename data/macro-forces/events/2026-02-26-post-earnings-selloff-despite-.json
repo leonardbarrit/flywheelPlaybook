@@ -1,0 +1,85 @@
+{
+  "id": "2026-02-26-post-earnings-selloff-despite-",
+  "date": "2026-02-26",
+  "event_window": "before_open",
+  "primary_catalyst": {
+    "description": "Post-earnings selloff despite beat. Q4 FY26: $68.1B revenue (vs ~$57B est), $1.62 non-GAAP EPS, 75.2% non-GAAP gross margin, Data Center $62.3B (+75% YoY). Q1 FY27 guide: $78B +/-2% (well above consensus). BUT: company explicitly stated ZERO China data center compute revenue in Q1 guide \u00e2\u20ac\u201d and an 'overarching AI bubble worry' persisted despite blowout numbers. Stock fell >5% on record beat-and-raise.",
+    "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+    "event_window": "before_open"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "CNBC: 'Nvidia's blowout earnings report disappoints Wall Street as stock sinks 5%'",
+      "source_url": "https://www.cnbc.com/2026/02/26/nvidia-nvda-stock-price-q4-earnings.html"
+    },
+    {
+      "description": "Yahoo/Kiplinger: AI bubble concerns front of mind",
+      "source_url": "https://finance.yahoo.com/news/stock-market-today-feb-26-215858261.html"
+    },
+    {
+      "description": "Investing.com: 'Fed Speak Echoes Patience' added macro de-risking layer",
+      "source_url": "https://www.investing.com/analysis/nvidia-delivers-in-q4-fy26-earnings-fed-speak-echoes-patience-200675695"
+    }
+  ],
+  "price_data": {
+    "prior_close": 195.56,
+    "event_day": {
+      "open": 194.27,
+      "high": 194.29,
+      "low": 184.31,
+      "close": 184.89,
+      "volume": 360807907,
+      "gap_open_pct": -0.66,
+      "intraday_range_pct": 5.137,
+      "close_change_pct": -5.46,
+      "close_vs_open_pct": -4.828
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": -2.28,
+    "volume_sigma": 5.887,
+    "range_expansion_sigma": 1.294,
+    "gap_sigma": -0.879,
+    "volume_baseline": 178640358
+  },
+  "reaction_classification": {
+    "close": "significant",
+    "volume": "regime-changing",
+    "range": "notable"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "A1",
+      "direction": "bearish",
+      "weight_share": 0.4,
+      "f1_tier": null,
+      "rationale": "AI bubble / buy-the-rumor-sell-the-news on hyperscaler capex \u00e2\u20ac\u201d market priced in beat already"
+    },
+    {
+      "force_id": "C1",
+      "direction": "bearish",
+      "weight_share": 0.35,
+      "f1_tier": null,
+      "rationale": "Explicit ZERO China DC compute revenue in Q1 guide confirms de facto export block persists (despite Jan H200 framework)"
+    },
+    {
+      "force_id": "D1",
+      "direction": "bearish",
+      "weight_share": 0.15,
+      "f1_tier": null,
+      "rationale": "Customers 'starting to branch out to rivals like AMD' per earnings commentary"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bearish",
+      "weight_share": 0.1,
+      "f1_tier": null,
+      "rationale": "Mechanical de-risk from peak-earnings optimism"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": true,
+  "confidence": "high",
+  "notes": "CRITICAL earnings move. Volume z=+5.89 is extraordinary. Classic sell-the-news on priced-in perfection. Worst day for NVDA since spring 2025 per BNN Bloomberg."
+}

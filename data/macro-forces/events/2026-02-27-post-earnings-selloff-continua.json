@@ -1,0 +1,77 @@
+{
+  "id": "2026-02-27-post-earnings-selloff-continua",
+  "date": "2026-02-27",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Post-earnings selloff continuation (day 2). Stock closed at $178.79, down 3.3-4.2% on the day. Broke below 50-day and 100-day moving averages \u00e2\u20ac\u201d technical trigger for further systematic selling. AI bubble narrative dominated; no stabilization attempt.",
+    "source_url": "https://ts2.tech/en/nvidia-stock-price-slides-again-as-nvda-selloff-deepens-after-earnings-beat/",
+    "event_window": "intraday"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Motley Fool: 'Nasdaq and S&P 500 Stumble on Fading Nvidia Optimism'",
+      "source_url": "https://www.fool.com/coverage/stock-market-today/2026/02/26/stock-market-today-feb-26-nasdaq-and-s-and-p-500-stumble-on-fading-nvidia-optimism/"
+    }
+  ],
+  "price_data": {
+    "prior_close": 184.89,
+    "event_day": {
+      "open": 181.25,
+      "high": 182.59,
+      "low": 176.38,
+      "close": 177.19,
+      "volume": 311636494,
+      "gap_open_pct": -1.969,
+      "intraday_range_pct": 3.426,
+      "close_change_pct": -4.16,
+      "close_vs_open_pct": -2.24
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": -1.453,
+    "volume_sigma": 2.429,
+    "range_expansion_sigma": -0.015,
+    "gap_sigma": -1.906,
+    "volume_baseline": 189253120
+  },
+  "reaction_classification": {
+    "close": "notable",
+    "volume": "significant",
+    "range": "negligible"
+  },
+  "gap_priority": "moderate",
+  "force_attributions": [
+    {
+      "force_id": "A1",
+      "direction": "bearish",
+      "weight_share": 0.4,
+      "f1_tier": null,
+      "rationale": "AI bubble concerns continued; capex sustainability doubts"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bearish",
+      "weight_share": 0.35,
+      "f1_tier": null,
+      "rationale": "Technical break of 50/100-day MAs triggered CTA/trend-following sell programs"
+    },
+    {
+      "force_id": "C1",
+      "direction": "bearish",
+      "weight_share": 0.15,
+      "f1_tier": null,
+      "rationale": "China zero-revenue overhang continued to weigh"
+    },
+    {
+      "force_id": "D1",
+      "direction": "bearish",
+      "weight_share": 0.1,
+      "f1_tier": null,
+      "rationale": "AMD competitive narrative from earnings call persisted"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": true,
+  "confidence": "high",
+  "notes": "Day 2 earnings continuation. Gap priority 'moderate' + volume z=+2.43 consistent with systematic selling after technical break. Closed at $178.79."
+}

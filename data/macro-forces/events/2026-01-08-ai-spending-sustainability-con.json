@@ -1,0 +1,74 @@
+{
+  "id": "2026-01-08-ai-spending-sustainability-con",
+  "date": "2026-01-08",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "AI spending sustainability concerns intensify; NVDA continues slide from Oct 29 all-time high amid worries about hyperscaler capex peak, GPU depreciation accounting at hyperscalers, and custom-silicon competition from Google/Amazon. Broad sector de-rating extends.",
+    "source_url": "https://www.cnbc.com/2026/01/14/nvidia-shares-are-struggling-how-the-ai-juggernaut-can-can-break-its-funk.html",
+    "event_window": "intraday"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Bloomberg: 'Nvidia's $4 Trillion Stock Rally Faces More Threats Than Ever' framing piece published Jan 6, continues to weigh on sentiment",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-01-06/nvidia-s-4-trillion-stock-rally-faces-more-threats-than-ever"
+    },
+    {
+      "description": "Seeking Alpha ratings downgrade (Jan 2026) amplifying AI capex peak narrative",
+      "source_url": "https://seekingalpha.com/article/4853785-nvidia-im-a-convert-a-big-decline-is-probably-coming-rating-downgrade"
+    }
+  ],
+  "price_data": {
+    "prior_close": 189.11,
+    "event_day": {
+      "open": 189.11,
+      "high": 189.55,
+      "low": 183.71,
+      "close": 185.04,
+      "volume": 172457048,
+      "gap_open_pct": 0.0,
+      "intraday_range_pct": 3.088,
+      "close_change_pct": -2.15,
+      "close_vs_open_pct": -2.152
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": -2.762,
+    "volume_sigma": 0.4,
+    "range_expansion_sigma": 0.238,
+    "gap_sigma": -2.771,
+    "volume_baseline": 165543993
+  },
+  "reaction_classification": {
+    "close": "major",
+    "volume": "negligible",
+    "range": "negligible"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "A1",
+      "direction": "bearish",
+      "weight_share": 0.4,
+      "f1_tier": null,
+      "rationale": "Hyperscaler capex peak concern dominated the tape; market re-rating on whether 60%+ capex growth is sustainable"
+    },
+    {
+      "force_id": "D2",
+      "direction": "bearish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Custom silicon displacement threat (TPU, Trainium, MTIA) cited directly in the CNBC piece"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bearish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Position unwind from mega-cap concentration; stock down ~9% from Oct 29 highs"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "medium",
+  "notes": "Move is part of a multi-week narrative re-evaluation, not a single catalyst. CES 2026 product announcements (Rubin, DRIVE AV) failed to halt the slide."
+}

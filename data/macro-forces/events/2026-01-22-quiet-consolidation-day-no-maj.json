@@ -1,0 +1,51 @@
+{
+  "id": "2026-01-22-quiet-consolidation-day-no-maj",
+  "date": "2026-01-22",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Quiet consolidation day \u00e2\u20ac\u201d no major catalyst. Digestion of tariff framework and H200 China opening. Stock settling into $170-195 consolidation range identified by technical analysts.",
+    "source_url": "https://www.litefinance.org/blog/analysts-opinions/nvda-stock-price-prediction/",
+    "event_window": "intraday"
+  },
+  "secondary_catalysts": [],
+  "price_data": {
+    "prior_close": 183.32,
+    "event_day": {
+      "open": 184.75,
+      "high": 186.17,
+      "low": 183.93,
+      "close": 184.84,
+      "volume": 139636626,
+      "gap_open_pct": 0.78,
+      "intraday_range_pct": 1.212,
+      "close_change_pct": 0.8292,
+      "close_vs_open_pct": 0.049
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 0.503,
+    "volume_sigma": -1.195,
+    "range_expansion_sigma": -1.908,
+    "gap_sigma": 0.446,
+    "volume_baseline": 172425085
+  },
+  "reaction_classification": {
+    "close": "negligible",
+    "volume": "notable",
+    "range": "significant"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "E1",
+      "direction": "neutral",
+      "weight_share": 1.0,
+      "f1_tier": null,
+      "rationale": "Positioning/flows default \u00e2\u20ac\u201d consolidation within developing range"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "low",
+  "notes": "Range day; negative volume z (-1.20) confirms low conviction."
+}

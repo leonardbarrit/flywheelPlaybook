@@ -1,0 +1,63 @@
+{
+  "id": "2026-01-29-day-after-fomc-jan-27-28-meeti",
+  "date": "2026-01-29",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Day after FOMC (Jan 27-28 meeting). Fed held target rate at 3.5-3.75%, with Governors Miran and Waller dissenting for a cut. NVDA modestly up on dovish dissent signal; range-bound session.",
+    "source_url": "https://www.cnbc.com/2026/01/28/fed-rate-decision-january-2026.html",
+    "event_window": "intraday"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "FOMC Statement \u00e2\u20ac\u201d held rates, acknowledged data-dependent posture",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260128a.htm"
+    }
+  ],
+  "price_data": {
+    "prior_close": 191.52,
+    "event_day": {
+      "open": 191.34,
+      "high": 193.48,
+      "low": 186.06,
+      "close": 192.51,
+      "volume": 171764375,
+      "gap_open_pct": -0.094,
+      "intraday_range_pct": 3.878,
+      "close_change_pct": 0.5169,
+      "close_vs_open_pct": 0.611
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 0.209,
+    "volume_sigma": 0.301,
+    "range_expansion_sigma": 1.987,
+    "gap_sigma": -0.463,
+    "volume_baseline": 163387483
+  },
+  "reaction_classification": {
+    "close": "negligible",
+    "volume": "negligible",
+    "range": "significant"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "C3",
+      "direction": "bullish",
+      "weight_share": 0.6,
+      "f1_tier": null,
+      "rationale": "Two dovish dissents (Miran, Waller for cut) seen as bullish for duration assets / long-duration growth"
+    },
+    {
+      "force_id": "E1",
+      "direction": "neutral",
+      "weight_share": 0.4,
+      "f1_tier": null,
+      "rationale": "Muted broad market response"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "medium",
+  "notes": "Note: Jan 29 is day AFTER FOMC (meeting concluded Jan 28). Range-bound response consistent with no-surprise hold."
+}

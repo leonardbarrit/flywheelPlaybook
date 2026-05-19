@@ -1,0 +1,62 @@
+{
+  "id": "2026-03-25-bounce-day-within-the-broader-",
+  "date": "2026-03-25",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Bounce day within the broader March correction. No singular NVDA-specific catalyst identified; day fits technical-bounce pattern off prior-week extreme oversold levels as Iran/peace-talk headlines turned marginally constructive. GTC (Mar 16-19) product/backlog announcements from prior week continued to underpin bull case.",
+    "source_url": "https://www.cnbc.com/2026/03/17/a-theory-on-whats-wrong-with-nvidia-stock-stuck-in-a-2026-funk.html"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "GTC 2026 aftermath: $1T Blackwell/Rubin backlog through 2027 still being absorbed by analysts",
+      "source_url": "https://www.cnbc.com/2026/03/16/nvidia-gtc-2026-ceo-jensen-huang-keynote-blackwell-vera-rubin.html"
+    }
+  ],
+  "price_data": {
+    "prior_close": 175.2,
+    "event_day": {
+      "open": 177.1,
+      "high": 181.22,
+      "low": 176.85,
+      "close": 178.68,
+      "volume": 162602054,
+      "gap_open_pct": 1.084,
+      "intraday_range_pct": 2.468,
+      "close_change_pct": 1.99,
+      "close_vs_open_pct": 0.892
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 1.063,
+    "volume_sigma": -0.674,
+    "range_expansion_sigma": -0.362,
+    "gap_sigma": 1.051,
+    "volume_baseline": 199672860
+  },
+  "reaction_classification": {
+    "close": "notable",
+    "volume": "negligible",
+    "range": "negligible"
+  },
+  "gap_priority": "moderate",
+  "force_attributions": [
+    {
+      "force_id": "E1",
+      "direction": "bullish",
+      "weight_share": 0.6,
+      "f1_tier": null,
+      "rationale": "Technical bounce / short-cover within a heavily oversold Mag7 complex; low volume (-0.67 vol z) consistent with flow-driven bounce, not fundamental catalyst"
+    },
+    {
+      "force_id": "A1",
+      "direction": "bullish",
+      "weight_share": 0.4,
+      "f1_tier": null,
+      "rationale": "GTC $1T backlog narrative (Blackwell + Rubin demand from hyperscalers) continued to support dip-buying interest"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "low",
+  "notes": "MEDIUM priority \u00e2\u20ac\u201d no specific day-of catalyst found; most likely a positioning/technical bounce before Mar 26 plunge to YTD low."
+}

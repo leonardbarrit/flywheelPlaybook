@@ -1,0 +1,74 @@
+{
+  "id": "2026-04-17-continuation-of-10-day-winning",
+  "date": "2026-04-17",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Continuation of 10-day+ winning streak following TSMC Apr 16 earnings blowout (+58% profit, $35.6B revenue, 61% HPC mix, 'AI demand exceptionally strong'). Low volume (-0.12 vol z). Drift higher; no discrete NVDA catalyst day-of, but TSMC earnings the prior day continued to feed the rally.",
+    "source_url": "https://www.cnbc.com/2026/04/16/tsmc-q1-profit-58-percent-ai-chip-demand-record.html"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "CNN: oil drops, stocks soar to wrap up a wild week post-ceasefire",
+      "source_url": "https://www.cnn.com/2026/04/17/investing/oil-strait-hormuz-iran"
+    }
+  ],
+  "price_data": {
+    "prior_close": 198.35,
+    "event_day": {
+      "open": 199.9,
+      "high": 201.7,
+      "low": 199.27,
+      "close": 201.68,
+      "volume": 160324417,
+      "gap_open_pct": 0.781,
+      "intraday_range_pct": 1.216,
+      "close_change_pct": 1.68,
+      "close_vs_open_pct": 0.89
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 0.516,
+    "volume_sigma": -0.123,
+    "range_expansion_sigma": -1.579,
+    "gap_sigma": 0.514,
+    "volume_baseline": 164493649
+  },
+  "reaction_classification": {
+    "close": "negligible",
+    "volume": "negligible",
+    "range": "significant"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "B1",
+      "direction": "bullish",
+      "weight_share": 0.4,
+      "f1_tier": null,
+      "rationale": "TSMC Q1 earnings (prior day) \u00e2\u20ac\u201d 58% profit surge, AI demand 'exceptionally strong', $39-40.2B Q2 guide \u00e2\u20ac\u201d continued to carry NVDA"
+    },
+    {
+      "force_id": "A1",
+      "direction": "bullish",
+      "weight_share": 0.35,
+      "f1_tier": null,
+      "rationale": "Hyperscaler demand narrative continuing to compound as AI capex visibility extends to 2027"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bullish",
+      "weight_share": 0.25,
+      "f1_tier": null,
+      "rationale": "Momentum/trend flows riding the multi-day streak"
+    }
+  ],
+  "f1_attribution": {
+    "force_id": "F1",
+    "tier": 4,
+    "multiplier": 1.5,
+    "rationale": "TSMC earnings is Tier 4 corroboration \u00e2\u20ac\u201d NVDA's primary foundry confirming AI demand is accelerating"
+  },
+  "confounded": false,
+  "confidence": "medium",
+  "notes": "LOW priority day but cleanly attributable to TSMC earnings read-through (prior day) + streak momentum."
+}

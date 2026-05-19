@@ -1,0 +1,465 @@
+{
+  "analyses": [
+    {
+      "date": "2026-01-15",
+      "observed": 2.13,
+      "expected_sum": 0.719,
+      "residual": 1.411,
+      "classification": "synergy",
+      "contributions": [
+        {
+          "force_id": "B1",
+          "contribution": 0.719,
+          "weight_share": 0.3
+        }
+      ],
+      "missing_baselines": [
+        "C1",
+        "C2"
+      ],
+      "forces": [
+        "C1",
+        "B1",
+        "C2"
+      ]
+    },
+    {
+      "date": "2026-01-20",
+      "observed": -4.38,
+      "expected_sum": 0.114,
+      "residual": -4.494,
+      "classification": "strong_synergy",
+      "contributions": [
+        {
+          "force_id": "E1",
+          "contribution": 0.102,
+          "weight_share": 0.15
+        },
+        {
+          "force_id": "E2",
+          "contribution": 0.013,
+          "weight_share": 0.1
+        }
+      ],
+      "missing_baselines": [
+        "C1",
+        "C2"
+      ],
+      "forces": [
+        "C1",
+        "C2",
+        "E1",
+        "E2"
+      ]
+    },
+    {
+      "date": "2026-02-03",
+      "observed": -2.84,
+      "expected_sum": 1.016,
+      "residual": -3.856,
+      "classification": "strong_synergy",
+      "contributions": [
+        {
+          "force_id": "A1",
+          "contribution": 0.813,
+          "weight_share": 0.3
+        },
+        {
+          "force_id": "E1",
+          "contribution": 0.203,
+          "weight_share": 0.3
+        }
+      ],
+      "missing_baselines": [
+        "D1"
+      ],
+      "forces": [
+        "D1",
+        "A1",
+        "E1"
+      ]
+    },
+    {
+      "date": "2026-02-26",
+      "observed": -5.46,
+      "expected_sum": 1.152,
+      "residual": -6.612,
+      "classification": "strong_synergy",
+      "contributions": [
+        {
+          "force_id": "A1",
+          "contribution": 1.084,
+          "weight_share": 0.4
+        },
+        {
+          "force_id": "E1",
+          "contribution": 0.068,
+          "weight_share": 0.1
+        }
+      ],
+      "missing_baselines": [
+        "C1",
+        "D1"
+      ],
+      "forces": [
+        "A1",
+        "C1",
+        "D1",
+        "E1"
+      ]
+    },
+    {
+      "date": "2026-02-27",
+      "observed": -4.16,
+      "expected_sum": 1.321,
+      "residual": -5.481,
+      "classification": "strong_synergy",
+      "contributions": [
+        {
+          "force_id": "A1",
+          "contribution": 1.084,
+          "weight_share": 0.4
+        },
+        {
+          "force_id": "E1",
+          "contribution": 0.237,
+          "weight_share": 0.35
+        }
+      ],
+      "missing_baselines": [
+        "C1",
+        "D1"
+      ],
+      "forces": [
+        "A1",
+        "E1",
+        "C1",
+        "D1"
+      ]
+    },
+    {
+      "date": "2026-03-02",
+      "observed": 2.99,
+      "expected_sum": 0.809,
+      "residual": 2.181,
+      "classification": "strong_synergy",
+      "contributions": [
+        {
+          "force_id": "E2",
+          "contribution": 0.064,
+          "weight_share": 0.5
+        },
+        {
+          "force_id": "E1",
+          "contribution": 0.203,
+          "weight_share": 0.3
+        },
+        {
+          "force_id": "A1",
+          "contribution": 0.542,
+          "weight_share": 0.2
+        }
+      ],
+      "missing_baselines": [],
+      "forces": [
+        "E2",
+        "E1",
+        "A1"
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "observed": -3.01,
+      "expected_sum": 0.266,
+      "residual": -3.276,
+      "classification": "strong_synergy",
+      "contributions": [
+        {
+          "force_id": "E2",
+          "contribution": 0.077,
+          "weight_share": 0.6
+        },
+        {
+          "force_id": "E1",
+          "contribution": 0.169,
+          "weight_share": 0.25
+        },
+        {
+          "force_id": "C3",
+          "contribution": 0.02,
+          "weight_share": 0.15
+        }
+      ],
+      "missing_baselines": [],
+      "forces": [
+        "E2",
+        "E1",
+        "C3"
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "observed": -3.28,
+      "expected_sum": 0.236,
+      "residual": -3.516,
+      "classification": "strong_synergy",
+      "contributions": [
+        {
+          "force_id": "E1",
+          "contribution": 0.203,
+          "weight_share": 0.3
+        },
+        {
+          "force_id": "E2",
+          "contribution": 0.019,
+          "weight_share": 0.15
+        },
+        {
+          "force_id": "C3",
+          "contribution": 0.013,
+          "weight_share": 0.1
+        }
+      ],
+      "missing_baselines": [
+        "C1"
+      ],
+      "forces": [
+        "C1",
+        "E1",
+        "E2",
+        "C3"
+      ]
+    },
+    {
+      "date": "2026-03-26",
+      "observed": -4.16,
+      "expected_sum": 0.356,
+      "residual": -4.516,
+      "classification": "strong_synergy",
+      "contributions": [
+        {
+          "force_id": "E1",
+          "contribution": 0.305,
+          "weight_share": 0.45
+        },
+        {
+          "force_id": "E2",
+          "contribution": 0.038,
+          "weight_share": 0.3
+        },
+        {
+          "force_id": "C3",
+          "contribution": 0.013,
+          "weight_share": 0.1
+        }
+      ],
+      "missing_baselines": [
+        "C1"
+      ],
+      "forces": [
+        "E1",
+        "E2",
+        "C1",
+        "C3"
+      ]
+    },
+    {
+      "date": "2026-04-08",
+      "observed": 2.23,
+      "expected_sum": 0.132,
+      "residual": 2.098,
+      "classification": "strong_synergy",
+      "contributions": [
+        {
+          "force_id": "E2",
+          "contribution": 0.064,
+          "weight_share": 0.5
+        },
+        {
+          "force_id": "E1",
+          "contribution": 0.068,
+          "weight_share": 0.1
+        }
+      ],
+      "missing_baselines": [
+        "C1",
+        "B2"
+      ],
+      "forces": [
+        "E2",
+        "C1",
+        "B2",
+        "E1"
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "observed": 3.8,
+      "expected_sum": 1.337,
+      "residual": 2.463,
+      "classification": "strong_synergy",
+      "contributions": [
+        {
+          "force_id": "A1",
+          "contribution": 0.949,
+          "weight_share": 0.35
+        },
+        {
+          "force_id": "E1",
+          "contribution": 0.136,
+          "weight_share": 0.2
+        },
+        {
+          "force_id": "B1",
+          "contribution": 0.24,
+          "weight_share": 0.1
+        },
+        {
+          "force_id": "E2",
+          "contribution": 0.013,
+          "weight_share": 0.1
+        }
+      ],
+      "missing_baselines": [
+        "A2"
+      ],
+      "forces": [
+        "A1",
+        "A2",
+        "E1",
+        "B1",
+        "E2"
+      ]
+    },
+    {
+      "date": "2026-04-21",
+      "observed": -1.08,
+      "expected_sum": -0.049,
+      "residual": -1.031,
+      "classification": "synergy",
+      "contributions": [
+        {
+          "force_id": "E1",
+          "contribution": 0.305,
+          "weight_share": 0.45
+        },
+        {
+          "force_id": "D2",
+          "contribution": -0.386,
+          "weight_share": 0.3
+        },
+        {
+          "force_id": "E2",
+          "contribution": 0.032,
+          "weight_share": 0.25
+        }
+      ],
+      "missing_baselines": [],
+      "forces": [
+        "E1",
+        "D2",
+        "E2"
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "observed": -1.41,
+      "expected_sum": 0.731,
+      "residual": -2.141,
+      "classification": "strong_synergy",
+      "contributions": [
+        {
+          "force_id": "E1",
+          "contribution": 0.305,
+          "weight_share": 0.45
+        },
+        {
+          "force_id": "E2",
+          "contribution": 0.019,
+          "weight_share": 0.15
+        },
+        {
+          "force_id": "A1",
+          "contribution": 0.407,
+          "weight_share": 0.15
+        }
+      ],
+      "missing_baselines": [
+        "A2"
+      ],
+      "forces": [
+        "E1",
+        "A2",
+        "E2",
+        "A1"
+      ]
+    }
+  ],
+  "force_baselines": {
+    "A1": {
+      "isolated_n": 12,
+      "confounded_n": 6,
+      "mean_weighted_reaction": 1.31
+    },
+    "D2": {
+      "isolated_n": 4,
+      "confounded_n": 1,
+      "mean_weighted_reaction": -0.354
+    },
+    "E1": {
+      "isolated_n": 21,
+      "confounded_n": 12,
+      "mean_weighted_reaction": 0.334
+    },
+    "C2": {
+      "isolated_n": 1,
+      "confounded_n": 2,
+      "mean_weighted_reaction": -0.864
+    },
+    "C1": {
+      "isolated_n": 1,
+      "confounded_n": 7,
+      "mean_weighted_reaction": -0.288
+    },
+    "B1": {
+      "isolated_n": 4,
+      "confounded_n": 2,
+      "mean_weighted_reaction": 0.869
+    },
+    "E2": {
+      "isolated_n": 2,
+      "confounded_n": 9,
+      "mean_weighted_reaction": 0.064
+    },
+    "C3": {
+      "isolated_n": 2,
+      "confounded_n": 3,
+      "mean_weighted_reaction": 0.059
+    },
+    "D1": {
+      "isolated_n": 1,
+      "confounded_n": 3,
+      "mean_weighted_reaction": 0.432
+    },
+    "A2": {
+      "isolated_n": 1,
+      "confounded_n": 2,
+      "mean_weighted_reaction": -1.364
+    },
+    "F1": {
+      "isolated_n": 0,
+      "confounded_n": 0,
+      "mean_weighted_reaction": null
+    },
+    "B2": {
+      "isolated_n": 0,
+      "confounded_n": 1,
+      "mean_weighted_reaction": null
+    },
+    "B3": {
+      "isolated_n": 1,
+      "confounded_n": 0,
+      "mean_weighted_reaction": 0.432
+    }
+  }
+}

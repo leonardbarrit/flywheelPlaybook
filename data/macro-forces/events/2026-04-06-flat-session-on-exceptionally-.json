@@ -1,0 +1,50 @@
+{
+  "id": "2026-04-06-flat-session-on-exceptionally-",
+  "date": "2026-04-06",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Flat session on exceptionally low volume (-2.69 vol z). No NVDA-specific catalyst identified. Market in wait-and-see mode ahead of expected Iran-war-related headlines and the subsequent April 7 ceasefire announcement. Options positioning (P/C shift from 0.53 to 0.78) showed growing caution ahead of May earnings.",
+    "source_url": "https://earezki.com/ai-financial-news/2026-04-08-nvda/"
+  },
+  "secondary_catalysts": [],
+  "price_data": {
+    "prior_close": 177.39,
+    "event_day": {
+      "open": 177.16,
+      "high": 177.79,
+      "low": 175.76,
+      "close": 177.64,
+      "volume": 107564280,
+      "gap_open_pct": -0.13,
+      "intraday_range_pct": 1.146,
+      "close_change_pct": 0.1409,
+      "close_vs_open_pct": 0.271
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 0.12,
+    "volume_sigma": -2.688,
+    "range_expansion_sigma": -1.611,
+    "gap_sigma": -0.141,
+    "volume_baseline": 178736021
+  },
+  "reaction_classification": {
+    "close": "negligible",
+    "volume": "major",
+    "range": "significant"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "E1",
+      "direction": "bullish",
+      "weight_share": 1.0,
+      "f1_tier": null,
+      "rationale": "Range-bound drift on near-record-low volume \u00e2\u20ac\u201d pure positioning/flows session, no fundamental catalyst"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "low",
+  "notes": "LOW priority \u00e2\u20ac\u201d volume anomaly only. Lowest-volume session in the cohort; typical pre-event quiet day."
+}

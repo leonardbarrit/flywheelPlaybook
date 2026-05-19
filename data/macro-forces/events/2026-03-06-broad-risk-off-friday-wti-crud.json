@@ -1,0 +1,73 @@
+{
+  "id": "2026-03-06-broad-risk-off-friday-wti-crud",
+  "date": "2026-03-06",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Broad risk-off Friday: WTI crude broke above $90/bbl (week's 35% gain \u00e2\u20ac\u201d biggest weekly oil move since futures trading began in 1983) as Iran war concerns kept Strait of Hormuz risk premium elevated. S&P -1.33%, Nasdaq -1.59%. Unexpected soft February NFP print (release morning of March 6) compounded inflation-plus-stagflation anxiety. NVDA dragged with Nasdaq in broader AI complex selloff.",
+    "source_url": "https://www.cnbc.com/2026/03/05/stock-market-today-live-updates.html"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "BlackRock capped withdrawals from private credit fund (first time) \u00e2\u20ac\u201d amplified risk-off tone with credit-stress echo",
+      "source_url": "https://www.cnbc.com/2026/03/05/stock-market-today-live-updates.html"
+    },
+    {
+      "description": "Marvell +11% on AI-driven Q4 results \u00e2\u20ac\u201d rotational pressure as diversification trade pulls flows away from NVDA even within AI theme",
+      "source_url": "https://www.cnbc.com/2026/03/05/stock-market-today-live-updates.html"
+    }
+  ],
+  "price_data": {
+    "prior_close": 183.34,
+    "event_day": {
+      "open": 179.84,
+      "high": 182.76,
+      "low": 176.82,
+      "close": 177.82,
+      "volume": 189021949,
+      "gap_open_pct": -1.909,
+      "intraday_range_pct": 3.303,
+      "close_change_pct": -3.01,
+      "close_vs_open_pct": -1.123
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": -1.191,
+    "volume_sigma": -0.134,
+    "range_expansion_sigma": -0.018,
+    "gap_sigma": -1.517,
+    "volume_baseline": 196616149
+  },
+  "reaction_classification": {
+    "close": "notable",
+    "volume": "negligible",
+    "range": "negligible"
+  },
+  "gap_priority": "moderate",
+  "force_attributions": [
+    {
+      "force_id": "E2",
+      "direction": "bearish",
+      "weight_share": 0.6,
+      "f1_tier": null,
+      "rationale": "Oil shock + Iran risk + stagflation tape = cross-asset risk regime deterioration was the dominant driver on the day"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bearish",
+      "weight_share": 0.25,
+      "f1_tier": null,
+      "rationale": "Rotation into Marvell and other AI-adjacent names pulling flows out of NVDA (AI-diversification trade pattern visible all Q1)"
+    },
+    {
+      "force_id": "C3",
+      "direction": "bearish",
+      "weight_share": 0.15,
+      "f1_tier": null,
+      "rationale": "NFP surprise + oil shock reduced likelihood of near-term Fed cuts; rate repricing pressured long-duration tech"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": true,
+  "confidence": "high",
+  "notes": "Confluence day: Iran-oil-rates-NFP all landed same session. Not a single-catalyst event."
+}

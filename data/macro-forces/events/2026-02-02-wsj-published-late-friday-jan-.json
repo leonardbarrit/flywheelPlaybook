@@ -1,0 +1,70 @@
+{
+  "id": "2026-02-02-wsj-published-late-friday-jan-",
+  "date": "2026-02-02",
+  "event_window": "before_open",
+  "primary_catalyst": {
+    "description": "WSJ published late Friday Jan 30: NVDA's $100B planned investment in OpenAI had stalled, citing insider uncertainty. Huang had told industry associates the investment was 'nonbinding and not finalized,' criticized OpenAI's lack of discipline, and shared concerns about competition from Google/Anthropic. Gap-down Monday open on overnight news.",
+    "source_url": "https://www.cnbc.com/2026/02/02/nvidia-stock-price-openai-funding.html",
+    "event_window": "before_open"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Mag-7 earnings aftermath \u00e2\u20ac\u201d Meta, Microsoft, Tesla beat but ballooning capex concerns",
+      "source_url": "https://finance.yahoo.com/news/big-tech-set-to-spend-650-billion-in-2026-as-ai-investments-soar-163907630.html"
+    }
+  ],
+  "price_data": {
+    "prior_close": 191.13,
+    "event_day": {
+      "open": 187.2,
+      "high": 190.3,
+      "low": 184.88,
+      "close": 185.61,
+      "volume": 165794054,
+      "gap_open_pct": -2.056,
+      "intraday_range_pct": 2.895,
+      "close_change_pct": -2.89,
+      "close_vs_open_pct": -0.849
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": -1.863,
+    "volume_sigma": 0.044,
+    "range_expansion_sigma": 0.593,
+    "gap_sigma": -2.269,
+    "volume_baseline": 164611426
+  },
+  "reaction_classification": {
+    "close": "significant",
+    "volume": "negligible",
+    "range": "negligible"
+  },
+  "gap_priority": "high",
+  "force_attributions": [
+    {
+      "force_id": "A1",
+      "direction": "bearish",
+      "weight_share": 0.5,
+      "f1_tier": null,
+      "rationale": "OpenAI \u00e2\u20ac\u201d the largest AI compute customer \u00e2\u20ac\u201d potentially losing NVDA strategic capital commitment signals lower forward demand certainty"
+    },
+    {
+      "force_id": "D2",
+      "direction": "bearish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Huang's own citation of Google/Anthropic competition validates custom silicon concern"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bearish",
+      "weight_share": 0.2,
+      "f1_tier": null,
+      "rationale": "Gap-down on WSJ report absorbed over weekend \u00e2\u20ac\u201d classic positioning-amplified gap"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "high",
+  "notes": "Gap priority HIGH confirmed \u00e2\u20ac\u201d WSJ overnight/weekend report was the catalyst. Jensen's own critical quotes about OpenAI discipline were particularly damaging."
+}

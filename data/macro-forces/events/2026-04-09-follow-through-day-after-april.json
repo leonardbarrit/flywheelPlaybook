@@ -1,0 +1,57 @@
+{
+  "id": "2026-04-09-follow-through-day-after-april",
+  "date": "2026-04-09",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Follow-through day after April 8 Iran-ceasefire gap. NVDA closed at $182.08. Wedbush analyst note: NVIDIA 'undervalued given future AI monetization'. Continued risk-on relief rally; no new discrete catalyst. Low volume (-1.67 vol z) consistent with drift continuation.",
+    "source_url": "https://www.capitalstreetfx.com/market-analysis/nvidia-nvda-market-outlook/"
+  },
+  "secondary_catalysts": [],
+  "price_data": {
+    "prior_close": 182.08,
+    "event_day": {
+      "open": 181.84,
+      "high": 184.08,
+      "low": 180.62,
+      "close": 183.91,
+      "volume": 116428523,
+      "gap_open_pct": -0.132,
+      "intraday_range_pct": 1.903,
+      "close_change_pct": 1.01,
+      "close_vs_open_pct": 1.138
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": 0.488,
+    "volume_sigma": -1.672,
+    "range_expansion_sigma": -0.669,
+    "gap_sigma": -0.302,
+    "volume_baseline": 170859912
+  },
+  "reaction_classification": {
+    "close": "negligible",
+    "volume": "significant",
+    "range": "negligible"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "E1",
+      "direction": "bullish",
+      "weight_share": 0.7,
+      "f1_tier": null,
+      "rationale": "Low-volume follow-through; positioning continuation from Apr 8 ceasefire gap"
+    },
+    {
+      "force_id": "E2",
+      "direction": "bullish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Continued benefit from ceasefire-driven risk-on tape"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": false,
+  "confidence": "low",
+  "notes": "LOW priority. Drift day \u00e2\u20ac\u201d no discrete catalyst, continuation of ceasefire relief."
+}

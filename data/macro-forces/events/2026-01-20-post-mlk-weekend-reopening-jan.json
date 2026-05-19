@@ -1,0 +1,81 @@
+{
+  "id": "2026-01-20-post-mlk-weekend-reopening-jan",
+  "date": "2026-01-20",
+  "event_window": "overnight_weekend",
+  "primary_catalyst": {
+    "description": "Post-MLK-weekend reopening (Jan 19 was MLK Day, market closed). Chinese customs officials began blocking H200 shipments at the border over the 25% US surcharge/revenue-tariff; China Ministry of Commerce signaled it would not allow US to collect 'tax' on technology imports. Section 232 tariff took full effect on Jan 15 and impact was compounded over the 3-day weekend into a gap-down Tuesday open.",
+    "source_url": "https://markets.financialcontent.com/stocks/article/tokenring-2026-1-23-us-eases-nvidia-h200-exports-to-china-with-25-revenue-tariff",
+    "event_window": "overnight_weekend"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Broader Mag-7 selloff on AI spending sustainability + concentration unwind",
+      "source_url": "https://www.apnews.org/tech-stocks-decline-january-2026/"
+    },
+    {
+      "description": "IndexBox: semiconductor sector sell-off despite strong AI chip earnings",
+      "source_url": "https://www.indexbox.io/blog/semiconductor-sell-off-drags-market-lower-despite-strong-ai-chip-earnings/"
+    }
+  ],
+  "price_data": {
+    "prior_close": 186.23,
+    "event_day": {
+      "open": 181.9,
+      "high": 182.38,
+      "low": 177.61,
+      "close": 178.07,
+      "volume": 223345257,
+      "gap_open_pct": -2.325,
+      "intraday_range_pct": 2.622,
+      "close_change_pct": -4.38,
+      "close_vs_open_pct": -2.106
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": -3.618,
+    "volume_sigma": 2.574,
+    "range_expansion_sigma": 0.236,
+    "gap_sigma": -2.947,
+    "volume_baseline": 165254535
+  },
+  "reaction_classification": {
+    "close": "regime-changing",
+    "volume": "major",
+    "range": "negligible"
+  },
+  "gap_priority": "high",
+  "force_attributions": [
+    {
+      "force_id": "C1",
+      "direction": "bearish",
+      "weight_share": 0.45,
+      "f1_tier": null,
+      "rationale": "China retaliation via customs blocks directly threatens newly-approved H200 revenue stream"
+    },
+    {
+      "force_id": "C2",
+      "direction": "bearish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Tariff now fully in effect; margin compression math being priced in by buyside"
+    },
+    {
+      "force_id": "E1",
+      "direction": "bearish",
+      "weight_share": 0.15,
+      "f1_tier": null,
+      "rationale": "Mega-cap concentration unwind amplifies the move; CTA/systematic de-risking post-3-day weekend"
+    },
+    {
+      "force_id": "E2",
+      "direction": "bearish",
+      "weight_share": 0.1,
+      "f1_tier": null,
+      "rationale": "Risk-off regime; VIX elevated on tariff + Taiwan geopolitical overhang"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": true,
+  "confidence": "high",
+  "notes": "CRITICAL regime-changing move. Gap priority HIGH aligns with 3-day weekend risk accumulation. Z-score -3.62 places this as a 1-in-several-hundred-trading-day event. Sets up Tuesday-Thursday consolidation and subsequent recovery."
+}

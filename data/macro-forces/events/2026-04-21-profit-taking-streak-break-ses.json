@@ -1,0 +1,69 @@
+{
+  "id": "2026-04-21-profit-taking-streak-break-ses",
+  "date": "2026-04-21",
+  "event_window": "intraday",
+  "primary_catalyst": {
+    "description": "Profit-taking / streak-break session. Stocks dropped on concerns that US-Iran peace deal would not be struck before ceasefire expiration Wed Apr 22. S&P -0.63% to 7,064.01, Nasdaq -0.59%. AMD +~3% (diversification trade still in play), QCOM -1%. Google (April 22) announced two new in-house AI chips (Ironwood TPU v7) \u00e2\u20ac\u201d custom silicon displacement narrative weighed on NVDA.",
+    "source_url": "https://www.cnbc.com/2026/04/20/stock-market-today-live-updates.html"
+  },
+  "secondary_catalysts": [
+    {
+      "description": "Google unveiled 2 new AI chips (TPU Ironwood) positioned as NVDA competitor \u00e2\u20ac\u201d custom silicon displacement headline (article dated Apr 22 but news flow likely ran into Apr 21)",
+      "source_url": "https://www.fool.com/investing/2026/04/22/google-unveils-2-new-ai-chips-to-take-on-nvidia/"
+    }
+  ],
+  "price_data": {
+    "prior_close": 202.06,
+    "event_day": {
+      "open": 202.13,
+      "high": 202.75,
+      "low": 199.0,
+      "close": 199.88,
+      "volume": 107945303,
+      "gap_open_pct": 0.035,
+      "intraday_range_pct": 1.855,
+      "close_change_pct": -1.08,
+      "close_vs_open_pct": -1.113
+    }
+  },
+  "statistical_context": {
+    "close_move_sigma": -0.909,
+    "volume_sigma": -1.66,
+    "range_expansion_sigma": -0.654,
+    "gap_sigma": -0.081,
+    "volume_baseline": 157864336
+  },
+  "reaction_classification": {
+    "close": "negligible",
+    "volume": "significant",
+    "range": "negligible"
+  },
+  "gap_priority": "low",
+  "force_attributions": [
+    {
+      "force_id": "E1",
+      "direction": "bearish",
+      "weight_share": 0.45,
+      "f1_tier": null,
+      "rationale": "Low-volume (-1.66 vol z) profit-taking after 10+ day streak; positioning unwind, not fundamental reversal"
+    },
+    {
+      "force_id": "D2",
+      "direction": "bearish",
+      "weight_share": 0.3,
+      "f1_tier": null,
+      "rationale": "Google TPU v7 / Ironwood announcement re-engaged the custom silicon displacement narrative"
+    },
+    {
+      "force_id": "E2",
+      "direction": "bearish",
+      "weight_share": 0.25,
+      "f1_tier": null,
+      "rationale": "Iran ceasefire expiration anxiety re-entered the tape ahead of Apr 22 deadline"
+    }
+  ],
+  "f1_attribution": null,
+  "confounded": true,
+  "confidence": "medium",
+  "notes": "LOW priority. Profit-taking after big streak; TPU announcement from Google the fundamental kicker on the downside."
+}

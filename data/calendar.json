@@ -1,0 +1,86 @@
+[
+  {
+    "date": "2026-05-20",
+    "type": "earnings",
+    "ticker": "NVDA",
+    "importance": "critical",
+    "affects_forces": ["A1", "A2", "A3", "B1", "C1", "D1", "D2", "D3"],
+    "primary_source_url": "https://investor.nvidia.com/financial-information/financial-results/default.aspx",
+    "last_verified_date": "2026-05-18",
+    "confirmed": true,
+    "label": "NVDA Q1 FY27 Earnings",
+    "notes": "Confirmed 2026-05-18 via investor.nvidia.com. Previously mis-entered as 2026-05-27 in prior tooling — that date was incorrect."
+  },
+  {
+    "date": "2026-08-19",
+    "type": "earnings",
+    "ticker": "NVDA",
+    "importance": "critical",
+    "affects_forces": ["A1", "A2", "A3", "B1", "C1", "D1", "D2", "D3"],
+    "primary_source_url": "https://investor.nvidia.com/financial-information/financial-results/default.aspx",
+    "last_verified_date": "2026-05-18",
+    "confirmed": false,
+    "label": "NVDA Q2 FY27 Earnings (estimated)",
+    "notes": "Estimate only. NVDA typically reports ~8 weeks after quarter end (Q2 FY27 ends July 27). Verify against IR page when posted."
+  },
+  {
+    "date": "2026-05-20",
+    "type": "economic",
+    "ticker": null,
+    "importance": "moderate",
+    "affects_forces": ["C3"],
+    "primary_source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "last_verified_date": "2026-05-18",
+    "confirmed": true,
+    "label": "FOMC Meeting Minutes (May 6-7 meeting)",
+    "notes": "Minutes of the May 6-7 FOMC meeting released 3 weeks after decision day."
+  },
+  {
+    "date": "2026-06-10",
+    "type": "economic",
+    "ticker": null,
+    "importance": "high",
+    "affects_forces": ["C3", "E2"],
+    "primary_source_url": "https://www.bls.gov/schedule/news_release/cpi.htm",
+    "last_verified_date": "2026-05-18",
+    "confirmed": true,
+    "label": "CPI — May 2026",
+    "notes": "Consumer Price Index for May 2026. Key Fed input ahead of June 18 FOMC."
+  },
+  {
+    "date": "2026-06-11",
+    "type": "economic",
+    "ticker": null,
+    "importance": "moderate",
+    "affects_forces": ["C3", "E2"],
+    "primary_source_url": "https://www.bls.gov/schedule/news_release/cpi.htm",
+    "last_verified_date": "2026-05-18",
+    "confirmed": true,
+    "label": "PPI — May 2026",
+    "notes": "Producer Price Index for May 2026."
+  },
+  {
+    "date": "2026-06-10",
+    "type": "economic",
+    "ticker": null,
+    "importance": "moderate",
+    "affects_forces": ["C3"],
+    "primary_source_url": "https://www.bls.gov/schedule/news_release/empsit.htm",
+    "last_verified_date": "2026-05-18",
+    "confirmed": false,
+    "label": "Non-Farm Payrolls — May 2026 (date estimated)",
+    "notes": "NFP typically released first Friday of the month. Verify exact date."
+  },
+  {
+    "date": "2026-06-10",
+    "type": "economic",
+    "ticker": null,
+    "importance": "moderate",
+    "affects_forces": ["B1", "A1"],
+    "primary_source_url": "https://ir.tsmc.com/english/financials/monthly-revenue",
+    "last_verified_date": "2026-05-18",
+    "confirmed": false,
+    "label": "TSMC Monthly Revenue — May 2026 (date estimated)",
+    "notes": "TSMC releases monthly revenue ~10th of following month. Verify exact date."
+  }
+]
