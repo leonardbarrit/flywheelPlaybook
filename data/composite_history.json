@@ -28,6 +28,9 @@
       "C4",
       "D3"
     ],
-    "nvda_close": null
+    "nvda_open": 131.5,
+    "nvda_close": 129.8,
+    "gap_pct": null,
+    "intraday_reversal": null
   }
 ]

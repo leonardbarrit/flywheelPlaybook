@@ -24,11 +24,14 @@ py skills/calendar-engine/scripts/verify_calendar.py --as-of 2026-05-18
 py skills/calendar-engine/scripts/compute_density.py --window data\_tmp_window.json
 
 # Composite score + history log (Phase 3A)
-# Run composite.py to recompute AND append to composite_history.json
-# Pass --nvda-close if NVDA close price is available from positions.json or arguments
-py skills/force-attribution/scripts/composite.py --nvda-close {price_if_known}
-# If no price available:
+# Run composite.py to recompute AND upsert today's entry in composite_history.json.
+# Extract NVDA open and/or close from $ARGUMENTS if supplied. Use whichever are available:
+py skills/force-attribution/scripts/composite.py --nvda-open {open} --nvda-close {close}
+# Morning session (open only, typical for Pacific Time amateur-hour workflow):
+py skills/force-attribution/scripts/composite.py --nvda-open {open}
+# Neither available:
 py skills/force-attribution/scripts/composite.py
+# gap_pct and intraday_reversal are computed automatically from prior history entry.
 
 # Position risk (using file intermediate)
 py skills/position-risk/scripts/compute_overlap.py --window data\_tmp_window.json | Out-File -Encoding utf8 data\_tmp_overlap.json
@@ -118,7 +121,9 @@ NVDA earnings window: [PRE-DRIFT T-N | EARNINGS EVENT | POST-DRIFT T+N | OUTSIDE
 Score: [composite_score] — [interpretation]
 Net bullish: [net_bullish] | Net bearish: [net_bearish] | F1 multiplier: [f1_multiplier]×
 Active: [active_force_count] | Attenuating: [attenuating_force_count] | Dormant: [dormant_force_count]
-[Flag if composite.json is missing or date is >7 days old: "COMPOSITE STALE — run /macro-update"]
+[If nvda_open recorded: "NVDA open: $X.XX | Overnight gap: +/-X.XX%"]
+[If intraday_reversal=true: "INTRADAY REVERSAL — open direction diverged from close"]
+[If composite.json missing or date >7 days old: "COMPOSITE STALE — run /macro-update"]
 
 ### Position Risk
 [Each open option: TICKER STRIKE EXP | DTE | RISK_TIER | flags]

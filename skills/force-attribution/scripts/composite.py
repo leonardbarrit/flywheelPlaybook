@@ -2,14 +2,16 @@
 Recompute composite score from data/forces.json.
 
 Pure function: reads forces.json, computes net_bullish, net_bearish,
-applies F1 multiplier, writes data/composite.json, appends to
-data/composite_history.json.
+applies F1 multiplier, writes data/composite.json, upserts today's
+entry into data/composite_history.json.
 
 Called after every update_force_state.py run and by /status.
 
 Usage:
     py composite.py
-    py composite.py --nvda-close 131.25
+    py composite.py --nvda-open 131.50
+    py composite.py --nvda-close 129.80
+    py composite.py --nvda-open 131.50 --nvda-close 129.80
     py composite.py --forces data/forces.json --out data/composite.json
     py composite.py --no-history
 """
@@ -99,7 +101,24 @@ def compute(forces_data: dict) -> dict:
     }
 
 
-def append_history(result: dict, history_path: Path, nvda_close: float | None) -> None:
+def _intraday_reversal(nvda_open: float | None, nvda_close: float | None,
+                        prior_close: float | None) -> bool | None:
+    """
+    True when the open gap direction and the close direction diverge.
+    Gap direction = sign(open - prior_close). Close direction = sign(close - prior_close).
+    Returns None if either price is missing.
+    """
+    if nvda_open is None or nvda_close is None or prior_close is None:
+        return None
+    gap_dir = nvda_open - prior_close
+    close_dir = nvda_close - prior_close
+    if gap_dir == 0 or close_dir == 0:
+        return None
+    return (gap_dir > 0) != (close_dir > 0)
+
+
+def append_history(result: dict, history_path: Path,
+                   nvda_open: float | None, nvda_close: float | None) -> None:
     """Upsert a composite snapshot into composite_history.json (one entry per date)."""
     if history_path.exists():
         with open(history_path, encoding="utf-8-sig") as f:
@@ -108,6 +127,19 @@ def append_history(result: dict, history_path: Path, nvda_close: float | None) -
         history = []
 
     today = result["date"]
+
+    # Prior close for gap calculation — last entry with a recorded close
+    prior_close = next(
+        (e["nvda_close"] for e in reversed(history)
+         if e.get("nvda_close") is not None and e["date"] != today),
+        None
+    )
+    gap_pct = None
+    if nvda_open is not None and prior_close is not None:
+        gap_pct = round((nvda_open - prior_close) / prior_close * 100, 3)
+
+    reversal = _intraday_reversal(nvda_open, nvda_close, prior_close)
+
     entry = {
         "date": today,
         "composite_score": result["composite_score"],
@@ -118,15 +150,26 @@ def append_history(result: dict, history_path: Path, nvda_close: float | None) -
         "active_forces": result["_active_forces"],
         "attenuating_forces": result["_attenuating_forces"],
         "dormant_forces": result["_dormant_forces"],
+        "nvda_open": nvda_open,
         "nvda_close": nvda_close,
+        "gap_pct": gap_pct,
+        "intraday_reversal": reversal,
     }
 
-    # Replace existing entry for today if present, otherwise append
+    # Upsert: replace today's entry if present, preserving any prices not re-supplied
     idx = next((i for i, e in enumerate(history) if e["date"] == today), None)
     if idx is not None:
-        # Preserve nvda_close from existing entry if not supplied in this run
-        if nvda_close is None and history[idx].get("nvda_close") is not None:
-            entry["nvda_close"] = history[idx]["nvda_close"]
+        existing = history[idx]
+        if nvda_open is None and existing.get("nvda_open") is not None:
+            entry["nvda_open"] = existing["nvda_open"]
+        if nvda_close is None and existing.get("nvda_close") is not None:
+            entry["nvda_close"] = existing["nvda_close"]
+        # Recompute derived fields with any preserved prices
+        if entry["nvda_open"] is not None and prior_close is not None:
+            entry["gap_pct"] = round((entry["nvda_open"] - prior_close) / prior_close * 100, 3)
+        entry["intraday_reversal"] = _intraday_reversal(
+            entry["nvda_open"], entry["nvda_close"], prior_close
+        )
         history[idx] = entry
     else:
         history.append(entry)
@@ -145,6 +188,7 @@ if __name__ == "__main__":
     parser.add_argument("--forces", default=None)
     parser.add_argument("--out", default=None)
     parser.add_argument("--history", default=None)
+    parser.add_argument("--nvda-open", type=float, default=None, dest="nvda_open")
     parser.add_argument("--nvda-close", type=float, default=None, dest="nvda_close")
     parser.add_argument("--no-history", action="store_true", dest="no_history")
     args = parser.parse_args()
@@ -163,6 +207,6 @@ if __name__ == "__main__":
         json.dump(output, f, indent=2)
 
     if not args.no_history:
-        append_history(result, history_path, args.nvda_close)
+        append_history(result, history_path, args.nvda_open, args.nvda_close)
 
     print(json.dumps(output, indent=2))

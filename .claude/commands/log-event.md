@@ -2,9 +2,9 @@
 
 Log a market event into the force attribution pipeline. Classifies the event, updates force states, recomputes the composite score, and appends to events.json and outcomes.json.
 
-Usage: `/log-event "event description" [--ticker TICKER] [--date YYYY-MM-DD] [--z-score N] [--close-pct N]`
+Usage: `/log-event "event description" [--ticker TICKER] [--date YYYY-MM-DD] [--open-pct N] [--close-pct N] [--z-score N]`
 
-All arguments after the description are optional. If `--date` is omitted, today's date is used. If `--z-score` or `--close-pct` are omitted, use 0.0 and note in the entry that price data was not supplied.
+All arguments after the description are optional. If `--date` is omitted, today's date is used. Supply `--open-pct` for the gap open move and `--close-pct` for the day's close move. When both are supplied and their directions diverge, `intraday_reversal` is set to true on the event entry.
 
 ---
 
@@ -63,6 +63,9 @@ Read the current `data/events.json`. Build a new entry with this schema:
     {"force_id": "{primary_force_id}", "direction": "{direction}", "weight_share": 1.0}
   ],
   "f1_attribution": null,
+  "open_pct": {open_pct or null},
+  "close_pct": {close_pct or null},
+  "intraday_reversal": {true if open_pct and close_pct have opposite signs, else null},
   "z_score_close": {z_score},
   "z_score_volume": null,
   "reaction_class": null,

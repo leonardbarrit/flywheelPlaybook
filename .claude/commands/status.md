@@ -18,11 +18,13 @@ The agent should execute this sequence in order:
 7. Report scaling roadmap progress
 
 **Block C — Composite score + history log (run in parallel with Block A)**
-8. If NVDA close price is available (supplied in arguments or from positions.json mktPrice), run:
-   `py skills/force-attribution/scripts/composite.py --nvda-close {price}`
-   Otherwise run:
-   `py skills/force-attribution/scripts/composite.py`
+8. Extract NVDA prices from $ARGUMENTS if supplied. Then run composite.py with whatever is available:
+   - Open price only (typical morning session): `py skills/force-attribution/scripts/composite.py --nvda-open {open}`
+   - Close price only: `py skills/force-attribution/scripts/composite.py --nvda-close {close}`
+   - Both: `py skills/force-attribution/scripts/composite.py --nvda-open {open} --nvda-close {close}`
+   - Neither: `py skills/force-attribution/scripts/composite.py`
    This recomputes composite.json AND upserts today's entry into composite_history.json.
+   Gap % (open vs prior close) and intraday_reversal are computed automatically when prices allow.
 
 **Block D — Position risk (requires Block A output)**
 9. Run `py skills/position-risk/scripts/compute_overlap.py --window data\_tmp_window.json` → save to `data\_tmp_overlap.json`
@@ -52,7 +54,9 @@ Report format:
 Score: [composite_score] — [interpretation]
 Net bullish: [net_bullish] | Net bearish: [net_bearish] | F1 multiplier: [f1_multiplier]×
 Active forces: [active_force_count] | Attenuating: [attenuating_force_count] | Dormant: [dormant_force_count]
-[As of: composite date. If composite.json missing or stale (>7 days), flag: "COMPOSITE STALE — run /macro-update"]
+[If nvda_open supplied: "NVDA open: $X.XX | Gap: +/-X.XX% vs prior close"]
+[If both open and close supplied and intraday_reversal=true: "INTRADAY REVERSAL — open direction diverged from close"]
+[If composite.json missing or stale (>7 days): "COMPOSITE STALE — run /macro-update"]
 
 ### Position Risk
 [For each open option: ticker | strike | exp | DTE | risk_tier | flags]

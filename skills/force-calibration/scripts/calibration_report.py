@@ -94,15 +94,18 @@ def render(entries: list[dict], stats: dict, transitions: list[dict]) -> str:
         return "\n".join(lines)
 
     lines.append(f"--- Score History ({stats['count']} entries) ---")
-    lines.append(f"{'Date':<12} {'Score':>8} {'Net Bull':>10} {'Net Bear':>10} {'F1':>5} {'Active':>7} {'NVDA':>8}  Forces Active")
-    lines.append("-" * 90)
+    lines.append(f"{'Date':<12} {'Score':>8} {'Net Bull':>10} {'Net Bear':>10} {'F1':>5} {'Active':>7} {'Open':>8} {'Close':>8} {'Gap%':>6} {'Rev':>4}  Forces Active")
+    lines.append("-" * 110)
     for e in entries:
-        nvda = f"  {e['nvda_close']:.2f}" if e.get("nvda_close") else "     -"
+        o = f"{e['nvda_open']:.2f}" if e.get("nvda_open") else "     -"
+        c = f"{e['nvda_close']:.2f}" if e.get("nvda_close") else "     -"
+        g = f"{e['gap_pct']:+.2f}" if e.get("gap_pct") is not None else "     -"
+        rev = "YES" if e.get("intraday_reversal") else (" NO" if e.get("intraday_reversal") is False else "  -")
         active_str = ", ".join(e.get("active_forces", []))
         lines.append(
             f"{e['date']:<12} {e['composite_score']:>8.3f} {e['net_bullish']:>10.3f} "
             f"{e['net_bearish']:>10.3f} {e['f1_multiplier']:>5.2f} "
-            f"{len(e.get('active_forces', [])):>7}  {nvda}  {active_str}"
+            f"{len(e.get('active_forces', [])):>7} {o:>8} {c:>8} {g:>6} {rev:>4}  {active_str}"
         )
 
     lines.append("")
