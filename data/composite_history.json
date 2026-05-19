@@ -1,0 +1,33 @@
+[
+  {
+    "date": "2026-05-18",
+    "composite_score": 17.362,
+    "net_bullish": 23.471,
+    "net_bearish": -11.896,
+    "net_directional": 11.575,
+    "f1_multiplier": 1.5,
+    "active_forces": [
+      "A1",
+      "A2",
+      "B1",
+      "B2",
+      "B3",
+      "C1",
+      "D1",
+      "D2",
+      "E1",
+      "E2",
+      "F1"
+    ],
+    "attenuating_forces": [
+      "C2",
+      "C3"
+    ],
+    "dormant_forces": [
+      "A3",
+      "C4",
+      "D3"
+    ],
+    "nvda_close": null
+  }
+]

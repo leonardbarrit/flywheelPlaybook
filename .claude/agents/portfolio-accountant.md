@@ -23,8 +23,12 @@ py skills/calendar-engine/scripts/verify_calendar.py --as-of 2026-05-18
 # Density summary
 py skills/calendar-engine/scripts/compute_density.py --window data\_tmp_window.json
 
-# Composite score (Phase 2)
-# Read data/composite.json directly — no script needed
+# Composite score + history log (Phase 3A)
+# Run composite.py to recompute AND append to composite_history.json
+# Pass --nvda-close if NVDA close price is available from positions.json or arguments
+py skills/force-attribution/scripts/composite.py --nvda-close {price_if_known}
+# If no price available:
+py skills/force-attribution/scripts/composite.py
 
 # Position risk (using file intermediate)
 py skills/position-risk/scripts/compute_overlap.py --window data\_tmp_window.json | Out-File -Encoding utf8 data\_tmp_overlap.json

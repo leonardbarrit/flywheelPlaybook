@@ -81,9 +81,18 @@ The following are point-in-time analysis outputs written by agents. The aggregat
 
 ---
 
-## Phase 3 files (not yet created)
+### `composite_history.json`
+- **Owner:** Phase 3A
+- **Maintained by:** `skills/force-attribution/scripts/composite.py` (called by every `/status` run)
+- **Schema:** Array of daily snapshots: `{ date, composite_score, net_bullish, net_bearish, net_directional, f1_multiplier, active_forces[], attenuating_forces[], dormant_forces[], nvda_close }`
+  - One entry per date. If `/status` runs multiple times in a day, the last run wins (NVDA close is preserved if not re-supplied).
+  - `nvda_close`: populated when NVDA price is available in `/status` arguments or positions.json; otherwise null.
+- **Update cadence:** Every `/status` run
+- **Convention:** Written by composite.py only. Do not edit manually.
 
-No additional data files required for Phase 3. Phase 3 calibration reads existing `events.json` and `outcomes.json` with weighting that discounts `prediction_type="retrospective"` entries.
+## Phase 3B files (not yet created — gates on Phase 4)
+
+- `channel_observations.json` — dated channel dominance observations (ascending/descending/wedge) sourced from Len's Phase 4 channel drawings. Calibration input for recalibrate_weights.py.
 
 ---
 

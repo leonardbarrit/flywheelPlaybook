@@ -17,8 +17,12 @@ The agent should execute this sequence in order:
 6. Compute trailing 3-month income metrics
 7. Report scaling roadmap progress
 
-**Block C — Composite score (run in parallel with Block A)**
-8. Read `data/composite.json`
+**Block C — Composite score + history log (run in parallel with Block A)**
+8. If NVDA close price is available (supplied in arguments or from positions.json mktPrice), run:
+   `py skills/force-attribution/scripts/composite.py --nvda-close {price}`
+   Otherwise run:
+   `py skills/force-attribution/scripts/composite.py`
+   This recomputes composite.json AND upserts today's entry into composite_history.json.
 
 **Block D — Position risk (requires Block A output)**
 9. Run `py skills/position-risk/scripts/compute_overlap.py --window data\_tmp_window.json` → save to `data\_tmp_overlap.json`

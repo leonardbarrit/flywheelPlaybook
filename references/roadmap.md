@@ -71,7 +71,8 @@ flywheel-claude-code/
 │   ├── calendar.json                          Phase 1                 Maintained primary-source catalyst calendar
 │   ├── forces.json                            Phase 2                 Force taxonomy + current state
 │   ├── events.json                            Phase 2                 Append-only attributed event log
-│   ├── outcomes.json                          Phase 3                 Append-only predicted-vs-realized ledger
+│   ├── outcomes.json                          Phase 2                 Append-only per-force directional ledger
+│   ├── composite_history.json                 Phase 3A                Time-series of composite scores (one entry per date)
 │   └── archive/                               Phase 1                 Archived data (preserved, out of active path)
 │       └── README.md                          Phase 1
 │
@@ -104,12 +105,12 @@ flywheel-claude-code/
 │   │       ├── update_force_state.py                                  Recompute ACTIVE/ATTENUATING/DORMANT
 │   │       └── composite.py                                           Pure function over forces.json → composite score
 │   │
-│   ├── force-calibration/                     Phase 3
-│   │   ├── SKILL.md
+│   ├── force-calibration/                     Phase 3A/3B
+│   │   ├── SKILL.md                           Phase 3A
 │   │   └── scripts/
-│   │       ├── log_outcome.py                                         Append predicted vs realized to outcomes.json
-│   │       ├── recalibrate_weights.py                                 Rolling-window Bayesian update
-│   │       └── calibration_report.py                                  Per-force accuracy summary
+│   │       ├── calibration_report.py          Phase 3A                Composite score trend viewer (read-only)
+│   │       ├── log_outcome.py                 Phase 3B                Log realized channel dominance observations
+│   │       └── recalibrate_weights.py         Phase 3B                Adjust force weights against channel observations
 │   │
 │   ├── channel-pivots/                        Phase 4                 Exploratory — spec subject to revision
 │   ├── channel-regime/                        Phase 4                 Exploratory — spec subject to revision
@@ -133,7 +134,7 @@ flywheel-claude-code/
     ├── /verify-calendar                       Phase 1                 Manual trigger for staleness check
     ├── /log-event                             Phase 2                 Attribute and append a new significant event
     ├── /forces                                Phase 2                 Current force state dump
-    └── /recalibrate                           Phase 3                 Manual trigger for weight recalibration
+    └── /recalibrate                           Phase 3A                Trend viewer now; weight recalibration in Phase 3B
 ```
 
 ### Conventions
@@ -221,19 +222,50 @@ This converts the roadmap from a passive document into an active enforcement mec
 
 ---
 
-## Phase 3 — Force calibration (later)
+## Phase 3 — Force calibration (split into 3A and 3B)
 
-**Goal:** The system starts learning. Force weights adjust based on predicted vs realized outcomes over a rolling window. Every weight change is a git diff with a rationale comment.
+### Design principle
 
-### Deliverables
+Macro force data (composite score) and price action observations (channel dominance) are collected independently to avoid confirmation bias. The composite score accumulates on its own timeline; channel dominance observations come from Len's chart readings once Phase 4 produces channel drawings. Only after the two datasets exist independently does calibration run.
 
-**Skill: `skills/force-calibration/`** (per canonical tree)
+---
 
-**New slash command:** `/recalibrate` (per canonical tree)
+### Phase 3A — Composite score history (active)
 
-### Acceptance criteria
-- After 30+ events logged with outcomes, `recalibrate_weights.py` produces meaningful weight changes for forces where prediction accuracy diverges from baseline.
+**Goal:** Persist the composite score over time as an independent variable. Every `/status` run appends a snapshot to `data/composite_history.json`. No weight changes. No channel input.
+
+**Deliverables:**
+
+- `data/composite_history.json` — one entry per date: composite_score, net_bullish, net_bearish, f1_multiplier, active/attenuating/dormant force lists, NVDA close (if supplied). Updated by `composite.py`, piggybacked on `/status`.
+- `skills/force-calibration/scripts/calibration_report.py` — read-only trend viewer: score trajectory, score statistics, force state transitions, Phase 3B readiness summary.
+- `skills/force-calibration/SKILL.md`
+- `.claude/commands/recalibrate.md` — invokes calibration_report.py; documents Phase 3B deferral.
+
+**Acceptance criteria:**
+- Every `/status` run appends to composite_history.json without any user action.
+- `/recalibrate` shows the score trajectory and makes no changes to any file.
+
+**Status: Complete as of 2026-05-18.**
+
+---
+
+### Phase 3B — Threshold discovery + weight calibration (gates on Phase 4)
+
+**Goal:** Match composite score history against dated channel dominance observations from Phase 4 channel drawings. Discover the score thresholds separating ascending / descending / wedge regimes. Then adjust force weights so the composite score crosses those thresholds more reliably.
+
+**Gate condition:** Phase 4 must produce channel drawings with dated dominance periods before Phase 3B can activate.
+
+**Deliverables (not yet built):**
+
+- `skills/force-calibration/scripts/log_outcome.py` — accepts dated channel dominance observations (ascending / descending / wedge) sourced from Len's chart readings. Appends to a new `data/channel_observations.json` ledger.
+- `skills/force-calibration/scripts/recalibrate_weights.py` — matches channel_observations against composite_history; identifies score thresholds; adjusts force weights in forces.json with guardrails (minimum N observations per force, maximum ±15% weight change per cycle). Every run produces a human-readable diff for approval before committing.
+- Updated `/recalibrate` — adds weight-change mode once 3B activates.
+
+**Acceptance criteria:**
+- `recalibrate_weights.py` requires explicit approval before writing to forces.json.
+- Every approved weight change is committed to git with message: `recalibrate: YYYY-MM-DD -- <force> +/-N% -- N=X obs, threshold=Y`.
 - `git log data/forces.json` shows weight evolution over time.
+- The composite.py interpretation thresholds (currently arbitrary) are replaced with empirically derived values once the threshold is confirmed across sufficient observations.
 
 ---
 
