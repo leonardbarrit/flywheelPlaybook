@@ -110,6 +110,7 @@ flywheel-claude-code/
 │   │   ├── SKILL.md                           Phase 3A
 │   │   └── scripts/
 │   │       ├── calibration_report.py          Phase 3A                Composite score trend viewer (read-only)
+│   │       ├── channel_correlation.py         Phase 3B                Force events vs breakout timing correlation
 │   │       ├── log_outcome.py                 Phase 3B                Log realized channel dominance observations
 │   │       └── recalibrate_weights.py         Phase 3B                Adjust force weights against channel observations
 │   │
@@ -139,6 +140,7 @@ flywheel-claude-code/
     ├── /calendar                              Phase 1                 Show forward catalyst window
     ├── /verify-calendar                       Phase 1                 Manual trigger for staleness check
     ├── /log-event                             RETIRED                 Replaced by automated price pipeline
+    ├── /log-channel                           Phase 3B                Record channel drawing; compute apex and T+45 projection
     ├── /forces                                Phase 2                 Current force state dump
     └── /recalibrate                           Phase 3A                Trend viewer now; weight recalibration in Phase 3B
 ```
@@ -263,8 +265,10 @@ Macro force data (composite score) and price action observations (channel domina
 
 **Deliverables (not yet built):**
 
-- `skills/force-calibration/scripts/log_outcome.py` — accepts dated channel dominance observations (ascending / descending / wedge) sourced from Len's chart readings. Appends to a new `data/channel_observations.json` ledger.
-- `skills/force-calibration/scripts/recalibrate_weights.py` — matches channel_observations against composite_history; identifies score thresholds; adjusts force weights in forces.json with guardrails (minimum N observations per force, maximum ±15% weight change per cycle). Every run produces a human-readable diff for approval before committing.
+- `data/channel_drawings.json` — append-on-draw, update-on-resolve ledger. Each entry: anchor parameters, computed slopes, apex prediction, T+45 strike projection, macro composite context at time of drawing, outcome block (breakout date, direction, apex error, premature flag, preceding force event IDs).
+- `skills/force-calibration/scripts/channel_correlation.py` — reads channel_drawings.json + events.json; identifies force events in a lookback window before each breakout; builds frequency tables for premature vs on-time breakouts; flags candidate "breakout-forcing" forces for Phase 3B weight calibration.
+- `/log-channel` command — practitioner supplies anchor dates/prices from Fidelity chart; command computes slope, apex, T+45 projection, reads macro context, appends to channel_drawings.json.
+- `skills/force-calibration/scripts/recalibrate_weights.py` — matches channel_drawings outcomes against composite_history; identifies score thresholds; adjusts force weights in forces.json with guardrails (minimum N observations per force, maximum ±15% weight change per cycle). Every run produces a human-readable diff for approval before committing.
 - Updated `/recalibrate` — adds weight-change mode once 3B activates.
 
 **Acceptance criteria:**

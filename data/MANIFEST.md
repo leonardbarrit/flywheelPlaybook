@@ -90,9 +90,17 @@ The following are point-in-time analysis outputs written by agents. The aggregat
 - **Update cadence:** Every `/status` run
 - **Convention:** Written by composite.py only. Do not edit manually.
 
-## Phase 3B files (not yet created — gates on Phase 4)
+### `channel_drawings.json`
+- **Owner:** Phase 3B / Phase 4
+- **Maintained by:** `/log-channel` command; outcome fields updated on breakout resolution
+- **Schema:** Array of drawing records. Each entry: `{ drawing_id, drawn_date, timeframe, ticker, regime, notes, ascending_channel: { compression_rail, containment_rail }, descending_channel: { compression_rail, containment_rail }, wedge: { apex_predicted_date, apex_days_forward_at_drawing, apex_basis, asc_containment_t45, desc_compression_t45 }, macro_context: { composite_score, composite_date, active_forces[], attenuating_forces[], dormant_forces[], f1_multiplier }, outcome: { resolved, breakout_date, breakout_direction, breakout_price, apex_prediction_error_days, premature, preceding_force_event_ids[], notes } }`
+- **Update cadence:** Append new drawing on each `/log-channel` call. Update outcome block in place when breakout is resolved.
+- **Convention:** New drawings are append-only. Outcome blocks are edited in place (channel drawings are maintained state). Never delete an entry — log corrections as new entries referencing the superseded drawing_id.
+- **Correlation analysis:** `skills/force-calibration/scripts/channel_correlation.py` — identifies force events preceding breakouts, flags breakout-forcing force candidates.
 
-- `channel_observations.json` — dated channel dominance observations (ascending/descending/wedge) sourced from Len's Phase 4 channel drawings. Calibration input for recalibrate_weights.py.
+## Phase 3B files (not yet active — gates on Phase 4)
+
+- `channel_observations.json` — dated channel dominance observations (ascending/descending/wedge) sourced from Len's Phase 4 channel drawings. Calibration input for recalibrate_weights.py. Superseded in scope by `channel_drawings.json` which captures this and more.
 
 ---
 

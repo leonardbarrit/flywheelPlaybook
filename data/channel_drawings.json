@@ -1,0 +1,68 @@
+[
+  {
+    "drawing_id": "draw-2026-05-19-001",
+    "drawn_date": "2026-05-19",
+    "timeframe": "4h",
+    "ticker": "NVDA",
+    "regime": "converging",
+    "notes": "Ascending channel 93 bars. Two defended wick breaches at ascending containment rail (~4/27 spike to 236.54 and ~5/11 area). Descending channel 5 days old, steep. Descending bottom rail anchored at geometric intersection with ascending containment rail — no price pivot yet. Recency weighting applied: touches from 5/11 forward weighted over 4/13-4/27 cluster.",
+
+    "ascending_channel": {
+      "compression_rail": {
+        "anchor1": {"date": "2026-03-31", "price": 164.27, "type": "APL", "confirmed": true},
+        "anchor2": {"date": null, "price": null, "type": "VFD", "confirmed": false, "_note": "VFD not resolvable from chart at this resolution — not supplied"},
+        "slope_per_4h_bar": null,
+        "status": "partial"
+      },
+      "containment_rail": {
+        "anchor": {"date": "2026-05-12", "price": 236.54, "type": "defended_breach", "confirmed": true},
+        "offset_from_compression": null,
+        "status": "confirmed",
+        "_note": "Top rail adjusted to maximize recent touch points (5/11 forward). Two earlier touches (4/13-4/27 cluster) discounted because resistance was subsequently breached."
+      }
+    },
+
+    "descending_channel": {
+      "compression_rail": {
+        "anchor1": {"date": "2026-05-12", "price": 236.54, "type": "APH", "confirmed": true},
+        "anchor2": {"date": "2026-05-19", "price": 220.91, "type": "provisional_VSR", "confirmed": false, "_note": "Current price used as provisional second anchor. No qualifying VSR has emerged yet."},
+        "slope_per_4h_bar": null,
+        "status": "provisional"
+      },
+      "containment_rail": {
+        "anchor": {"date": null, "price": null, "type": "geometric_intersection", "confirmed": false, "_note": "Bottom rail anchored at projected intersection with ascending containment rail. No price pivot has tested this level."},
+        "offset_from_compression": null,
+        "status": "provisional"
+      }
+    },
+
+    "wedge": {
+      "apex_predicted_date": "2026-06-02",
+      "apex_days_forward_at_drawing": 14,
+      "apex_basis": "visual_estimate",
+      "asc_containment_t45": null,
+      "desc_compression_t45": null,
+      "_note": "T+45 from 2026-05-19 = 2026-07-03. Projections not computable without VFD and precise slopes."
+    },
+
+    "macro_context": {
+      "composite_score": 17.362,
+      "composite_date": "2026-05-18",
+      "active_forces": ["A1","A2","B1","B2","B3","C1","D1","D2","E1","E2","F1"],
+      "attenuating_forces": ["C2","C3"],
+      "dormant_forces": ["A3","C4","D3"],
+      "f1_multiplier": 1.5
+    },
+
+    "outcome": {
+      "resolved": false,
+      "breakout_date": null,
+      "breakout_direction": null,
+      "breakout_price": null,
+      "apex_prediction_error_days": null,
+      "premature": null,
+      "preceding_force_event_ids": [],
+      "notes": null
+    }
+  }
+]
