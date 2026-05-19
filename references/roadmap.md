@@ -78,6 +78,7 @@ flywheel-claude-code/
 │
 ├── references/
 │   ├── roadmap.md                             [verified]              This document
+│   ├── channel-spec.md                        [verified]              Phase 4 channel construction spec
 │   ├── data-sources.md                        Phase 1                 Primary source URLs per event type
 │   ├── force-event-mapping.md                 Phase 2                 Event type → affected force IDs lookup
 │   └── pattern-library.md                     Phase 2                 Empirical patterns documented

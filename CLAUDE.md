@@ -2,7 +2,7 @@
 
 This file is loaded automatically at the start of every Claude Code session in this project. It establishes operating context that does not persist between sessions otherwise.
 
-Last updated: 2026-05-18.
+Last updated: 2026-05-19.
 
 ---
 
@@ -63,8 +63,17 @@ Use these terms precisely. This vocabulary section is the operational baseline; 
 - **Compression Rail** — Slope-defining rail. Two-anchor (binary validity). Validates against closing-price evidence only.
 - **Containment Rail** — Parallel rail offset to one side. Single-anchor (validity earned through confirming touches). Validates against both closing and wick force-defense evidence.
 - **Compression Wedge** — Geometric apex where Ascending and Descending Compression Rails intersect.
+- **Provisional channel** — Channel fewer than ~10 bars old where VSR/VFD has not yet emerged. Top rail uses APH + current close as temporary second anchor; containment rail uses geometric intersection or first available close. Flagged as unconfirmed until a price anchor is established.
 
-**Channel construction is currently an open methodology question.** The deterministic algorithm produces slopes that diverge from Len's visual construction. Phase 4 will revisit. Until then, do not autonomously construct channels — defer to Len or work from explicitly-supplied anchor inputs.
+**Purpose of channel drawing (established 2026-05-19):**
+1. **Strike screener input** — Project the resistance rail T+45 days forward to find the OTM CC strike. Approximate is sufficient; precision is not the goal.
+2. **Wedge apex timing** — Where ascending and descending Compression Rails converge predicts when a breakout is imminent and drives mode and DTE selection.
+
+**Recency weighting is intentional methodology, not bias.** More recent price action carries more evidentiary weight when positioning rails. Touch evidence from before a breached resistance level is discounted relative to post-breach touch evidence. When two rail positions are defensible, prefer the one capturing the most recent confirming closes.
+
+**Regime classification is human judgment.** The algorithm presents candidate rails. The practitioner determines whether recent price action is (a) continuation of the existing trend, (b) start of a new opposing trend, or (c) a short-term correction. This determination is the analysis; the channel is the tool that structures it. Do not automate this judgment.
+
+**Channel construction is currently an open methodology question.** The deterministic algorithm produces slopes that diverge from Len's visual construction. Phase 4 will revisit. Until then, do not autonomously construct channels — defer to Len or work from explicitly-supplied anchor inputs. Full spec: `references/channel-spec.md`.
 
 ### Macro forces
 
@@ -114,15 +123,15 @@ For any term not defined here, consult the v22 Playbook in Google Drive rather t
 
 ## Current state
 
-As of 2026-05-18:
+As of 2026-05-19:
 
-- **Foundation:** operational per prior session context, subject to verification at session start. Existing subagents (weekend-session, roll-evaluator, monday-scanner, macro-analyst, portfolio-accountant) and slash commands (`/weekend`, `/scan-rolls`, `/macro`, `/status`) are believed to be in place. `data/positions.json` and `data/trades.json` are maintained via Fidelity screenshot workflow.
-- **`references/` directory** contains only `roadmap.md` (created 2026-05-18). Any other reference file the codebase mentions does not exist yet.
-- **Pre-Phase-1 cleanup:** **pending.** Inventory `data/` and triage obsolete files before Phase 1 deliverables. See `references/roadmap.md` Section "Pre-Phase-1 cleanup."
-- **Phase 1 (calendar engine + daily status):** not started. Awaiting cleanup.
-- **Phase 2 (force attribution + outcomes ledger):** scheduled.
-- **Phase 3 (force calibration):** scheduled.
-- **Phase 4 (channel pipeline):** deferred. Exploratory. Do not start until Phases 1–3 are stable.
+- **Foundation:** operational. Subagents (weekend-session, roll-evaluator, monday-scanner, macro-analyst, portfolio-accountant) and slash commands (`/weekend`, `/scan-rolls`, `/macro`, `/status`, `/forces`, `/recalibrate`) are in place and verified.
+- **`references/` directory** contains `roadmap.md` and `channel-spec.md` (created 2026-05-19).
+- **Phase 1 (calendar engine + daily status):** complete. `/status` runs full Block A–D sequence.
+- **Phase 2 (force attribution + outcomes ledger):** complete. `forces.json`, `events.json`, `outcomes.json` operational.
+- **Phase 3A (composite score history):** complete. `composite_history.json` accumulates on every `/status`. Price pipeline (`skills/price-data/`) fetches OHLCV via Massive.com, detects significant days, triggers forensic news research. `/log-event` retired.
+- **Phase 3B (weight calibration):** deferred. Gates on Phase 4 channel drawings.
+- **Phase 4 (channel pipeline):** deferred. Spec in `references/channel-spec.md`. Do not start until Phases 1–3 are stable in production.
 
 ---
 
@@ -180,7 +189,7 @@ As of 2026-05-18:
 
 ## Known open questions and gotchas
 
-- **Channel construction (Phase 4).** Algorithm produces slopes that diverge from visual construction. Spec is being revised. The "most recent VFD after APL" rule combined with the Compression Rail Discipline check currently filters out the visually-correct candidates. Open.
+- **Channel construction (Phase 4).** Algorithm produces slopes that diverge from visual construction. Core spec is now in `references/channel-spec.md`. Open questions: recency decay function for containment rail positioning, VFD iteration order, regime transition detection thresholds, multi-timeframe authority rule. Do not automate channel construction until Phase 4 activates.
 - **Earnings date verification.** NVDA Q1 FY27 confirmed at **2026-05-20** (investor.nvidia.com, verified 2026-05-18). Do not trust Fidelity options chain DTE labels — they may carry stale estimates. Always verify against issuer IR pages.
 - **No special vacation handling.** Daily `/status` is the universal protocol regardless of physical location. The Cancun miss occurred because Len couldn't action `/status`-equivalent information remotely; the fix is operational discipline, not a separate vacation mode.
 
