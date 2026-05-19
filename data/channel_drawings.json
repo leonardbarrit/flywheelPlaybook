@@ -5,32 +5,93 @@
     "timeframe": "4h",
     "ticker": "NVDA",
     "regime": "converging",
-    "notes": "Ascending channel 93 bars. Two defended wick breaches at ascending containment rail (~4/27 spike to 236.54 and ~5/11 area). Descending channel 5 days old, steep. Descending bottom rail anchored at geometric intersection with ascending containment rail — no price pivot yet. Recency weighting applied: touches from 5/11 forward weighted over 4/13-4/27 cluster.",
-
+    "notes": "SUPERSEDED by draw-2026-05-19-002. Seed entry created during system build — slopes not computed, containment offset not populated. Use 002 for analysis.",
     "ascending_channel": {
       "compression_rail": {
         "anchor1": {"date": "2026-03-31", "price": 164.27, "type": "APL", "confirmed": true},
-        "anchor2": {"date": null, "price": null, "type": "VFD", "confirmed": false, "_note": "VFD not resolvable from chart at this resolution — not supplied"},
+        "anchor2": {"date": null, "price": null, "type": "VFD", "confirmed": false},
         "slope_per_4h_bar": null,
         "status": "partial"
       },
       "containment_rail": {
         "anchor": {"date": "2026-05-12", "price": 236.54, "type": "defended_breach", "confirmed": true},
         "offset_from_compression": null,
-        "status": "confirmed",
-        "_note": "Top rail adjusted to maximize recent touch points (5/11 forward). Two earlier touches (4/13-4/27 cluster) discounted because resistance was subsequently breached."
+        "status": "confirmed"
+      }
+    },
+    "descending_channel": {
+      "compression_rail": {
+        "anchor1": {"date": "2026-05-12", "price": 236.54, "type": "APH", "confirmed": true},
+        "anchor2": {"date": "2026-05-19", "price": 220.91, "type": "provisional_VSR", "confirmed": false},
+        "slope_per_4h_bar": null,
+        "status": "provisional"
+      },
+      "containment_rail": {
+        "anchor": {"date": null, "price": null, "type": "geometric_intersection", "confirmed": false},
+        "offset_from_compression": null,
+        "status": "provisional"
+      }
+    },
+    "wedge": {
+      "apex_predicted_date": "2026-06-02",
+      "apex_days_forward_at_drawing": 14,
+      "apex_basis": "visual_estimate",
+      "asc_containment_t45": null,
+      "desc_compression_t45": null
+    },
+    "macro_context": {
+      "composite_score": 17.362,
+      "composite_date": "2026-05-18",
+      "active_forces": ["A1","A2","B1","B2","B3","C1","D1","D2","E1","E2","F1"],
+      "attenuating_forces": ["C2","C3"],
+      "dormant_forces": ["A3","C4","D3"],
+      "f1_multiplier": 1.5
+    },
+    "outcome": {
+      "resolved": false,
+      "breakout_date": null,
+      "breakout_direction": null,
+      "breakout_price": null,
+      "apex_prediction_error_days": null,
+      "premature": null,
+      "preceding_force_event_ids": [],
+      "notes": null
+    }
+  },
+  {
+    "drawing_id": "draw-2026-05-19-002",
+    "drawn_date": "2026-05-19",
+    "timeframe": "4h",
+    "ticker": "NVDA",
+    "regime": "converging",
+    "notes": "Supersedes draw-2026-05-19-001. Ascending channel 93 bars per Fidelity channel tool. Containment offset $57.54 (35% of APL price) read directly from Fidelity tooltip. Ascending slope derived from Fidelity x35% cursor position at 5/5 bar close $197.78 — bottom rail back-calculated to $177.64 at 5/5, giving slope $0.361/bar. Two defended wick breaches at ascending containment: ~4/27 spike and ~5/12 APH ($236.54). Descending channel 5 days old, steep, provisional. Bottom rail has no empirical anchor — geometric intersection only. Recency weighting applied: touches from 5/11 forward weighted over 4/13-4/27 cluster which was subsequently breached.",
+
+    "ascending_channel": {
+      "compression_rail": {
+        "anchor1": {"date": "2026-04-03", "price": 164.27, "type": "APL", "confirmed": true},
+        "anchor2": {"date": null, "price": null, "type": "VFD", "confirmed": false, "_note": "VFD not identifiable from chart at this resolution. Slope derived from Fidelity x35% tooltip instead."},
+        "slope_per_4h_bar": 0.361,
+        "slope_basis": "derived_from_fidelity_tooltip",
+        "status": "partial"
+      },
+      "containment_rail": {
+        "anchor": {"date": "2026-05-12", "price": 236.54, "type": "defended_breach", "confirmed": true},
+        "offset_from_compression": 57.54,
+        "offset_basis": "fidelity_channel_tool_direct",
+        "status": "confirmed"
       }
     },
 
     "descending_channel": {
       "compression_rail": {
         "anchor1": {"date": "2026-05-12", "price": 236.54, "type": "APH", "confirmed": true},
-        "anchor2": {"date": "2026-05-19", "price": 220.91, "type": "provisional_VSR", "confirmed": false, "_note": "Current price used as provisional second anchor. No qualifying VSR has emerged yet."},
-        "slope_per_4h_bar": null,
+        "anchor2": {"date": "2026-05-19", "price": 220.91, "type": "provisional_VSR", "confirmed": false, "_note": "Current price used as provisional second anchor. No qualifying VSR (bar.high < prior bar.high, close inside channel) has emerged yet."},
+        "slope_per_4h_bar": -1.954,
+        "slope_basis": "computed_aph_to_provisional_vsr",
         "status": "provisional"
       },
       "containment_rail": {
-        "anchor": {"date": null, "price": null, "type": "geometric_intersection", "confirmed": false, "_note": "Bottom rail anchored at projected intersection with ascending containment rail. No price pivot has tested this level."},
+        "anchor": {"date": null, "price": null, "type": "geometric_intersection", "confirmed": false, "_note": "No price pivot has tested descending support. Bottom rail anchored at projected intersection with ascending containment rail."},
         "offset_from_compression": null,
         "status": "provisional"
       }
@@ -38,11 +99,14 @@
 
     "wedge": {
       "apex_predicted_date": "2026-06-02",
-      "apex_days_forward_at_drawing": 14,
-      "apex_basis": "visual_estimate",
-      "asc_containment_t45": null,
-      "desc_compression_t45": null,
-      "_note": "T+45 from 2026-05-19 = 2026-07-03. Projections not computable without VFD and precise slopes."
+      "apex_days_calendar_forward_at_drawing": 14,
+      "apex_days_trading_forward_at_drawing": 10,
+      "apex_basis": "computed",
+      "apex_computation": "asc_compression = desc_compression → t=69.2 bars from APL → 43.3 trading days from 2026-04-03 → 2026-06-02",
+      "asc_containment_t45": 267.27,
+      "desc_compression_t45": 78.27,
+      "t45_date": "2026-07-22",
+      "_t45_note": "Descending $78.27 assumes steep provisional slope persists 45 days — unrealistic. Use asc_containment_t45 $267.27 as strike screener upper bound if ascending regime holds."
     },
 
     "macro_context": {
