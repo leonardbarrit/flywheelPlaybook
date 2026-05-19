@@ -112,6 +112,11 @@ flywheel-claude-code/
 │   │       ├── log_outcome.py                 Phase 3B                Log realized channel dominance observations
 │   │       └── recalibrate_weights.py         Phase 3B                Adjust force weights against channel observations
 │   │
+│   ├── price-data/                            Phase 3A
+│   │   ├── SKILL.md                                                   Fetch-process-research pipeline documentation
+│   │   └── scripts/
+│   │       └── process_prices.py                                      OHLCV → gap/reversal detection, history upsert
+│   │
 │   ├── channel-pivots/                        Phase 4                 Exploratory — spec subject to revision
 │   ├── channel-regime/                        Phase 4                 Exploratory — spec subject to revision
 │   ├── channel-slope/                         Phase 4                 Exploratory — spec subject to revision
@@ -132,7 +137,7 @@ flywheel-claude-code/
     ├── /status                                [per memory — verify]   Enhanced in Phase 1 with 45-day catalyst landscape
     ├── /calendar                              Phase 1                 Show forward catalyst window
     ├── /verify-calendar                       Phase 1                 Manual trigger for staleness check
-    ├── /log-event                             Phase 2                 Attribute and append a new significant event
+    ├── /log-event                             RETIRED                 Replaced by automated price pipeline
     ├── /forces                                Phase 2                 Current force state dump
     └── /recalibrate                           Phase 3A                Trend viewer now; weight recalibration in Phase 3B
 ```
@@ -215,10 +220,10 @@ This converts the roadmap from a passive document into an active enforcement mec
 
 **Skill: `skills/force-attribution/`** (per canonical tree)
 
-**New slash commands:** `/log-event`, `/forces` (per canonical tree)
+**New slash commands:** `/forces` (per canonical tree). `/log-event` was built but retired in favor of the automated price pipeline (see price-data skill below).
 
 ### Acceptance criteria
-- The end-of-day workflow becomes: open `/status` to see today's significant move (if any), then `/log-event` to attribute it. Both `events.json` and `forces.json` update in one motion.
+- The end-of-day workflow becomes: `/status` detects any significant move automatically (via price pipeline), researches it, and surfaces attribution candidates for review. `forces.json` is updated once the user confirms.
 
 ---
 

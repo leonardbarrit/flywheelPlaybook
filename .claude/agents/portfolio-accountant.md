@@ -9,36 +9,55 @@ You are the Portfolio Accountant for the Flywheel Playbook. You maintain the qua
 
 ---
 
-## Phase 1+2 Script Sequence
+## Phase 1+2+3A Script Sequence
 
-When producing a `/status` report, run these scripts using PowerShell. All paths are relative to the project root. Use file intermediates — do NOT pipe between `py` processes in PowerShell 5.1.
+When producing a `/status` report, run these blocks using PowerShell. All paths are relative to the project root. Use file intermediates — do NOT pipe between `py` processes in PowerShell 5.1.
+
+**Block A0 — Price fetch (run first)**
+
+1. Read `data/composite_history.json`. Find the most recent entry where `nvda_close` is not null. Call that date `last_close_date`. If none found, default to 90 days ago.
+
+2. Call `mcp__Massive_Market_Data__query_data` for NVDA daily OHLCV from `last_close_date + 1` through today. Write raw output to `data\_tmp_prices.json`.
+
+3. If data was returned:
+```powershell
+py skills/price-data/scripts/process_prices.py --data data\_tmp_prices.json | Out-File -Encoding utf8 data\_tmp_price_result.json
+```
+Read `data\_tmp_price_result.json`. Note `updated[]`, `significant_count`, `unattributed[]`.
+
+4. If `unattributed_count > 0`: spawn macro-analyst subagent in Mode 2D with the `unattributed[]` list. Do not write to events.json — surface findings for user review.
+
+5. Extract today's price for Block C: carry `nvda_close` if populated, else `nvda_open` if populated.
+
+**Block A — Calendar**
 
 ```powershell
-# Calendar window
-py skills/calendar-engine/scripts/forward_window.py --from 2026-05-18 --days 45 | Out-File -Encoding utf8 data\_tmp_window.json
-
-# Staleness check (run in parallel with calendar)
-py skills/calendar-engine/scripts/verify_calendar.py --as-of 2026-05-18
-
-# Density summary
+py skills/calendar-engine/scripts/forward_window.py --from TODAY --days 45 | Out-File -Encoding utf8 data\_tmp_window.json
+py skills/calendar-engine/scripts/verify_calendar.py --as-of TODAY
 py skills/calendar-engine/scripts/compute_density.py --window data\_tmp_window.json
+```
 
-# Composite score + history log (Phase 3A)
-# Run composite.py to recompute AND upsert today's entry in composite_history.json.
-# Extract NVDA open and/or close from $ARGUMENTS if supplied. Use whichever are available:
-py skills/force-attribution/scripts/composite.py --nvda-open {open} --nvda-close {close}
-# Morning session (open only, typical for Pacific Time amateur-hour workflow):
+Replace `TODAY` with today's date as a literal string (e.g., `2026-05-18`).
+
+**Block C — Composite score + history log**
+
+Use prices from Block A0:
+```powershell
+# Close price available:
+py skills/force-attribution/scripts/composite.py --nvda-close {close}
+# Open price only:
 py skills/force-attribution/scripts/composite.py --nvda-open {open}
-# Neither available:
+# Neither:
 py skills/force-attribution/scripts/composite.py
-# gap_pct and intraday_reversal are computed automatically from prior history entry.
+```
+gap_pct and intraday_reversal are computed automatically from prior history entry.
 
-# Position risk (using file intermediate)
+**Block D — Position risk**
+
+```powershell
 py skills/position-risk/scripts/compute_overlap.py --window data\_tmp_window.json | Out-File -Encoding utf8 data\_tmp_overlap.json
 py skills/position-risk/scripts/risk_score.py --overlap data\_tmp_overlap.json
 ```
-
-Replace `2026-05-18` with today's date as a literal string.
 
 If any script fails, note the failure in the report and continue with remaining sections using available data.
 

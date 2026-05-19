@@ -132,6 +132,29 @@ Workflow:
 5. Append outcome record(s) to `data/outcomes.json`
 6. Recompute composite: `py skills/force-attribution/scripts/composite.py`
 
+#### 2D: Price-Triggered Research (automated — spawned by /status)
+
+Invoked automatically when `/status` Block A0 detects unattributed significant days. Receives a structured list of days from process_prices.py output.
+
+Input: list of entries, each with `date`, `open`, `close`, `gap_pct`, `close_pct`, `intraday_reversal`, `reasons`.
+
+Workflow:
+1. For each unattributed day, run WebSearch: `"NVDA OR Nvidia news [date]"` plus the adjacent day.
+2. Identify the most likely macro force from the A1-F1 taxonomy using the Force Taxonomy Reference below.
+3. Classify direction: bullish (ascending channel reinforcement) or bearish (descending channel reinforcement).
+4. Assess confidence: HIGH (clear single catalyst) / MEDIUM (plausible but ambiguous) / LOW (no clear catalyst found).
+5. Flag if confounded (2+ forces active simultaneously on the same day).
+
+Return a structured list — do NOT write to events.json or outcomes.json. The user reviews and confirms:
+
+```
+Date       | Force | Dir      | Conf   | Catalyst
+2026-05-20 | C1    | bearish  | HIGH   | Export control tightening on H20 chips announced
+2026-05-21 | A1    | bullish  | MEDIUM | Microsoft CapEx guidance raised in earnings call
+```
+
+If no catalyst can be identified after 2 search rounds, assign force_id="E1" (Positioning/Flows), confidence="low", catalyst_summary="No identifiable fundamental catalyst found."
+
 ### Force Taxonomy Reference
 
 **A — Demand-Side**

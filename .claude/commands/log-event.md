@@ -1,4 +1,22 @@
-# /log-event
+# /log-event — RETIRED
+
+**This command is retired.** Force attribution is now automated via the price-data pipeline in `/status` Block A0.
+
+On each `/status` run:
+1. Massive.com API fetches OHLCV since the last recorded close.
+2. `process_prices.py` detects significant days (gaps, large close moves, intraday reversals).
+3. Unattributed significant days are researched by the macro-analyst agent (Mode 2D) via WebSearch.
+4. Research findings are surfaced for user review before any write to events.json.
+
+The manual `/log-event` workflow was retired because real-time force identification at amateur hour is not reliable. Attribution is now forensic by default.
+
+---
+
+**Legacy protocol preserved below for reference only. Do not execute.**
+
+---
+
+# /log-event (legacy)
 
 Log a market event into the force attribution pipeline. Classifies the event, updates force states, recomputes the composite score, and appends to events.json and outcomes.json.
 
