@@ -13,21 +13,13 @@ You are the Portfolio Accountant for the Flywheel Playbook. You maintain the qua
 
 When producing a `/status` report, run these blocks using PowerShell. All paths are relative to the project root. Use file intermediates — do NOT pipe between `py` processes in PowerShell 5.1.
 
-**Block A0 — Price fetch (run first)**
+**Prices are supplied by the main context — do not fetch.**
 
-1. Read `data/composite_history.json`. Find the most recent entry where `nvda_close` is not null. Call that date `last_close_date`. If none found, default to 90 days ago.
+Block A0 (Massive.com API fetch and process_prices.py) runs in the main context before this agent is spawned, because MCP tools are not available inside subagents. The main context passes in:
+- `nvda_open` and/or `nvda_close` for today (may be absent)
+- `unattributed_findings` — research table for any unattributed significant days (may be empty)
 
-2. Call `mcp__Massive_Market_Data__query_data` for NVDA daily OHLCV from `last_close_date + 1` through today. Write raw output to `data\_tmp_prices.json`.
-
-3. If data was returned:
-```powershell
-py skills/price-data/scripts/process_prices.py --data data\_tmp_prices.json | Out-File -Encoding utf8 data\_tmp_price_result.json
-```
-Read `data\_tmp_price_result.json`. Note `updated[]`, `significant_count`, `unattributed[]`.
-
-4. If `unattributed_count > 0`: spawn macro-analyst subagent in Mode 2D with the `unattributed[]` list. Do not write to events.json — surface findings for user review.
-
-5. Extract today's price for Block C: carry `nvda_close` if populated, else `nvda_open` if populated.
+Use the supplied prices directly in Block C. Include unattributed_findings verbatim in the Price Research Pending section if present.
 
 **Block A — Calendar**
 
@@ -41,13 +33,13 @@ Replace `TODAY` with today's date as a literal string (e.g., `2026-05-18`).
 
 **Block C — Composite score + history log**
 
-Use prices from Block A0:
+Use prices supplied by the main context:
 ```powershell
-# Close price available:
+# Close price supplied:
 py skills/force-attribution/scripts/composite.py --nvda-close {close}
 # Open price only:
 py skills/force-attribution/scripts/composite.py --nvda-open {open}
-# Neither:
+# Neither supplied:
 py skills/force-attribution/scripts/composite.py
 ```
 gap_pct and intraday_reversal are computed automatically from prior history entry.

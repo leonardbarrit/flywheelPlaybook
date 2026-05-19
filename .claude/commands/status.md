@@ -2,91 +2,99 @@
 description: Portfolio status check — current holdings, scaling progress, income metrics, capital pool, 45-day catalyst landscape, and position-risk overlay.
 ---
 
-Use the portfolio-accountant subagent to generate a full Phase 1+2 status report.
+## Execution model
 
-The agent should execute this sequence in order:
+Block A0 and news research run in the **main context** (MCP tools required).
+All other blocks run inside the **portfolio-accountant subagent**.
 
-**Block A0 — Price fetch (run first; results feed Block C)**
+---
 
-1. Read `data/composite_history.json`. Find the most recent entry where `nvda_close` is not null. Use that date as `last_close_date`. If none exists, default to 90 days ago.
+## MAIN CONTEXT — Block A0 (run this before spawning the subagent)
 
-2. Call `mcp__Massive_Market_Data__query_data` (or `mcp__Massive_Market_Data__search_endpoints` first if the endpoint is unknown) for NVDA daily OHLCV from `last_close_date + 1` through today. Save raw output to `data\_tmp_prices.json`.
+**Step 1 — Determine fetch window**
 
-3. If `data\_tmp_prices.json` contains records, run:
-   ```powershell
-   py skills/price-data/scripts/process_prices.py --data data\_tmp_prices.json | Out-File -Encoding utf8 data\_tmp_price_result.json
-   ```
-   Read `data\_tmp_price_result.json`. Note `updated[]`, `significant[]`, `unattributed[]`.
+Read `data/composite_history.json`. Find the most recent entry where `nvda_close` is not null. That date is `last_close_date`. If none exists, default to 90 days before today.
 
-4. If `unattributed_count > 0`: spawn a general-purpose agent with WebSearch to research each unattributed significant day. Brief the agent with: date, open, close, gap_pct, close_pct, intraday_reversal, reasons. Ask it to identify the most likely macro force (from the A1–F1 taxonomy), direction, confidence, and a 1-sentence catalyst summary for each date. **Do not write to events.json.** Surface findings to the user for review.
+**Step 2 — Fetch OHLCV**
 
-5. From `data\_tmp_price_result.json`, extract today's prices for Block C:
-   - If today is in `updated[]` and `nvda_close` is populated: carry `nvda_close` to Block C.
-   - If today is in `updated[]` and only `nvda_open` is populated: carry `nvda_open` to Block C.
-   - Otherwise: no price flag for Block C.
+Call `mcp__Massive_Market_Data__query_data` for NVDA daily OHLCV from `last_close_date + 1` through today. If the correct endpoint is unknown, call `mcp__Massive_Market_Data__search_endpoints` first. Write the raw response to `data\_tmp_prices.json`.
 
-**Block A — Calendar (run after A0; results needed by Block D)**
-6. Run `py skills/calendar-engine/scripts/forward_window.py --from TODAY --days 45` and save to `data\_tmp_window.json`
-7. Run `py skills/calendar-engine/scripts/verify_calendar.py --as-of TODAY`
-8. Run `py skills/calendar-engine/scripts/compute_density.py --window data\_tmp_window.json` for density summary
+If the API returns no new records (no trading days since last fetch), skip Steps 3–5. No price flag for Block C.
 
-**Block B — Portfolio snapshot (run in parallel with Block A)**
-9. Read `data/positions.json` and `data/trades.json`
-10. Calculate effective cost basis for all NVDA lots
-11. Compute trailing 3-month income metrics
-12. Report scaling roadmap progress
+**Step 3 — Process prices**
 
-**Block C — Composite score + history log (run after Block A0)**
-13. Run composite.py with prices from Block A0:
-    - Close price available: `py skills/force-attribution/scripts/composite.py --nvda-close {close}`
-    - Open price only: `py skills/force-attribution/scripts/composite.py --nvda-open {open}`
-    - Neither: `py skills/force-attribution/scripts/composite.py`
-    This recomputes composite.json AND upserts today's entry into composite_history.json.
-    Gap % (open vs prior close) and intraday_reversal are computed automatically.
+```powershell
+py skills/price-data/scripts/process_prices.py --data data\_tmp_prices.json | Out-File -Encoding utf8 data\_tmp_price_result.json
+```
 
-**Block D — Position risk (requires Block A output)**
-14. Run `py skills/position-risk/scripts/compute_overlap.py --window data\_tmp_window.json` → save to `data\_tmp_overlap.json`
-15. Run `py skills/position-risk/scripts/risk_score.py --overlap data\_tmp_overlap.json`
+Read `data\_tmp_price_result.json`. Extract:
+- `updated[]` — dates upserted into composite_history.json
+- `significant[]` — days meeting gap/close/reversal thresholds
+- `unattributed[]` — significant days with no entry in events.json
 
-**Block E — Assemble report**
-16. If verify_calendar returns any stale or unverified entries, lead with CALENDAR VERIFICATION REQUIRED action items (one per stale entry, with its primary_source_url)
-17. If unattributed significant days were found in Block A0, include a PRICE RESEARCH PENDING section with the news agent findings
-18. Then produce the full status report in the format below
+**Step 4 — News research (conditional, main context only)**
 
-Report format:
+If `unattributed_count > 0`: spawn a general-purpose agent (WebSearch) for each unattributed day. Brief:
+
+> Research NVDA price action on [date]. Significant move: open [open], close [close], gap [gap_pct]%, close [close_pct]%, reversal: [true/false], reasons: [reasons].
+> Identify the most likely macro force from: A1 Hyperscaler Capex | A2 Enterprise AI | A3 Sovereign AI | B1 Foundry/Packaging | B2 Taiwan Risk | B3 Power Grid | C1 China Export Controls | C2 US Industrial Policy | C3 Fed Policy | C4 AI Antitrust | D1 AMD | D2 Custom Silicon | D3 China Domestic Chip | E1 Positioning/Flows | E2 Cross-Asset Risk | F1 Narrative Validation.
+> Return: force_id | direction (bullish/bearish) | confidence (HIGH/MEDIUM/LOW) | 1-sentence catalyst summary | confounded (true/false).
+> If no clear catalyst found after 2 search rounds, return E1 | direction=unknown | confidence=LOW.
+
+Collect research findings. Do NOT write to events.json.
+
+**Step 5 — Extract prices for Block C**
+
+From `data\_tmp_price_result.json`, find today's entry in `updated[]`:
+- If today's `nvda_close` is populated → `PRICE_FLAG = --nvda-close {close}`
+- Else if today's `nvda_open` is populated → `PRICE_FLAG = --nvda-open {open}`
+- Otherwise → `PRICE_FLAG = (none)`
+
+---
+
+## SUBAGENT — portfolio-accountant
+
+Spawn the portfolio-accountant subagent. Pass in:
+- `TODAY` — today's date as YYYY-MM-DD
+- `PRICE_FLAG` — from Step 5 above (may be empty)
+- `UNATTRIBUTED_FINDINGS` — the research table from Step 4 (may be empty)
+
+The subagent runs Blocks A, B, C, D, and E (report assembly).
+
+---
+
+## Report format (assembled by subagent)
 
 ```
 ## PORTFOLIO STATUS — [DATE]
 
 ### ACTION ITEMS
-[If stale calendar entries: "CALENDAR VERIFICATION REQUIRED — [ticker/type] last verified [date], check: [URL]"]
-[If CRITICAL or ELEVATED risk positions: surface them here with score and flags]
-[If no open options: note that]
+[CALENDAR VERIFICATION REQUIRED — [ticker/type] last verified [date], check: [URL]]
+[CRITICAL or ELEVATED risk positions with score and flags]
 [If no action items: "No action items."]
 
 ### Price Research Pending
 [If unattributed significant days exist:]
-[DATE | open | close | gap_pct% | close_pct% | reversal | reasons]
-[Force research findings from news agent: force_id | direction | confidence | catalyst]
-[Prompt: "Review and confirm attribution with /confirm-attribution or dismiss."]
-[If no unattributed days: omit this section entirely]
+  DATE | open | close | gap_pct% | close_pct% | reversal | reasons
+  Force: force_id | direction | confidence | catalyst
+[If none: omit section entirely]
 
-### Catalyst Landscape — Next 45 Days ([from_date] → [to_date])
-[List each event: date | label | importance | days_until]
-[Flag high-density weeks]
-[NVDA earnings window position: PRE-EARNINGS DRIFT T-N / EARNINGS EVENT / POST-EARNINGS DRIFT T+N / OUTSIDE WINDOW]
+### Catalyst Landscape — Next 45 Days ([from] → [to])
+[DATE | LABEL | IMPORTANCE | T-N]
+High-density weeks: [list or "none"]
+NVDA earnings window: [PRE-DRIFT T-N | EARNINGS EVENT | POST-DRIFT T+N | OUTSIDE WINDOW]
 
 ### Macro Composite
 Score: [composite_score] — [interpretation]
 Net bullish: [net_bullish] | Net bearish: [net_bearish] | F1 multiplier: [f1_multiplier]×
-Active forces: [active_force_count] | Attenuating: [attenuating_force_count] | Dormant: [dormant_force_count]
+Active: [count] | Attenuating: [count] | Dormant: [count]
 [If nvda_open recorded: "NVDA open: $X.XX | Gap: +/-X.XX% vs prior close"]
 [If intraday_reversal=true: "INTRADAY REVERSAL — open direction diverged from close"]
-[If composite.json missing or stale (>7 days): "COMPOSITE STALE — run /macro-update"]
+[If composite.json missing or >7 days old: "COMPOSITE STALE — run /macro-update"]
 
 ### Position Risk
-[For each open option: ticker | strike | exp | DTE | risk_tier | flags]
-[If no open options: "No open option positions."]
+[TICKER STRIKE EXP | DTE | RISK_TIER | flags]
+[If none: "No open option positions."]
 
 ### Roth IRA
 - NVDA: XXX shares (X contracts) | Effective CB: $XXX.XX | Mkt: $XXX
@@ -108,4 +116,4 @@ Active forces: [active_force_count] | Attenuating: [attenuating_force_count] | D
 - Monthly run rate: $X,XXX
 ```
 
-Write the full report to `data/portfolio-status-YYYY-MM-DD.md` before responding. Return the report as your response.
+Write the full report to `data/portfolio-status-YYYY-MM-DD.md` before responding.
