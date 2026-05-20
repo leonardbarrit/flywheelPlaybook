@@ -1,31 +1,25 @@
 # Flywheel Roadmap
 
-Living document. Phases are sequenced by dependency, not calendar. Channel work in Phase 4 is exploratory — the pipeline below is the current working hypothesis and is subject to revision as we learn more.
+Living document. Phases are sequenced by dependency, not calendar.
 
-Last updated: 2026-05-18.
+Last updated: 2026-05-20.
 
 ---
 
-## Current state (2026-05-18)
+## Current state (2026-05-20)
 
-**Verified operational components (per project memory; verify before relying):**
+**Verified operational components:**
 - `CLAUDE.md` at project root.
-- 5 subagent definitions: weekend-session (Opus), roll-evaluator (Sonnet), monday-scanner (Sonnet), macro-analyst (Opus), portfolio-accountant (Haiku).
-- 4 slash commands: `/weekend`, `/scan-rolls`, `/macro`, `/status`.
-- `data/positions.json` and `data/trades.json`, maintained via Fidelity screenshot workflow.
+- 4 subagents: weekend-session (Opus), roll-evaluator (Sonnet), macro-analyst (Opus), portfolio-accountant (Haiku). monday-scanner retired — `/status` is sufficient.
+- Slash commands: `/weekend`, `/scan-rolls`, `/macro`, `/status`, `/forces`, `/recalibrate`, `/draw-channels`, `/log-channel`.
+- `data/positions.json` and `data/trades.json`, maintained manually after trades.
 
-**Verified reference content:**
+**Reference content:**
 - `references/roadmap.md` — this document.
+- `references/channel-spec.md` — Phase 4 pipeline spec and open algorithm questions.
 
 **Methodology source of truth:**
 - `Flywheel_Playbook_v22.docx` in Google Drive (ID: `1rs20-5mRlerMD7wgRSd1ZYmEQPwIUgl7QslDCBGCHcA`). This is the canonical methodology document. All other methodology content in this project is a distillation or operational subset.
-
-**Inherited issues to fix:**
-- Earnings calendar dates have historically been entered manually with no primary-source verification. The 2026-05-20 NVDA earnings date was mis-entered as 2026-05-27 in a prior dashboard. Primary-source verification is a Phase 1 requirement.
-- `data/` directory contains files from prior iterations that may be obsolete. Pre-Phase-1 cleanup pass required (see below).
-
-**Open methodology questions:**
-- Channel construction (Compression Rail / Containment Rail) is unresolved. The deterministic algorithm produces slopes that diverge from visual construction. Quarter-dollar discipline has been removed from the methodology. The right rule for selecting the second Compression Rail anchor remains open. **The channel skill is not blocking other work and is deferred to Phase 4.**
 
 ---
 
@@ -103,7 +97,8 @@ flywheel-claude-code/
 │   │   ├── SKILL.md
 │   │   └── scripts/
 │   │       ├── classify_event.py                                      Event description → force IDs via mapping
-│   │       ├── update_force_state.py                                  Recompute ACTIVE/ATTENUATING/DORMANT
+│   │       ├── update_force_state.py                                  State machine: ACTIVE/ATTENUATING/DORMANT/REACTIVATED; analysis-driven reactivation
+│   │       ├── match_keywords.py                                      Passive force surveillance — scan text against trigger_keywords
 │   │       └── composite.py                                           Pure function over forces.json → composite score
 │   │
 │   ├── force-calibration/                     Phase 3A/3B
@@ -117,32 +112,37 @@ flywheel-claude-code/
 │   ├── price-data/                            Phase 3A
 │   │   ├── SKILL.md                                                   Fetch-process-research pipeline documentation
 │   │   └── scripts/
-│   │       └── process_prices.py                                      OHLCV → gap/reversal detection, history upsert
+│   │       ├── process_prices.py                                      OHLCV → gap/reversal detection, history upsert
+│   │       └── log_price_event.py                                     Append attributed price event to events.json + outcomes.json
 │   │
-│   ├── channel-pivots/                        Phase 4                 Exploratory — spec subject to revision
-│   ├── channel-regime/                        Phase 4                 Exploratory — spec subject to revision
-│   ├── channel-slope/                         Phase 4                 Exploratory — spec subject to revision
-│   ├── channel-anchors/                       Phase 4                 Exploratory — spec subject to revision
-│   └── channel-geometry/                      Phase 4                 Exploratory — spec subject to revision
+│   └── channel-pipeline/                      Phase 4                 Consolidated pipeline — spec in references/channel-spec.md
+│       ├── SKILL.md
+│       └── scripts/
+│           ├── find_pivots.py                                         Pivot detection; velocity/acceleration characterization
+│           ├── score_channels.py                                      Candidate scoring; envelopment; ranked output per direction
+│           ├── channel_chart.py                                       Multi-candidate render with labels; primary interaction surface
+│           ├── select_pair.py                                         Iterative pass logic; apex window filter for opposing candidates
+│           └── build_geometry.py                                      Containment offset; apex (corrected formula); T+45 projection
 │
 ├── agents/                                                            (or `.claude/agents/` per existing convention)
-│   ├── weekend-session.md                     [per memory — verify]   Opus — strategic review
-│   ├── roll-evaluator.md                      [per memory — verify]   Sonnet — roll evaluation
-│   ├── monday-scanner.md                      [per memory — verify]   Sonnet — entry opportunities
-│   ├── macro-analyst.md                       [per memory — verify]   Opus — force attribution for new events
-│   └── portfolio-accountant.md                [per memory — verify]   Haiku — enhanced in Phase 1 to produce daily /status
+│   ├── weekend-session.md                     [verified]              Opus — synthesis layer; reads /status outputs; 10 blocks including calibration preview
+│   ├── roll-evaluator.md                      [verified]              Sonnet — roll evaluation; Mode 1/2/3/4A/4B classification
+│   ├── macro-analyst.md                       [verified]              Opus — force attribution for new events (Modes 1 and 2)
+│   └── portfolio-accountant.md                [verified]              Haiku — portfolio metrics block for /status
+│   (monday-scanner.md archived — superseded by /status)
 │
 └── commands/                                                          (or `.claude/commands/` per existing convention)
-    ├── /weekend                               [per memory — verify]
-    ├── /scan-rolls                            [per memory — verify]
-    ├── /macro                                 [per memory — verify]
-    ├── /status                                [per memory — verify]   Enhanced in Phase 1 with 45-day catalyst landscape
+    ├── /weekend                               [verified]              Synthesis layer; reads week's /status outputs; 10 blocks W0–W10
+    ├── /scan-rolls                            [verified]              Standalone; invoke only for intraday re-evaluation (Block 4 of /status handles daily)
+    ├── /macro                                 [verified]              Force assignment for coming week; Mode 1 output
+    ├── /status                                [verified]              Single daily kickoff: Blocks 0–5 (price→force→calendar→channel→roll→metrics)
+    ├── /draw-channels                         [verified]              Full channel pipeline: OHLCV→pivots→score→chart→select→geometry→log; triggered by NEW_DRAWING_REQUIRED
+    ├── /log-channel                           [verified]              Manual channel anchor entry; computes apex and T+45 projection; logs to channel_drawings.json
+    ├── /forces                                [verified]              Current force state dump
+    ├── /recalibrate                           [verified]              Calibration report + weight proposals; integrated into /weekend Block W10
     ├── /calendar                              Phase 1                 Show forward catalyst window
     ├── /verify-calendar                       Phase 1                 Manual trigger for staleness check
-    ├── /log-event                             RETIRED                 Replaced by automated price pipeline
-    ├── /log-channel                           Phase 3B                Record channel drawing; compute apex and T+45 projection
-    ├── /forces                                Phase 2                 Current force state dump
-    └── /recalibrate                           Phase 3A                Trend viewer now; weight recalibration in Phase 3B
+    └── /log-event                             RETIRED                 Replaced by automated price pipeline
 ```
 
 ### Conventions
@@ -257,13 +257,13 @@ Macro force data (composite score) and price action observations (channel domina
 
 ---
 
-### Phase 3B — Threshold discovery + weight calibration (gates on Phase 4)
+### Phase 3B — Threshold discovery + weight calibration (active as of 2026-05-19)
 
 **Goal:** Match composite score history against dated channel dominance observations from Phase 4 channel drawings. Discover the score thresholds separating ascending / descending / wedge regimes. Then adjust force weights so the composite score crosses those thresholds more reliably.
 
-**Gate condition:** Phase 4 must produce channel drawings with dated dominance periods before Phase 3B can activate.
+**Gate condition:** Minimum 3 resolved channel drawings per regime class before recalibration runs. First drawing logged 2026-05-19 (ascending_dominant, provisional VSR — resolves when breakout confirmed).
 
-**Deliverables (not yet built):**
+**Deliverables (built):**
 
 - `data/channel_drawings.json` — append-on-draw, update-on-resolve ledger. Each entry: anchor parameters, computed slopes, apex prediction, T+45 strike projection, macro composite context at time of drawing, outcome block (breakout date, direction, apex error, premature flag, preceding force event IDs).
 - `skills/force-calibration/scripts/channel_correlation.py` — reads channel_drawings.json + events.json; identifies force events in a lookback window before each breakout; builds frequency tables for premature vs on-time breakouts; flags candidate "breakout-forcing" forces for Phase 3B weight calibration.
@@ -279,75 +279,53 @@ Macro force data (composite score) and price action observations (channel domina
 
 ---
 
-## Phase 4 — Channel drawing pipeline (deferred, exploratory)
+## Phase 4 — Channel drawing pipeline (operational as of 2026-05-19)
 
-**Goal:** A deterministic channel-construction pipeline that produces visually-correct Compression and Containment Rails from OHLC data.
+**Goal:** A deterministic channel-construction pipeline that produces ranked channel candidates from OHLC data, renders them for practitioner selection, and computes apex and T+45 projections from the accepted pair.
 
-### Status: Working hypothesis only
+**Status:** `/draw-channels` runs the full pipeline end-to-end. Triggered automatically when `/status` Block 3 sets `NEW_DRAWING_REQUIRED` (breakout detected, apex lapsed, or no active drawing exists). `/log-channel` remains available for manual anchor entry.
 
-The stage decomposition below is the current best guess based on how a human reads a chart sequentially. The sequence has not been validated by implementation. Stages may be merged, split, reordered, or replaced. The hybrid stage-2 approach (manual regime annotation) is the intended starting point because building an autonomous regime classifier is non-trivial and the manual path unblocks stages 3–5 quickly.
+Full specification: `references/channel-spec.md`.
 
-### Working pipeline hypothesis
+### Pipeline overview
 
 ```
 [ OHLC bars ]
     ↓
-1. channel-pivots         → list of structural pivots
+find_pivots.py       → pivots with velocity and acceleration at each point
     ↓
-2. channel-regime         → segments tagged oscillating | ascending-contained | descending-contained
+score_channels.py    → ranked candidate channels (both directions); direction-agnostic scoring
     ↓
-3. channel-slope          → slope per contained segment, anchored on pivots
+channel_chart.py     → multi-candidate chart rendered; practitioner selects via toggle
     ↓
-4. channel-anchors        → final (pivot-A, pivot-B) for slope rail; offset anchor for containment rail
+select_pair.py       → iterative pass (elective) if one direction missing; apex window filter
     ↓
-5. channel-geometry       → rail equations, touch counts, breakout flags, projections
+build_geometry.py    → containment offset; apex; T+45 projection
     ↓
-[ Channel object → strike screener, status, etc. ]
+[ Accepted channel pair → channel_drawings.json → strike screener, /status ]
 ```
 
-### Per-stage notes
+### Key design decisions (established 2026-05-19)
 
-**Stage 1 — channel-pivots**
-- Likely deterministic: swing high/low identification with parameterized window (e.g., bar is a swing low if `bar.low` is lower than the N bars before and after).
-- Output: `[{ bar_index, type: "swing_high" | "swing_low", value, sigma_significance }]`
-- Open question: is a single window-N parameter enough, or do we need multi-scale pivot detection?
+- **Direction-agnostic scoring.** Prevailing vs opposing is determined by the scoring function (length × (1/slope) × recency discount), not by assuming ascending = prevailing.
+- **Backwards-iterative anchor search.** Start from today, step back in ~1-month increments. The most recent high-acceleration inflection point is the anchor candidate at each lookback depth. Mirrors manual drawing practice.
+- **Velocity/acceleration pivot characterization.** High acceleration = genuine inflection (anchor candidate). Low acceleration = oscillation (constituency member). Velocity similarity groups pivots belonging to the same trend.
+- **Candidate selection, not confirmation.** The practitioner sees all candidates on a chart and rejects incorrect ones. Algorithm handles all anchor identification and geometry. Regime classification (the three-way a/b/c question) remains human judgment.
+- **Iterative pass (elective).** If only one direction is selected, an optional second pass generates candidates for the missing direction with relaxed parameters. Single-channel result (no wedge) is valid for T+45 strike projection.
+- **Corrected apex formula.** Prior formula was missing the t_aph correction term. Corrected general form in channel-spec.md.
 
-**Stage 2 — channel-regime**
-- Hardest stage. Distinguishing range-bound oscillation from directional containment.
-- **Starting approach: manual annotation.** User marks each segment. Skills downstream read the annotation. This unblocks stages 3–5.
-- **Later approach (if needed): autonomous classifier.** Statistical (ADF, Hurst, slope-of-pivot-regression) or LLM pattern recognition.
+### Build order
 
-**Stage 3 — channel-slope**
-- Deterministic given a contained segment and its pivots.
-- Open question: least-squares fit through all pivots, pivot-pair extremes, or the v22 "most recent VFD after APL" rule. The visual-construction question we hit in v22 lives here.
+1. `find_pivots.py` — foundational; deterministic; testable against known OHLCV data
+2. `build_geometry.py` — define clean output interface first; pure math
+3. `score_channels.py` — scoring, velocity coherence, envelopment bonus
+4. `channel_chart.py` — multi-candidate visualization; central to interaction model
+5. `select_pair.py` — iterative pass, apex window filter
+6. `SKILL.md` — documents the selection workflow and human judgment gates
 
-**Stage 4 — channel-anchors**
-- Deterministic given correct slope and pivot inputs.
-- Slope rail anchors: which pivots define the rail.
-- Containment rail offset: parallel line maximizing touch count along its length.
+### Open algorithm questions
 
-**Stage 5 — channel-geometry**
-- Pure math.
-- Rail equations, touch counts, breakout detection, forward projection, strike screener output.
-
-### Build order when this phase activates
-
-1. Stage 1 first (pivots are foundational and largely deterministic).
-2. Stage 5 next (define clean interface).
-3. Stage 4 (anchor-selection logic with cleanly-typed inputs).
-4. Stage 3 (slope derivation rule TBD — possibly multiple variants behind a flag).
-5. Stage 2 manual annotation interface.
-6. Stage 2 autonomous classifier — optional upgrade.
-
-### Decisions explicitly deferred to Phase 4 activation
-
-- Swing pivot window size (single or multi-scale).
-- Slope derivation rule (least-squares vs pivot-pair vs Appendix-D's VFD/VSR rule).
-- Whether stage 2 stays manual indefinitely or graduates to an autonomous classifier.
-- Whether Compression Rail validation should accept wick touches (currently spec'd as closing-only).
-- Whether the closing-price tolerance is right at all timeframes or should scale with bar resolution.
-
-These are intentionally open. Re-derive at activation time rather than committing now.
+See `references/channel-spec.md` Section "Open Questions" for the full list. These are active refinement items, not blockers: recency decay function, velocity tolerance for constituency grouping, acceleration threshold for anchor qualification, apex window bounds, trendln vs custom pivot detection.
 
 ---
 

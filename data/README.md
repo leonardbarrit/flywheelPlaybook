@@ -11,36 +11,56 @@ Updated manually or by the portfolio-accountant when trades are recorded.
 {
   "roth": {
     "shares": [
-      { "ticker": "NVDA", "qty": 400, "avgCost": 135.50, "mktPrice": 180.00 },
-      { "ticker": "JEPQ", "qty": 850, "avgCost": 52.30, "mktPrice": 55.00 }
+      { "ticker": "NVDA", "qty": 400, "costBasis": 174.10, "cashBasis": 113.53, "mktPrice": null },
+      { "ticker": "JEPQ", "qty": 1000, "costBasis": 52.30, "mktPrice": null }
     ],
     "options": [
       {
-        "ticker": "-NVDA260501C205",
+        "ticker": "-NVDA260605C205",
         "underlying": "NVDA",
         "direction": "SHORT",
         "type": "CALL",
         "strike": 205,
-        "expiration": "2026-05-01",
-        "dte": 45,
-        "premium": 4.40,
+        "expiration": "2026-06-05",
+        "dte": 17,
+        "premium": 17.11,
         "qty": 4,
-        "mode": 1,
-        "entryDate": "2026-03-17"
+        "mode": 2,
+        "entryDate": "2026-05-18"
       }
     ],
-    "spaxx": 12500
+    "spaxx": 9470.38
   },
   "hsa": {
     "shares": [
-      { "ticker": "JEPI", "qty": 320, "avgCost": 56.00, "mktPrice": 58.50 },
-      { "ticker": "PPA", "qty": 45, "avgCost": 98.00, "mktPrice": 105.00 }
+      { "ticker": "JEPI", "qty": 500, "costBasis": 57.29, "mktPrice": null }
     ],
-    "options": [],
-    "spaxx": 0
+    "options": [
+      {
+        "ticker": "-IBIT20260605P35",
+        "underlying": "IBIT",
+        "direction": "SHORT",
+        "type": "PUT",
+        "strike": 35,
+        "expiration": "2026-06-05",
+        "dte": 17,
+        "premium": 0.09,
+        "qty": 1,
+        "mode": 1,
+        "entryDate": "2026-05-19"
+      }
+    ],
+    "spaxx": 3604.57
   }
 }
 ```
+
+**Schema notes:**
+- `costBasis` — original purchase price per share (tax term, fixed). Never adjusted by premiums or income.
+- `cashBasis` — out-of-pocket capital at risk after all income subtracted. Only tracked for NVDA (primary covered call position). Stored in positions.json; decremented by portfolio-accountant as premiums accumulate.
+- `mktPrice` — updated by `/status` Block 0 from Massive Market Data on each run. null between runs.
+- `premium` (options) — credit or debit per share on the option trade. Never used for share prices.
+- `price` (share trades in trades.json) — purchase or sale price per share.
 
 ### `trades.json` — Trade History Ledger
 Append-only log of all transactions. Used for income metrics, cost basis calculation, and performance tracking.
@@ -78,10 +98,12 @@ Append-only log of all transactions. Used for income metrics, cost basis calcula
 
 | File Pattern | Source | Content |
 |---|---|---|
-| `weekend-session-YYYY-MM-DD.md` | weekend-session | Full weekend analysis with decision tree |
+| `portfolio-status-YYYY-MM-DD.md` | portfolio-accountant (/status) | Daily portfolio status report |
+| `weekend-session-YYYY-MM-DD.md` | weekend-session (/weekend) | Weekly synthesis with Monday/Tuesday plan and calibration preview |
 | `roll-eval-{TICKER}-{DATE}.md` | roll-evaluator | Individual position roll analysis |
-| `monday-scan-YYYY-MM-DD.md` | monday-scanner | Turnaround Tuesday go/no-go checklist |
+| `roll-scan-YYYY-MM-DD.md` | /scan-rolls | Full portfolio roll scan table |
 | `macro-force-YYYY-MM-DD.md` | macro-analyst | Weekly force assignment map |
+| `channel_drawings.json` | /log-channel, /draw-channels | Append-on-draw, update-on-resolve channel drawing ledger |
 
 ## Getting Started
 

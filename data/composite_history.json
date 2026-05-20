@@ -28,8 +28,57 @@
       "C4",
       "D3"
     ],
-    "nvda_open": 131.5,
-    "nvda_close": 129.8,
+    "nvda_open": 229.87,
+    "nvda_close": 222.32,
+    "gap_pct": null,
+    "intraday_reversal": null
+  },
+  {
+    "date": "2026-05-19",
+    "composite_score": null,
+    "net_bullish": null,
+    "net_bearish": null,
+    "net_directional": null,
+    "f1_multiplier": null,
+    "active_forces": null,
+    "attenuating_forces": null,
+    "dormant_forces": null,
+    "nvda_open": 219.62,
+    "nvda_close": 220.61,
+    "gap_pct": -1.215,
+    "intraday_reversal": false
+  },
+  {
+    "date": "2026-05-20",
+    "composite_score": 17.362,
+    "net_bullish": 23.471,
+    "net_bearish": -11.896,
+    "net_directional": 11.575,
+    "f1_multiplier": 1.5,
+    "active_forces": [
+      "A1",
+      "A2",
+      "B1",
+      "B2",
+      "B3",
+      "C1",
+      "D1",
+      "D2",
+      "E1",
+      "E2",
+      "F1"
+    ],
+    "attenuating_forces": [
+      "C2",
+      "C3"
+    ],
+    "dormant_forces": [
+      "A3",
+      "C4",
+      "D3"
+    ],
+    "nvda_open": null,
+    "nvda_close": 220.61,
     "gap_pct": null,
     "intraday_reversal": null
   }

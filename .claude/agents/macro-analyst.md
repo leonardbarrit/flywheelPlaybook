@@ -84,8 +84,8 @@ Invoked by `/macro-update` or when the user asks for a dashboard refresh. Mainta
 The dashboard tracks 15 forces across 6 categories (A-F) with a state machine:
 - **ACTIVE** — monitored every update pass
 - **ATTENUATING** — weight declining, flagged for dormancy check
-- **DORMANT** — zero maintenance cost until reactivated by ≥1.5σ price reaction in category
-- **REACTIVATED** — recently woken, full monitoring for 2 passes or 14 days
+- **DORMANT** — zero maintenance cost until reactivated by research attribution (analysis-driven, not price-signal-driven)
+- **REACTIVATED** — LOW confidence attribution received; awaiting corroborating attribution to confirm ACTIVE
 
 State machine logic: `skills/force-attribution/scripts/update_force_state.py`. Full invocation protocol: `skills/force-attribution/SKILL.md`.
 
@@ -115,7 +115,7 @@ Workflow:
 8. Resolve prior prospective outcomes whose realized direction can now be confirmed
 9. Check ACTIVE→ATTENUATING transitions (3 consecutive <0.5σ reactions)
 10. Check ATTENUATING→DORMANT transitions (weight <0.15 AND 30+ days without significant event)
-11. Check DORMANT→REACTIVATED transitions (new ≥1.5σ event in category)
+11. Check DORMANT→REACTIVATED and DORMANT→ACTIVE transitions — driven by research attribution confidence (HIGH/MEDIUM → ACTIVE; LOW → REACTIVATED). See update_force_state.py for state machine logic.
 12. Recompute composite: `py skills/force-attribution/scripts/composite.py`
 13. Verify NVDA earnings date is current in `data/calendar.json`
 
@@ -132,28 +132,11 @@ Workflow:
 5. Append outcome record(s) to `data/outcomes.json`
 6. Recompute composite: `py skills/force-attribution/scripts/composite.py`
 
-#### 2D: Price-Triggered Research (automated — spawned by /status)
+#### 2D: Price-Triggered Research (automated — handled by /status Block 0)
 
-Invoked automatically when `/status` Block A0 detects unattributed significant days. Receives a structured list of days from process_prices.py output.
+This mode is now fully automated within `/status` Block 0. The status pipeline detects unattributed significant days via `process_prices.py`, spawns research agents, runs `match_keywords.py` for passive surveillance, and writes attributed events directly to `events.json` via `log_price_event.py`. This agent is not invoked for 2D — it is handled inline by the main context during `/status`.
 
-Input: list of entries, each with `date`, `open`, `close`, `gap_pct`, `close_pct`, `intraday_reversal`, `reasons`.
-
-Workflow:
-1. For each unattributed day, run WebSearch: `"NVDA OR Nvidia news [date]"` plus the adjacent day.
-2. Identify the most likely macro force from the A1-F1 taxonomy using the Force Taxonomy Reference below.
-3. Classify direction: bullish (ascending channel reinforcement) or bearish (descending channel reinforcement).
-4. Assess confidence: HIGH (clear single catalyst) / MEDIUM (plausible but ambiguous) / LOW (no clear catalyst found).
-5. Flag if confounded (2+ forces active simultaneously on the same day).
-
-Return a structured list — do NOT write to events.json or outcomes.json. The user reviews and confirms:
-
-```
-Date       | Force | Dir      | Conf   | Catalyst
-2026-05-20 | C1    | bearish  | HIGH   | Export control tightening on H20 chips announced
-2026-05-21 | A1    | bullish  | MEDIUM | Microsoft CapEx guidance raised in earnings call
-```
-
-If no catalyst can be identified after 2 search rounds, assign force_id="E1" (Positioning/Flows), confidence="low", catalyst_summary="No identifiable fundamental catalyst found."
+Do not invoke Mode 2D manually. Use Mode 2B (Update Pass) or 2C (Event-Driven Update) for manual force attribution work between status runs.
 
 ### Force Taxonomy Reference
 

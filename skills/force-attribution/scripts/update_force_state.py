@@ -1,23 +1,31 @@
 """
 Apply a new event attribution to data/forces.json in place.
 
-State machine transitions (from data/macro-forces/README.md):
+State machine transitions:
   ACTIVE      -> ATTENUATING:  3 consecutive events with |z| < 0.5
   ATTENUATING -> DORMANT:      weight < 0.15 AND days_since_last_significant >= 30
-  DORMANT     -> REACTIVATED:  new event |z| >= 1.5 OR |close_pct| >= 2.0%
-  REACTIVATED -> ACTIVE:       called with --confirm-active (after 2 passes or 14 days)
-  REACTIVATED -> DORMANT:      no follow-through: days_since_last_significant >= 14
+  DORMANT     -> ACTIVE:       research attributes a significant event (confidence HIGH/MEDIUM)
+  DORMANT     -> REACTIVATED:  research attributes an event with LOW confidence — watch for corroboration
+  REACTIVATED -> ACTIVE:       next attributed event for this force, regardless of magnitude
+  REACTIVATED -> DORMANT:      no follow-through attribution in 14 days
+
+Reactivation is analysis-driven, not price-signal-driven.
+match_keywords.py flags dormant forces showing keyword activity in news —
+that surfaces them for researcher attention. The attribution itself (via
+log_price_event.py → update_force_state.py) is what drives the state change.
+
+--confirm-active is RETIRED. Reactivation confirmation happens through a
+second research attribution, not a manual flag.
 
 Usage:
-    py update_force_state.py \
-        --force C1 \
-        --direction bearish \
-        --z-score -1.8 \
-        --close-pct -2.8 \
-        --date 2026-05-20 \
+    py update_force_state.py \\
+        --force C1 \\
+        --direction bearish \\
+        --z-score -1.8 \\
+        --close-pct -2.8 \\
+        --confidence HIGH \\
+        --date 2026-05-20 \\
         --event-id "2026-05-20-bis-new-restrictions"
-
-    py update_force_state.py --confirm-active C1  # After sustained signal
 """
 
 import argparse
@@ -55,7 +63,7 @@ def days_since(date_str: str | None) -> int:
 
 def apply_event(forces_data: dict, force_id: str, direction: str,
                 z_score: float, close_pct: float, event_date: str,
-                event_id: str | None) -> tuple[dict, list[str]]:
+                event_id: str | None, confidence: str = "MEDIUM") -> tuple[dict, list[str]]:
     """
     Update the force entry and run state machine. Returns (updated data, log lines).
     """
@@ -107,16 +115,25 @@ def apply_event(forces_data: dict, force_id: str, direction: str,
             log.append(f"NOTE: {force_id} significant event while ATTENUATING — consecutive_weak_reactions reset")
 
     elif old_state == "DORMANT":
-        if is_significant:
+        # Reactivation is analysis-driven: the research attribution IS the signal.
+        # HIGH/MEDIUM confidence → go directly to ACTIVE (analyst confirmed relevancy)
+        # LOW confidence → REACTIVATED (watch for corroborating attribution)
+        conf_upper = confidence.upper()
+        if conf_upper in ("HIGH", "MEDIUM"):
+            new_state = "ACTIVE"
+            log.append(f"TRANSITION: {force_id} DORMANT -> ACTIVE (research attribution, confidence={conf_upper})")
+        else:
             new_state = "REACTIVATED"
-            log.append(f"TRANSITION: {force_id} DORMANT -> REACTIVATED (z={z_score:.2f})")
+            log.append(f"TRANSITION: {force_id} DORMANT -> REACTIVATED (LOW confidence attribution — awaiting corroboration)")
 
     elif old_state == "REACTIVATED":
         if force.get("days_since_last_significant", 0) >= REACTIVATED_DAYS:
             new_state = "DORMANT"
             log.append(f"TRANSITION: {force_id} REACTIVATED -> DORMANT (no follow-through in {REACTIVATED_DAYS}d)")
-        elif is_significant:
-            log.append(f"NOTE: {force_id} sustained signal — call --confirm-active to promote to ACTIVE")
+        else:
+            # Any new attribution while REACTIVATED confirms — promote to ACTIVE
+            new_state = "ACTIVE"
+            log.append(f"TRANSITION: {force_id} REACTIVATED -> ACTIVE (corroborating attribution received)")
 
     force["state"] = new_state
     if new_state != old_state:
@@ -142,27 +159,20 @@ def confirm_active(forces_data: dict, force_id: str) -> tuple[dict, list[str]]:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--force", required=False)
-    parser.add_argument("--direction", default="neutral")
-    parser.add_argument("--z-score", type=float, default=0.0, dest="z_score")
-    parser.add_argument("--close-pct", type=float, default=0.0, dest="close_pct")
-    parser.add_argument("--date", default=date.today().isoformat())
-    parser.add_argument("--event-id", default=None, dest="event_id")
-    parser.add_argument("--confirm-active", default=None, dest="confirm_active",
-                        metavar="FORCE_ID")
+    parser.add_argument("--force",      required=True)
+    parser.add_argument("--direction",  default="neutral")
+    parser.add_argument("--z-score",    type=float, default=0.0, dest="z_score")
+    parser.add_argument("--close-pct",  type=float, default=0.0, dest="close_pct")
+    parser.add_argument("--confidence", default="MEDIUM",
+                        help="Research confidence: HIGH | MEDIUM | LOW (drives DORMANT reactivation path)")
+    parser.add_argument("--date",       default=date.today().isoformat())
+    parser.add_argument("--event-id",   default=None, dest="event_id")
     args = parser.parse_args()
 
     data = load_forces()
-
-    if args.confirm_active:
-        data, log = confirm_active(data, args.confirm_active)
-    else:
-        if not args.force:
-            print("Error: --force is required unless --confirm-active is used", flush=True)
-            raise SystemExit(1)
-        data, log = apply_event(data, args.force, args.direction,
-                                args.z_score, args.close_pct,
-                                args.date, args.event_id)
+    data, log = apply_event(data, args.force, args.direction,
+                            args.z_score, args.close_pct,
+                            args.date, args.event_id, args.confidence)
 
     save_forces(data)
     for line in log:

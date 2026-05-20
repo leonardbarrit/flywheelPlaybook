@@ -47,7 +47,7 @@
     "type": "SHARES",
     "strike": null,
     "expiration": null,
-    "premium": 165.25,
+    "price": 165.25,
     "qty": 100,
     "notes": "PPA sold when funding bill stalled in Congress. Proceeds ($16,525) directed to JEPI purchase. Regime growth vehicle fully exited."
   },
@@ -60,8 +60,21 @@
     "type": "SHARES",
     "strike": null,
     "expiration": null,
-    "premium": 57.23,
+    "price": 57.23,
     "qty": 230,
     "notes": "JEPI purchase funded by PPA proceeds. 230 shares at $57.23. New blended avg cost: $57.29 on 500 total shares. Reached 500-share milestone."
+  },
+  {
+    "id": "t006",
+    "date": "2026-05-19",
+    "account": "HSA",
+    "action": "STO",
+    "ticker": "IBIT",
+    "type": "CSP",
+    "strike": 35,
+    "expiration": "2026-06-05",
+    "premium": 0.09,
+    "qty": 1,
+    "notes": "SPAXX double-dip CSP. $3,500 collateral stays in SPAXX earning yield. $9 credit received. 17 DTE from entry."
   }
 ]

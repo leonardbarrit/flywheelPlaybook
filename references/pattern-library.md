@@ -3,7 +3,7 @@
 Empirical patterns observed in the NVDA force attribution dataset (2026 YTD).
 Updated as new patterns are confirmed. Each pattern requires ≥3 confirming instances before graduation from "candidate" to "confirmed."
 
-Last updated: 2026-05-18. Seeded from data/macro-forces/dashboard.md and decomposition.json.
+Last updated: 2026-05-20. Seeded from data/archive/macro-forces.20260520/dashboard.md and decomposition.json.
 
 ---
 

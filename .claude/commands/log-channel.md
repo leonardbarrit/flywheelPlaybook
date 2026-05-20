@@ -51,13 +51,19 @@ offset = asc_cont_price - (apl_price + slope * bar_count(apl_date, asc_cont_date
 
 **Wedge apex (bar index from APL):**
 ```
-# Where ascending compression rail = descending compression rail
-# apl_price + slope_asc * x = aph_price + slope_desc * x
-# x = (aph_price - apl_price) / (slope_asc - slope_desc)
-apex_bars_from_apl = (aph_price - apl_price) / (slope_asc - slope_desc)
+# Corrected formula — each rail is expressed from its own anchor reference point.
+# Prior formula (aph - apl) / (slope_asc - slope_desc) was missing the t_aph correction
+# and produced an apex ~30+ bars too early.
+#
+# Let t_aph_bars = bar_count(apl_date, aph_date)
+# apl_price + slope_asc * x = aph_price + slope_desc * (x - t_aph_bars)
+# Solving for x (bars from APL):
+apex_bars_from_apl = (aph_price - apl_price - slope_desc * t_aph_bars) / (slope_asc - slope_desc)
 apex_date = apl_date + apex_bars_from_apl bars
 apex_days_forward = trading_days(today, apex_date)
 ```
+
+Note: for the general direction-agnostic case (either channel may be prevailing), see the full formula in `references/channel-spec.md` Section "Layer 5 — Geometry".
 
 **T+45 projections (from today):**
 ```

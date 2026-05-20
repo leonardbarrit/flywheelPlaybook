@@ -11,6 +11,13 @@
       "type": "additive",
       "state": "ACTIVE",
       "weight": 1.509,
+      "trigger_keywords": [
+        "hyperscaler capex", "data center spending", "capital expenditure AI",
+        "GPU demand", "compute infrastructure", "AI infrastructure spending",
+        "data center buildout", "hyperscaler guidance", "Microsoft capex",
+        "Amazon AWS investment", "Google infrastructure", "Meta AI spending",
+        "cloud capex", "GPU orders", "compute capacity expansion"
+      ],
       "direction_bias": "bullish",
       "net_ytd_reaction": 12.733,
       "attenuation_trend": "stable",
@@ -34,6 +41,12 @@
       "type": "additive",
       "state": "ACTIVE",
       "weight": 0.889,
+      "trigger_keywords": [
+        "enterprise AI", "AI adoption", "AI deployment", "AI ROI",
+        "AI productivity", "workforce AI", "AI implementation",
+        "copilot", "AI agent enterprise", "AI software spending",
+        "AI use case", "enterprise software AI", "AI budget"
+      ],
       "direction_bias": "bearish",
       "net_ytd_reaction": -0.766,
       "attenuation_trend": "stable",
@@ -57,6 +70,13 @@
       "type": "additive",
       "state": "DORMANT",
       "weight": 0.0,
+      "trigger_keywords": [
+        "sovereign AI", "national AI", "government AI compute",
+        "state AI infrastructure", "AI sovereignty", "national compute",
+        "sovereign compute", "France AI", "UAE AI compute", "Saudi AI",
+        "India AI infrastructure", "Japan AI", "EU AI sovereignty",
+        "national AI strategy", "government GPU", "state-sponsored AI"
+      ],
       "direction_bias": "neutral",
       "net_ytd_reaction": 0.0,
       "attenuation_trend": "No events in YTD window",
@@ -80,6 +100,12 @@
       "type": "additive",
       "state": "ACTIVE",
       "weight": 0.845,
+      "trigger_keywords": [
+        "CoWoS", "HBM", "high bandwidth memory", "advanced packaging",
+        "TSMC packaging", "SK Hynix HBM", "Micron HBM", "chiplet",
+        "2.5D packaging", "3D stacking", "substrate supply",
+        "OSAT capacity", "foundry capacity", "SoIC", "wafer on wafer"
+      ],
       "direction_bias": "bullish",
       "net_ytd_reaction": 4.493,
       "attenuation_trend": "stable",
@@ -103,6 +129,13 @@
       "type": "additive",
       "state": "ACTIVE",
       "weight": 0.334,
+      "trigger_keywords": [
+        "Taiwan Strait", "cross-strait tensions", "PLA military",
+        "Taiwan independence", "China Taiwan conflict", "TSMC Taiwan risk",
+        "Taiwan escalation", "Beijing Taiwan", "Taiwan military exercise",
+        "Taiwan invasion", "strait blockade", "Taiwan election",
+        "China military Taiwan", "Taiwan semiconductor risk"
+      ],
       "direction_bias": "neutral",
       "net_ytd_reaction": 0.334,
       "attenuation_trend": "stable",
@@ -126,6 +159,14 @@
       "type": "additive",
       "state": "ACTIVE",
       "weight": 0.432,
+      "trigger_keywords": [
+        "data center power", "AI power consumption", "grid capacity",
+        "electricity demand AI", "power purchase agreement",
+        "nuclear data center", "gigawatt AI", "megawatt data center",
+        "power constraints compute", "utility AI demand",
+        "energy infrastructure AI", "behind the meter", "co-location power",
+        "SMR data center", "grid interconnection"
+      ],
       "direction_bias": "neutral",
       "net_ytd_reaction": 0.432,
       "attenuation_trend": "stable",
@@ -149,6 +190,13 @@
       "type": "additive",
       "state": "ACTIVE",
       "weight": 1.065,
+      "trigger_keywords": [
+        "export controls", "H100 ban", "H20", "A800", "chip export restrictions",
+        "BIS rules", "entity list semiconductor", "AI chip embargo",
+        "NVDA China license", "Commerce Department chips",
+        "semiconductor export control", "China chip ban",
+        "export license GPU", "diffusion rule", "advanced chip restrictions"
+      ],
       "direction_bias": "bearish",
       "net_ytd_reaction": -5.272,
       "attenuation_trend": "stable",
@@ -172,6 +220,14 @@
       "type": "additive",
       "state": "ATTENUATING",
       "weight": 0.868,
+      "trigger_keywords": [
+        "CHIPS Act", "semiconductor subsidy", "domestic semiconductor",
+        "fab incentive", "semiconductor manufacturing USA",
+        "Intel CHIPS grant", "TSMC Arizona", "Samsung Texas fab",
+        "reshoring semiconductor", "semiconductor industrial policy",
+        "national semiconductor strategy", "CHIPS and Science Act",
+        "domestic chip production", "semiconductor tax credit"
+      ],
       "direction_bias": "bearish",
       "net_ytd_reaction": -1.752,
       "attenuation_trend": "stable",
@@ -195,6 +251,12 @@
       "type": "additive",
       "state": "ATTENUATING",
       "weight": 0.339,
+      "trigger_keywords": [
+        "Federal Reserve", "FOMC", "Fed rate decision", "interest rate hike",
+        "rate cut", "Powell speech", "monetary policy", "CPI print",
+        "PCE inflation", "yield curve", "10-year yield", "rate expectations",
+        "Fed pivot", "quantitative tightening", "dot plot", "terminal rate"
+      ],
       "direction_bias": "bearish",
       "net_ytd_reaction": -1.077,
       "attenuation_trend": "building",
@@ -218,6 +280,14 @@
       "type": "additive",
       "state": "DORMANT",
       "weight": 0.0,
+      "trigger_keywords": [
+        "AI antitrust", "NVDA monopoly", "chip market dominance",
+        "DOJ NVDA", "FTC AI chips", "AI competition investigation",
+        "GPU market share antitrust", "AI market power",
+        "semiconductor antitrust", "AI regulation competition",
+        "NVDA market investigation", "AI dominance probe",
+        "European AI antitrust", "AI Act compliance"
+      ],
       "direction_bias": "neutral",
       "net_ytd_reaction": 0.0,
       "attenuation_trend": "No events in YTD window",
@@ -241,6 +311,12 @@
       "type": "additive",
       "state": "ACTIVE",
       "weight": 0.701,
+      "trigger_keywords": [
+        "AMD MI300", "AMD MI325", "AMD MI350", "AMD Instinct",
+        "AMD data center GPU", "AMD AI accelerator", "AMD CDNA",
+        "AMD market share GPU", "AMD inference", "AMD training",
+        "ROCm", "AMD NVDA competition", "AMD HPC", "AMD AI chip"
+      ],
       "direction_bias": "bearish",
       "net_ytd_reaction": -1.939,
       "attenuation_trend": "stable",
@@ -264,6 +340,12 @@
       "type": "additive",
       "state": "ACTIVE",
       "weight": 0.795,
+      "trigger_keywords": [
+        "custom silicon", "TPU", "Trainium", "Inferentia",
+        "Google TPU", "Amazon Trainium", "MTIA", "Apple Neural Engine",
+        "in-house AI chip", "hyperscaler custom chip", "ASIC AI accelerator",
+        "custom ASIC", "Microsoft Maia", "Meta MTIA", "custom inference chip"
+      ],
       "direction_bias": "bearish",
       "net_ytd_reaction": -1.741,
       "attenuation_trend": "stable",
@@ -287,6 +369,13 @@
       "type": "additive",
       "state": "DORMANT",
       "weight": 0.0,
+      "trigger_keywords": [
+        "Huawei Ascend", "Cambricon", "Biren", "Moore Threads",
+        "China AI chip", "domestic GPU China", "CXMT",
+        "SMIC advanced node", "Chinese AI accelerator",
+        "China chip self-sufficiency", "Made in China semiconductor",
+        "China GPU alternative", "Kunlun chip", "Hygon"
+      ],
       "direction_bias": "neutral",
       "net_ytd_reaction": 0.0,
       "attenuation_trend": "No events in YTD window",
@@ -310,6 +399,14 @@
       "type": "oscillating",
       "state": "ACTIVE",
       "weight": 0.696,
+      "trigger_keywords": [
+        "short squeeze", "gamma squeeze", "dealer hedging",
+        "CTA flows", "systematic buying", "momentum trade",
+        "NVDA positioning", "options flow", "put call ratio",
+        "gamma wall", "dark pool activity", "block trade",
+        "institutional accumulation", "retail buying NVDA",
+        "options gamma exposure", "max pain strike"
+      ],
       "direction_bias": "bullish",
       "net_ytd_reaction": 0.661,
       "attenuation_trend": "stable",
@@ -333,6 +430,14 @@
       "type": "oscillating",
       "state": "ACTIVE",
       "weight": 0.721,
+      "trigger_keywords": [
+        "risk off", "VIX spike", "credit spreads widening",
+        "recession fears", "yield spike", "dollar strength",
+        "equity selloff", "market panic", "flight to safety",
+        "risk sentiment deterioration", "global growth concern",
+        "macro headwind", "deleveraging", "margin calls",
+        "cross-asset correlation", "risk appetite"
+      ],
       "direction_bias": "bearish",
       "net_ytd_reaction": -1.347,
       "attenuation_trend": "stable",
@@ -356,6 +461,13 @@
       "type": "multiplier",
       "state": "ACTIVE",
       "weight": 1.5,
+      "trigger_keywords": [
+        "AI demand confirmed", "AI cycle intact", "AI thesis validated",
+        "adjacent AI supplier earnings", "independent AI corroboration",
+        "AI infrastructure demand confirmed", "third party AI validation",
+        "AI spending acceleration", "AI investment cycle confirmed",
+        "AI demand durable", "hyperscaler AI commitment"
+      ],
       "direction_bias": "neutral",
       "net_ytd_reaction": 0.0,
       "attenuation_trend": "building",

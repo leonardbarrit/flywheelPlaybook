@@ -129,4 +129,76 @@
       "notes": null
     }
   }
+  ,
+  {
+    "drawing_id": "draw-2026-05-19-003",
+    "drawn_date": "2026-05-19",
+    "timeframe": "4h",
+    "ticker": "NVDA",
+    "regime": "ascending_dominant",
+    "notes": "Phase 4 pipeline run 2026-05-19. Ascending: APL Mar 30 $163.50, no VFD confirmed — slope +0.3254/bar is algorithm-derived (score_channels.py backwards-iterative regression), not from two chart anchors; marked partial. Descending: APH May 14 $237.96, VSR May 18 $222.75 (provisional — last bar close used). Wedge apex May 19 $209.95 per build_geometry.py; compression resolving ~now. T+45 containment $238.52 per build_geometry.py using actual bar indices. Descending slope -1.901/bar from two-anchor APH→VSR computation.",
+
+    "ascending_channel": {
+      "compression_rail": {
+        "anchor1": {"date": "2026-03-30", "price": 163.5, "type": "APL", "confirmed": true},
+        "anchor2": {"date": null, "price": null, "type": "VFD", "confirmed": false},
+        "slope_per_4h_bar": null,
+        "slope_pipeline": 0.3254,
+        "slope_basis": "algorithm_regression_no_vfd",
+        "status": "partial"
+      },
+      "containment_rail": {
+        "anchor": {"date": null, "price": null, "type": null, "confirmed": false},
+        "offset_from_compression": null,
+        "status": "provisional"
+      }
+    },
+
+    "descending_channel": {
+      "compression_rail": {
+        "anchor1": {"date": "2026-05-14", "price": 237.96, "type": "APH", "confirmed": true},
+        "anchor2": {"date": "2026-05-18", "price": 222.75, "type": "VSR", "confirmed": false, "_note": "Provisional — last bar close used as VSR; no qualifying lower-high bar has emerged yet"},
+        "slope_per_4h_bar": -1.901,
+        "slope_basis": "computed_aph_to_vsr",
+        "status": "provisional"
+      },
+      "containment_rail": {
+        "anchor": {"date": null, "price": null, "type": "geometric_intersection", "confirmed": false},
+        "offset_from_compression": -7.93,
+        "status": "provisional"
+      }
+    },
+
+    "wedge": {
+      "apex_predicted_date": "2026-05-19",
+      "apex_days_forward_at_drawing": 1,
+      "apex_price": 209.95,
+      "apex_basis": "computed",
+      "apex_computation": "build_geometry.py bar-index intersection of ascending (+0.3254/bar from APL) and descending (-1.901/bar from APH) compression rails",
+      "asc_containment_t45": 238.52,
+      "desc_compression_t45": null,
+      "t45_date": "2026-07-20",
+      "_t45_note": "Asc containment $238.52 uses pipeline slope +0.3254 and actual bar indices (build_geometry.py). Desc T+45 null — steep provisional slope (-1.901/bar) over 45d is unrealistic for opposing channel."
+    },
+
+    "macro_context": {
+      "composite_score": 17.362,
+      "composite_date": "2026-05-18",
+      "active_forces": ["A1","A2","B1","B2","B3","C1","D1","D2","E1","E2","F1"],
+      "attenuating_forces": ["C2","C3"],
+      "dormant_forces": ["A3","C4","D3"],
+      "f1_multiplier": 1.5
+    },
+
+    "outcome": {
+      "resolved": false,
+      "breakout_date": null,
+      "breakout_direction": null,
+      "breakout_price": null,
+      "apex_prediction_error_days": null,
+      "premature": null,
+      "preceding_force_event_ids": [],
+      "notes": null
+    }
+  }
 ]

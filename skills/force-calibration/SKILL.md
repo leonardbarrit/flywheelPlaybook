@@ -1,7 +1,7 @@
 # Skill: Force Calibration
 
 Phase 3A: reads composite score history and renders a trend report.
-Phase 3B: deferred — gates on Phase 4 channel drawings providing realized channel dominance observations.
+Phase 3B: active — gates on Phase 4 channel drawings met as of 2026-05-19 (draw-2026-05-19-003 logged).
 
 The separation is intentional: macro force data (composite score) accumulates independently of price action/channel observations to avoid confirmation bias in calibration.
 

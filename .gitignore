@@ -1,5 +1,7 @@
 # Temp files from skill pipelines
 data/_tmp_*.json
+data/_tmp_*.py
+data/_tmp_*.png
 
 # Python
 __pycache__/

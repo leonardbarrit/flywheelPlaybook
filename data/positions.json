@@ -27,9 +27,9 @@
       {
         "ticker": "NVDA",
         "qty": 400,
-        "avgCost": 174.63,
-        "mktPrice": null,
-        "_note": "avgCost from 2026-03-20 snapshot; mktPrice not supplied"
+        "costBasis": 174.10,
+        "cashBasis": 113.53,
+        "mktPrice": null
       },
       {
         "ticker": "JEPQ",
@@ -67,8 +67,24 @@
         "_note": "500 shares at $57.29 blended avg as of 2026-04-27. 230 shares purchased 2026-04-27 at $57.23 via PPA proceeds."
       }
     ],
-    "options": [],
+    "options": [
+      {
+        "ticker": "-IBIT20260605P35",
+        "underlying": "IBIT",
+        "direction": "SHORT",
+        "type": "PUT",
+        "strike": 35,
+        "expiration": "2026-06-05",
+        "dte": 17,
+        "premium": 0.09,
+        "qty": 1,
+        "mode": null,
+        "entryDate": "2026-05-19",
+        "_note": "CSP. SPAXX double-dip. $3,500 collateral stays in SPAXX earning yield."
+      }
+    ],
     "openOrders": [],
-    "spaxx": 3596.04
+    "spaxx": 3605.04,
+    "_spaxx_note": "3596.04 + 9.00 CSP premium received 2026-05-19"
   }
 }
