@@ -31,6 +31,9 @@ All phases operational. Daily entry point: `/status`.
 - **Commands:** `/status`, `/weekend`, `/scan-rolls`, `/macro`, `/forces`, `/recalibrate`, `/draw-channels`, `/log-channel`
 - **Data files:** `positions.json`, `trades.json`, `calendar.json`, `forces.json`, `events.json`, `outcomes.json`, `composite_history.json`, `channel_drawings.json`
 - **Phase 3B (weight calibration):** active; gated on 3 resolved drawings per regime class. First drawing logged 2026-05-19.
+- **Scripts:** run as `py skills/<name>/scripts/<script>.py` (Windows Python). Do not use `python` or `python3`.
+- **Temp files:** `data\_tmp_*.json` are transient pipeline artifacts written and consumed within a `/status` run. Do not preserve or commit them.
+- **CHANGELOG:** `CHANGELOG.md` at project root. Append on each release.
 
 ---
 
@@ -81,8 +84,6 @@ Only **Mode 1** and **Mode 3** are recommended. Modes 2 and 4 are defined for re
 - **Cost Basis** — Original purchase price per share. Fixed. Never adjusted by premiums or income.
 - **Cash Basis** — Cost Basis minus all option premiums collected per share since inception. The Flywheel's primary operational metric. Do not conflate with Cost Basis.
 - **Premium** — Options credit or debit only. Share prices are "price." Never use "premium" for shares.
-- **SPAXX double-dip** — CSP where collateral earns SPAXX yield simultaneously.
-- **Deployment threshold** — P_min = max(SPAXX_yield, dividend_yield × 1.5) with PCR modifier: >1.20 → 1.3×, 0.70–1.20 → 1.5×, <0.50 → 2.0×.
 
 ---
 
